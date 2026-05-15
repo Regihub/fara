@@ -1,0 +1,17 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "public/images"
+public_folder: "/images"
+
+collections:
+  - name: "oznamy"
+    label: "Oznamy"
+    folder: "src/content/announcements"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Názov", name: "title", widget: "string" }
+      - { label: "Dátum", name: "date", widget: "datetime" }
+      - { label: "Text", name: "body", widget: "markdown" }

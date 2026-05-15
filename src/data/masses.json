@@ -1,0 +1,9 @@
+[
+  { "day": "Pondelok", "time": "17:00" },
+  { "day": "Utorok", "time": "9:00" },
+  { "day": "Streda", "time": "17:00" },
+  { "day": "Štvrtok", "time": "17:00" },
+  { "day": "Piatok", "time": "17:00" },
+  { "day": "Sobota", "time": "8:00" },
+  { "day": "Nedeľa", "time": "9:00" }
+]

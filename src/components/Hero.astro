@@ -1,0 +1,27 @@
+---
+import church from "../data/church.json";
+---
+
+<section class="p-5 bg-green-700 text-white rounded-b-3xl">
+  <h1 class="text-xl font-bold">
+    {church.name}
+  </h1>
+
+  <p class="text-sm opacity-90 mt-1">
+    {church.subtitle}
+  </p>
+
+  <p class="text-sm opacity-90 mt-1">
+    Aktuálne informácie a oznamy
+  </p>
+
+  <div class="mt-4 flex gap-2">
+    <a href="/omse" class="bg-white text-green-700 px-4 py-2 rounded-xl text-sm">
+      Omše
+    </a>
+
+    <a href="/oznamy" class="border border-white px-4 py-2 rounded-xl text-sm">
+      Oznamy
+    </a>
+  </div>
+</section>

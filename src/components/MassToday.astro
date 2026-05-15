@@ -1,0 +1,58 @@
+---
+import masses from "../data/masses.json";
+
+const days = ["Nedeľa","Pondelok","Utorok","Streda","Štvrtok","Piatok","Sobota"];
+
+const today = days[new Date().getDay()];
+const todayMasses = masses.filter(m => m.day === today);
+---
+
+<section class="px-5 pt-5 pb-2">
+  <h1 class="text-lg font-semibold leading-tight mb-2">
+    Omša dnes
+  </h1>
+
+  <div id="masses"></div>
+</section>
+
+<script define:vars={{ todayMasses }}>
+  function getMessage(timeStr) {
+    const [h, m] = timeStr.split(":").map(Number);
+
+    const now = new Date();
+
+    const massTime = new Date();
+    massTime.setHours(h, m, 0, 0);
+
+    const diffMinutes =
+      (now.getTime() - massTime.getTime()) / (1000 * 60);
+
+    if (diffMinutes < 0) {
+      return `Dnes je omša o ${timeStr}h`;
+    }
+
+    if (diffMinutes < 60) {
+      return `Omša práve prebieha, začala o ${timeStr}h`;
+    }
+
+    return `Dnes bola omša o ${timeStr}h`;
+  }
+
+  const container = document.getElementById("masses");
+
+  if (todayMasses.length === 0) {
+    container.innerHTML = `
+      <p class="text-gray-500 text-sm">
+        Dnes nie sú sv. omše
+      </p>
+    `;
+  } else {
+    container.innerHTML = todayMasses.map(m => `
+      <div class="p-4 border rounded-xl bg-white mb-2">
+        <div class="font-medium">
+          ${getMessage(m.time)}
+        </div>
+      </div>
+    `).join("");
+  }
+</script>

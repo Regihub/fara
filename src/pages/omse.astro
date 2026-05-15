@@ -1,0 +1,36 @@
+---
+import Base from "../layouts/Base.astro";
+import masses from "../data/masses.json";
+
+const days = ["Nedeľa","Pondelok","Utorok","Streda","Štvrtok","Piatok","Sobota"];
+const today = days[new Date().getDay()];
+---
+
+<Base>
+  <section class="p-5">
+    <h1 class="text-xl font-bold mb-4">Rozpis sv. omší</h1>
+
+    <div class="space-y-3">
+      {masses.map((m) => {
+        const isToday = m.day === today;
+
+        return (
+          <div class={
+            "p-4 border rounded-xl flex justify-between transition " +
+            (isToday
+              ? "bg-green-50 border-green-700 shadow-sm"
+              : "bg-white border-gray-200")
+          }>
+            <span class={isToday ? "font-bold text-green-700" : "font-medium"}>
+              {m.day}
+            </span>
+
+            <span class={isToday ? "font-bold text-green-700" : "font-bold"}>
+              {m.time}
+            </span>
+          </div>
+        );
+      })}
+    </div>
+  </section>
+</Base>

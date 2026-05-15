@@ -1,0 +1,121 @@
+---
+import Base from "../layouts/Base.astro";
+import church from "../data/church.json";
+import { Phone, Mail } from "lucide-astro";
+
+const locations = {
+  fara: {
+    name: "Farský úrad Stará Sásová",
+    address: `${church.address}, ${church["postalCode"]} ${church.city}`,
+
+    google:
+      "https://www.google.sk/maps?f=q&source=s_q&hl=sk&geocode&q=Na+T%C3%A1le+3089/10,+97411+Bansk%C3%A1+Bystrica-S%C3%A1sov%C3%A1&sll=48.669026,19.699024&sspn=3.119948,10.733643&ie=UTF8&hq&hnear=Na+T%C3%A1le+3089/10,+97411+Bansk%C3%A1+Bystrica-S%C3%A1sov%C3%A1&z=15",
+
+    mapycz:
+      "https://mapy.com/sk/zakladni?planovani-trasy&rc=9s-FZxRTZo&rs=&rs=osm&ri=&ri=1004937800&mrp=%7B%22c%22%3A112%2C%22dt%22%3A%22%22%2C%22d%22%3Atrue%7D&xc=%5B%5D&rut=1&x=19.1552756&y=48.7558878&z=19"
+  },
+
+  kostol: {
+    name: "Kostol sv. Antona a Pavla pustovníkov",
+    address: "Sásovská cesta 60, Banská Bystrica",
+
+    google:
+      "https://www.google.sk/maps/place/Kostol+sv.+Antona+a+Pavla,+pustovn%C3%ADkov/@48.7576848,19.1570198,115m/data=!3m1!1e3!4m15!1m8!3m7!1s0x4715166d4d0fe7d7:0x760b9e14b57de288!2sS%C3%A1sovsk%C3%A1+cesta+2964%2F60,+974+11+Bansk%C3%A1+Bystrica!3b1!8m2!3d48.7576933!4d19.1575304!16s%2Fg%2F11c1bpj81b!3m5!1s0x4715176cce572ba3:0x54deead0842083cf!8m2!3d48.757711!4d19.1573711!16s%2Fg%2F11fm79p24d?hl=sk&entry=ttu&g_ep=EgoyMDI2MDUxMi4wIKXMDSoASAFQAw%3D%3D",
+
+    mapycz:
+      "https://mapy.com/sk/zakladni?planovani-trasy&rc=9s-aHxR8GQ&rs=&rs=osm&ri=&ri=1067211612&mrp=%7B%22c%22%3A112%2C%22dt%22%3A%22%22%2C%22d%22%3Atrue%7D&xc=%5B%5D&rut=1&x=19.1570673&y=48.7574669&z=19"
+  }
+};
+---
+
+<Base>
+  <section class="p-5">
+    <h1 class="text-xl font-bold mb-5">Kontakt</h1>
+
+    <div class="space-y-5">
+
+      <!-- FARA -->
+      <div class="p-4 rounded-2xl border bg-white shadow-sm">
+        <h2 class="font-bold text-green-700">
+          {locations.fara.name}
+        </h2>
+
+        <p class="text-sm text-gray-600 mt-1">
+          {locations.fara.address}
+        </p>
+
+        <div class="text-sm text-gray-700 mt-3 space-y-2">
+
+  <!-- TELEFÓN -->
+  <a
+    href={`tel:${church.phone}`}
+    class="flex items-center gap-2 text-blue-600 font-medium hover:text-blue-800 transition"
+  >
+  <Phone class="w-5 h-5" />
+
+    <span>{church.phone}</span>
+  </a>
+
+  <!-- EMAIL -->
+  <a
+    href={`mailto:${church.email}`}
+    class="flex items-center gap-2 text-blue-600 font-medium hover:text-blue-800 transition break-all"
+  >
+<Mail class="w-5 h-5" />
+
+    <span>{church.email}</span>
+  </a>
+
+</div>
+
+        <div class="grid grid-cols-2 gap-2 mt-4">
+          <a
+            href={locations.fara.google}
+            target="_blank"
+            class="bg-green-700 text-white text-center py-2 rounded-xl text-sm font-medium hover:bg-green-800 transition"
+          >
+            Google Maps
+          </a>
+
+          <a
+            href={locations.fara.mapycz}
+            target="_blank"
+            class="bg-orange-500 text-white text-center py-2 rounded-xl text-sm font-medium hover:bg-orange-600 transition"
+          >
+            Mapy.cz
+          </a>
+        </div>
+      </div>
+
+      <!-- KOSTOL -->
+      <div class="p-4 rounded-2xl border bg-white shadow-sm">
+        <h2 class="font-bold text-green-700">
+          {locations.kostol.name}
+        </h2>
+
+        <p class="text-sm text-gray-600 mt-1">
+          {locations.kostol.address}
+        </p>
+
+        <div class="grid grid-cols-2 gap-2 mt-4">
+          <a
+            href={locations.kostol.google}
+            target="_blank"
+            class="bg-green-700 text-white text-center py-2 rounded-xl text-sm font-medium hover:bg-green-800 transition"
+          >
+            Google Maps
+          </a>
+
+          <a
+            href={locations.kostol.mapycz}
+            target="_blank"
+            class="bg-orange-500 text-white text-center py-2 rounded-xl text-sm font-medium hover:bg-orange-600 transition"
+          >
+            Mapy.cz
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</Base>

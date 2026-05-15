@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="sk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin – omše</title>
+
+    <style>
+      body {
+        font-family: system-ui, sans-serif;
+        padding: 20px;
+        background: #fafafa;
+      }
+
+      h1 {
+        margin-bottom: 16px;
+      }
+
+      button {
+        padding: 8px 12px;
+        margin-right: 8px;
+        margin-bottom: 12px;
+        cursor: pointer;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        background: white;
+      }
+
+      th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+      }
+
+      th {
+        background: #f3f3f3;
+        text-align: left;
+      }
+
+      input {
+        width: 100%;
+        padding: 6px;
+        box-sizing: border-box;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Admin – omše</h1>
+
+    <button onclick="generate()">Vygenerovať týždeň</button>
+    <button onclick="download()">Stiahnuť JSON</button>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Dátum</th>
+          <th>Čas</th>
+          <th>Úmysel</th>
+          <th>Akcia</th>
+        </tr>
+      </thead>
+
+      <tbody id="table"></tbody>
+    </table>
+
+    <script>
+      // =========================
+      // TEMPLATE ROZVRH
+      // =========================
+      const templateMasses = [
+        { day: "Pondelok", time: "17:00" },
+        { day: "Utorok", time: "9:00" },
+        { day: "Streda", time: "17:00" },
+        { day: "Štvrtok", time: "17:00" },
+        { day: "Piatok", time: "17:00" },
+        { day: "Sobota", time: "8:00" },
+        { day: "Nedeľa", time: "9:00" }
+      ];
+
+      const days = [
+        "Nedeľa",
+        "Pondelok",
+        "Utorok",
+        "Streda",
+        "Štvrtok",
+        "Piatok",
+        "Sobota"
+      ];
+
+      let data = [];
+
+      // =========================
+      // GENEROVANIE TÝŽDŇA
+      // =========================
+      function generateWeekMasses(startDate) {
+        const result = [];
+        const start = new Date(startDate);
+
+        for (let i = 0; i < 7; i++) {
+          const current = new Date(start);
+          current.setDate(start.getDate() + i);
+
+          const dayName = days[current.getDay()];
+
+          const dayMasses = templateMasses.filter(
+            m => m.day === dayName
+          );
+
+          dayMasses.forEach(m => {
+            result.push({
+              date: current.toISOString().slice(0, 10),
+              time: m.time,
+              intention: ""
+            });
+          });
+        }
+
+        return result;
+      }
+
+      // =========================
+      // RENDER TABUĽKY
+      // =========================
+      function render() {
+        const table = document.getElementById("table");
+
+        table.innerHTML = data.map((m, i) => `
+          <tr>
+            <td>${m.date}</td>
+
+            <td>
+              <input value="${m.time}"
+                onchange="update(${i}, 'time', this.value)">
+            </td>
+
+            <td>
+              <input value="${m.intention}"
+                onchange="update(${i}, 'intention', this.value)">
+            </td>
+
+            <td>
+              <button onclick="removeRow(${i})">❌</button>
+            </td>
+          </tr>
+        `).join("");
+      }
+
+      // =========================
+      // AKCIE
+      // =========================
+      function generate() {
+        const today = new Date().toISOString().slice(0, 10);
+        data = generateWeekMasses(today);
+        render();
+      }
+
+      function update(i, key, value) {
+        data[i][key] = value;
+      }
+
+      function removeRow(i) {
+        data.splice(i, 1);
+        render();
+      }
+
+      function download() {
+        const file = {
+          week: new Date().toISOString().slice(0, 10),
+          masses: data,
+          notices: []
+        };
+
+        const blob = new Blob(
+          [JSON.stringify(file, null, 2)],
+          { type: "application/json" }
+        );
+
+        const a = document.createElement("a");
+        a.href = URL.createObjectURL(blob);
+        a.download = "announcements.json";
+        a.click();
+      }
+
+      // expose
+      window.generate = generate;
+      window.update = update;
+      window.removeRow = removeRow;
+      window.download = download;
+    </script>
+  </body>
+</html>
