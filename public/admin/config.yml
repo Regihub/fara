@@ -2,8 +2,6 @@ backend:
   name: github
   repo: Regihub/fara
   branch: main
-  base_url: https://fara.vercel.app
-  auth_endpoint: oauth
 
 media_folder: "public/images/uploads"
 public_folder: "/images/uploads"
@@ -24,6 +22,7 @@ collections:
           - label: "Sväté omše"
             name: "masses"
             widget: "list"
+            summary: "{{fields.day}} {{fields.date}} {{fields.time}}"
             fields:
               - { label: "Deň", name: "day", widget: "string" }
               - { label: "Dátum", name: "date", widget: "date" }
