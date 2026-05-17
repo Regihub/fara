@@ -14,33 +14,18 @@ collections:
         label: "Aktuálny týždeň"
         name: "current"
         fields:
-          - label: "Názov"
-            name: "title"
-            widget: "string"
-            default: "Farské oznamy"
-
-          - label: "Platné od"
-            name: "weekStart"
-            widget: "date"
-            format: "YYYY-MM-DD"
-
-          - label: "Platné do"
-            name: "weekEnd"
-            widget: "date"
-            format: "YYYY-MM-DD"
-
-          - label: "Všeobecné oznamy"
-            name: "general"
-            widget: "markdown"
+          - { label: "Názov", name: "title", widget: "string" }
+          - { label: "Platné od", name: "weekStart", widget: "date" }
+          - { label: "Platné do", name: "weekEnd", widget: "date" }
+          - { label: "Všeobecné oznamy", name: "general", widget: "markdown" }
 
           - label: "Sväté omše"
             name: "masses"
             widget: "list"
-            summary: "{{fields.day}} {{fields.date}} {{fields.time}}"
             fields:
               - { label: "Deň", name: "day", widget: "string" }
-              - { label: "Dátum", name: "date", widget: "date", format: "YYYY-MM-DD" }
+              - { label: "Dátum", name: "date", widget: "date" }
               - { label: "Čas", name: "time", widget: "string" }
               - { label: "Úmysel", name: "intention", widget: "string", required: false }
-              - { label: "Miesto", name: "place", widget: "string", required: false, default: "Farský kostol" }
+              - { label: "Miesto", name: "place", widget: "string", required: false }
               - { label: "Poznámka", name: "note", widget: "string", required: false }
