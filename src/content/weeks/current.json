@@ -1,0 +1,63 @@
+{
+  "weekStart": "2026-05-18",
+  "weekEnd": "2026-05-24",
+  "general": "- V stredu po svätej omši bude adorácia.\n- V sobotu bude upratovanie kostola.",
+  "masses": [
+    {
+      "day": "Pondelok",
+      "date": "2026-05-18",
+      "time": "17:00",
+      "intention": "",
+      "place": "Farský kostol",
+      "note": ""
+    },
+    {
+      "day": "Utorok",
+      "date": "2026-05-19",
+      "time": "9:00",
+      "intention": "",
+      "place": "Farský kostol",
+      "note": ""
+    },
+    {
+      "day": "Streda",
+      "date": "2026-05-20",
+      "time": "17:00",
+      "intention": "",
+      "place": "Farský kostol",
+      "note": ""
+    },
+    {
+      "day": "Štvrtok",
+      "date": "2026-05-21",
+      "time": "17:00",
+      "intention": "",
+      "place": "Farský kostol",
+      "note": ""
+    },
+    {
+      "day": "Piatok",
+      "date": "2026-05-22",
+      "time": "17:00",
+      "intention": "",
+      "place": "Farský kostol",
+      "note": ""
+    },
+    {
+      "day": "Sobota",
+      "date": "2026-05-23",
+      "time": "8:00",
+      "intention": "",
+      "place": "Farský kostol",
+      "note": ""
+    },
+    {
+      "day": "Nedeľa",
+      "date": "2026-05-24",
+      "time": "9:00",
+      "intention": "",
+      "place": "Farský kostol",
+      "note": ""
+    }
+  ]
+}

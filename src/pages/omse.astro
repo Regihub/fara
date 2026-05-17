@@ -1,36 +1,30 @@
 ---
-import Base from "../layouts/Base.astro";
-import masses from "../data/masses.json";
+import Base from '../layouts/Base.astro';
+import week from '../content/weeks/current.json';
 
-const days = ["Nedeľa","Pondelok","Utorok","Streda","Štvrtok","Piatok","Sobota"];
-const today = days[new Date().getDay()];
+const masses = week.masses || [];
 ---
 
-<Base>
-  <section class="p-5">
-    <h1 class="text-xl font-bold mb-4">Rozpis sv. omší</h1>
+<Base title="Sväté omše">
+  <section class="mx-auto max-w-4xl px-4 py-8">
+    <h1 class="mb-6 text-3xl font-bold">Sväté omše</h1>
 
-    <div class="space-y-3">
-      {masses.map((m) => {
-        const isToday = m.day === today;
-
-        return (
-          <div class={
-            "p-4 border rounded-xl flex justify-between transition " +
-            (isToday
-              ? "bg-green-50 border-green-700 shadow-sm"
-              : "bg-white border-gray-200")
-          }>
-            <span class={isToday ? "font-bold text-green-700" : "font-medium"}>
-              {m.day}
-            </span>
-
-            <span class={isToday ? "font-bold text-green-700" : "font-bold"}>
-              {m.time}
-            </span>
+    <div class="space-y-4">
+      {masses.map((mass) => (
+        <div class="rounded-2xl bg-white p-5 shadow-sm ring-1 ring-slate-200">
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <h2 class="text-lg font-semibold">{mass.day}</h2>
+              <p class="text-sm text-slate-500">{mass.date}</p>
+            </div>
+            <div class="text-xl font-bold text-blue-600">{mass.time}</div>
           </div>
-        );
-      })}
+
+          {mass.intention && (
+            <p class="mt-3 text-slate-700">{mass.intention}</p>
+          )}
+        </div>
+      ))}
     </div>
   </section>
 </Base>

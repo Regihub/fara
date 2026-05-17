@@ -1,29 +1,61 @@
 ---
-import Base from "../layouts/Base.astro";
+import Base from '../layouts/Base.astro';
+import week from '../content/weeks/current.json';
 
-const posts = await Astro.glob("../content/announcements/*.md");
-
-// najnovšie hore
-posts.sort((a, b) =>
-  new Date(b.frontmatter.date) - new Date(a.frontmatter.date)
-);
+const {
+  title,
+  weekStart,
+  weekEnd,
+  general,
+  masses = []
+} = week;
 ---
 
-<Base>
-  <section class="p-5">
-    <h1 class="text-xl font-bold">Oznamy</h1>
+<Base title={title}>
+  <section class="mx-auto max-w-5xl px-4 py-8">
+    <h1 class="mb-2 text-3xl font-bold text-slate-900">{title}</h1>
 
-    {posts.map(post => (
-      <article class="mt-4 p-4 border rounded-xl">
-        <h2 class="font-bold">{post.frontmatter.title}</h2>
-        <p class="text-xs text-gray-500">
-          {post.frontmatter.date}
-        </p>
+    <p class="mb-6 text-sm text-slate-600">
+      <strong>Platnosť:</strong> {weekStart} – {weekEnd}
+    </p>
 
-        <div class="mt-2 text-sm">
-          {post.compiledContent()}
-        </div>
-      </article>
-    ))}
+    <section class="mb-8 rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
+      <h2 class="mb-4 text-2xl font-semibold text-slate-900">Všeobecné oznamy</h2>
+      <div
+        class="prose prose-slate max-w-none"
+        set:html={general.replace(/\n/g, '<br>')}
+      />
+    </section>
+
+    <section class="overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-slate-200">
+      <div class="border-b border-slate-200 px-6 py-4">
+        <h2 class="text-2xl font-semibold text-slate-900">Sväté omše</h2>
+      </div>
+
+      <div class="overflow-x-auto">
+        <table class="min-w-full text-sm">
+          <thead class="bg-slate-50 text-left text-slate-600">
+            <tr>
+              <th class="px-4 py-3">Deň</th>
+              <th class="px-4 py-3">Dátum</th>
+              <th class="px-4 py-3">Čas</th>
+              <th class="px-4 py-3">Úmysel</th>
+              <th class="px-4 py-3">Miesto</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-100">
+            {masses.map((mass) => (
+              <tr class="hover:bg-slate-50">
+                <td class="px-4 py-3 font-medium">{mass.day}</td>
+                <td class="px-4 py-3">{mass.date}</td>
+                <td class="px-4 py-3">{mass.time}</td>
+                <td class="px-4 py-3">{mass.intention || '—'}</td>
+                <td class="px-4 py-3">{mass.place || 'Farský kostol'}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
   </section>
 </Base>

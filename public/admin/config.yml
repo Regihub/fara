@@ -3,80 +3,44 @@ backend:
   repo: Regihub/fara
   branch: main
 
-media_folder: "public/images"
-public_folder: "/images"
+media_folder: "public/images/uploads"
+public_folder: "/images/uploads"
 
 collections:
   - name: "weeks"
-    label: "Týždenné oznamy"
-    folder: "src/content/weeks"
-    create: true
-    format: "json"
-    extension: "json"
-    slug: "{{year}}-week-{{weekNumber}}"
-
-    fields:
-      - label: "Názov týždňa"
-        name: "title"
-        widget: "string"
-
-      - label: "Číslo týždňa"
-        name: "weekNumber"
-        widget: "number"
-
-      - label: "Rok"
-        name: "year"
-        widget: "number"
-
-      - label: "Od (pondelok)"
-        name: "from"
-        widget: "date"
-
-      - label: "Do (nedeľa)"
-        name: "to"
-        widget: "date"
-
-      - label: "Publikované"
-        name: "published"
-        widget: "boolean"
-        default: false
-
-      - label: "Všeobecné oznamy"
-        name: "announcements"
-        widget: "list"
-        required: false
-        field:
-          label: "Oznam"
-          name: "item"
-          widget: "string"
-
-      - label: "Dni v týždni"
-        name: "days"
-        widget: "list"
-
+    label: "Aktuálne farské oznamy"
+    files:
+      - file: "src/content/weeks/current.json"
+        label: "Aktuálny týždeň"
+        name: "current"
         fields:
-          - label: "Dátum"
-            name: "date"
+          - label: "Názov"
+            name: "title"
+            widget: "string"
+            default: "Farské oznamy"
+
+          - label: "Platné od"
+            name: "weekStart"
             widget: "date"
+            format: "YYYY-MM-DD"
 
-          - label: "Deň"
-            name: "dayName"
-            widget: "string"
+          - label: "Platné do"
+            name: "weekEnd"
+            widget: "date"
+            format: "YYYY-MM-DD"
 
-          - label: "Sviatok"
-            name: "feast"
-            widget: "string"
-            required: false
+          - label: "Všeobecné oznamy"
+            name: "general"
+            widget: "markdown"
 
-          - label: "Omše"
+          - label: "Sväté omše"
             name: "masses"
             widget: "list"
-
+            summary: "{{fields.day}} {{fields.date}} {{fields.time}}"
             fields:
-              - label: "Čas"
-                name: "time"
-                widget: "string"
-
-              - label: "Úmysel"
-                name: "intention"
-                widget: "text"
+              - { label: "Deň", name: "day", widget: "string" }
+              - { label: "Dátum", name: "date", widget: "date", format: "YYYY-MM-DD" }
+              - { label: "Čas", name: "time", widget: "string" }
+              - { label: "Úmysel", name: "intention", widget: "string", required: false }
+              - { label: "Miesto", name: "place", widget: "string", required: false, default: "Farský kostol" }
+              - { label: "Poznámka", name: "note", widget: "string", required: false }
