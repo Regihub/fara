@@ -1,0 +1,82 @@
+backend:
+  name: github
+  repo: Regihub/fara
+  branch: main
+
+media_folder: "public/images"
+public_folder: "/images"
+
+collections:
+  - name: "weeks"
+    label: "Týždenné oznamy"
+    folder: "src/content/weeks"
+    create: true
+    format: "json"
+    extension: "json"
+    slug: "{{year}}-week-{{weekNumber}}"
+
+    fields:
+      - label: "Názov týždňa"
+        name: "title"
+        widget: "string"
+
+      - label: "Číslo týždňa"
+        name: "weekNumber"
+        widget: "number"
+
+      - label: "Rok"
+        name: "year"
+        widget: "number"
+
+      - label: "Od (pondelok)"
+        name: "from"
+        widget: "date"
+
+      - label: "Do (nedeľa)"
+        name: "to"
+        widget: "date"
+
+      - label: "Publikované"
+        name: "published"
+        widget: "boolean"
+        default: false
+
+      - label: "Všeobecné oznamy"
+        name: "announcements"
+        widget: "list"
+        required: false
+        field:
+          label: "Oznam"
+          name: "item"
+          widget: "string"
+
+      - label: "Dni v týždni"
+        name: "days"
+        widget: "list"
+
+        fields:
+          - label: "Dátum"
+            name: "date"
+            widget: "date"
+
+          - label: "Deň"
+            name: "dayName"
+            widget: "string"
+
+          - label: "Sviatok"
+            name: "feast"
+            widget: "string"
+            required: false
+
+          - label: "Omše"
+            name: "masses"
+            widget: "list"
+
+            fields:
+              - label: "Čas"
+                name: "time"
+                widget: "string"
+
+              - label: "Úmysel"
+                name: "intention"
+                widget: "text"
