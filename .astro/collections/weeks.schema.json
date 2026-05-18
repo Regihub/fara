@@ -1,0 +1,74 @@
+{
+  "$ref": "#/definitions/weeks",
+  "definitions": {
+    "weeks": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "weekNumber": {
+          "type": "number"
+        },
+        "year": {
+          "type": "number"
+        },
+        "weekStart": {
+          "type": "string"
+        },
+        "weekEnd": {
+          "type": "string"
+        },
+        "general": {
+          "type": "string"
+        },
+        "masses": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "day": {
+                "type": "string"
+              },
+              "date": {
+                "type": "string"
+              },
+              "time": {
+                "type": "string"
+              },
+              "intention": {
+                "type": "string"
+              },
+              "place": {
+                "type": "string"
+              },
+              "note": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "day",
+              "date",
+              "time"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "$schema": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "title",
+        "weekNumber",
+        "year",
+        "weekStart",
+        "weekEnd",
+        "general",
+        "masses"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}
