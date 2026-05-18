@@ -20,15 +20,15 @@ export default async function handler(req, res) {
   const data = await tokenRes.json();
 
   if (data.error || !data.access_token) {
-    return res.status(400).send(data.error_description || data.error || 'No access token');
+    return res.status(400).send(
+      data.error_description || data.error || 'No access token'
+    );
   }
 
-  const message =
-    'authorization:github:success:' +
-    JSON.stringify({
-      token: data.access_token,
-      provider: 'github',
-    });
+  const payload = {
+    token: data.access_token,
+    provider: 'github',
+  };
 
   res.setHeader('Content-Type', 'text/html');
   res.status(200).send(`
@@ -37,10 +37,12 @@ export default async function handler(req, res) {
   <body>
     <script>
       (function() {
-        const message = ${JSON.stringify(message)};
-        // Pošli správu späť do Decap CMS
-        window.opener.postMessage(message, window.location.origin);
-        // Zavri popup
+        if (window.opener) {
+          window.opener.postMessage(
+            'authorization:github:success:' + JSON.stringify(${JSON.stringify(payload)}),
+            '*'
+          );
+        }
         window.close();
       })();
     </script>
