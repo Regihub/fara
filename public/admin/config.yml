@@ -17,17 +17,38 @@ collections:
         name: "current"
         fields:
           - { label: "Názov", name: "title", widget: "string" }
-          - { label: "Platné od", name: "weekStart", widget: "date" }
-          - { label: "Platné do", name: "weekEnd", widget: "date" }
+
+          - label: "Platné od"
+            name: "weekStart"
+            widget: "date"
+            format: "YYYY-MM-DD"
+            date_format: "YYYY-MM-DD"
+            time_format: false
+
+          - label: "Platné do"
+            name: "weekEnd"
+            widget: "date"
+            format: "YYYY-MM-DD"
+            date_format: "YYYY-MM-DD"
+            time_format: false
+
           - { label: "Všeobecné oznamy", name: "general", widget: "markdown" }
 
           - label: "Sväté omše"
             name: "masses"
             widget: "list"
+            collapsed: false
             summary: "{{fields.day}} {{fields.date}} {{fields.time}}"
             fields:
               - { label: "Deň", name: "day", widget: "string" }
-              - { label: "Dátum", name: "date", widget: "date" }
+
+              - label: "Dátum"
+                name: "date"
+                widget: "date"
+                format: "YYYY-MM-DD"
+                date_format: "YYYY-MM-DD"
+                time_format: false
+
               - { label: "Čas", name: "time", widget: "string" }
               - { label: "Úmysel", name: "intention", widget: "string", required: false }
               - { label: "Miesto", name: "place", widget: "string", required: false }
