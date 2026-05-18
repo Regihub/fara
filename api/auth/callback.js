@@ -40,7 +40,7 @@ const message =
     <script>
       window.opener.postMessage(
         ${JSON.stringify(message)},
-        '*'
+        ${JSON.stringify(process.env.ORIGIN || '*')}
       );
       window.close();
     </script>
