@@ -45,16 +45,16 @@
       "note": ""
     },
     {
+      "day": "Sobota",
+      "time": "11:00"
+    },
+    {
       "day": "Nedeľa",
       "date": "2026-05-24",
       "time": "9:00",
       "intention": "",
       "place": "Farský kostol",
       "note": ""
-    },
-    {
-      "day": "Sobota",
-      "time": "11:00"
     }
   ]
 }
