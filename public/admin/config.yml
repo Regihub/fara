@@ -10,48 +10,44 @@ public_folder: "/images/uploads"
 
 collections:
   - name: "weeks"
-    label: "Aktuálne farské oznamy"
-    files:
-      - file: "src/content/weeks/current.json"
-        label: "Aktuálny týždeň"
-        name: "current"
+    label: "Farské oznamy"
+    folder: "src/content/weeks"
+    create: true
+    slug: "{{slug}}"
+    extension: "json"
+    format: "json"
+    identifier_field: "title"
+
+    fields:
+      - { label: "Názov", name: "title", widget: "string" }
+      - { label: "Číslo týždňa", name: "weekNumber", widget: "number", value_type: "int" }
+      - { label: "Rok", name: "year", widget: "number", value_type: "int" }
+
+      - label: "Platné od"
+        name: "weekStart"
+        widget: "date"
+        format: "YYYY-MM-DD"
+        date_format: "YYYY-MM-DD"
+        time_format: false
+
+      - label: "Platné do"
+        name: "weekEnd"
+        widget: "date"
+        format: "YYYY-MM-DD"
+        date_format: "YYYY-MM-DD"
+        time_format: false
+
+      - { label: "Všeobecné oznamy", name: "general", widget: "markdown" }
+
+      - label: "Sväté omše"
+        name: "masses"
+        widget: "list"
+        collapsed: false
+        summary: "{{fields.day}} {{fields.date}} {{fields.time}}"
         fields:
-          - { label: "Názov", name: "title", widget: "string" }
-
-          - label: "Platné od"
-            name: "weekStart"
-            widget: "date"
-            format: "YYYY-MM-DD"
-            date_format: "YYYY-MM-DD"
-            time_format: false
-
-          - label: "Platné do"
-            name: "weekEnd"
-            widget: "date"
-            format: "YYYY-MM-DD"
-            date_format: "YYYY-MM-DD"
-            time_format: false
-
-          - { label: "Všeobecné oznamy", name: "general", widget: "markdown" }
-
-          - label: "Sväté omše"
-            name: "masses"
-            widget: "list"
-            collapsed: false
-            summary: "{{fields.day}} {{fields.date}} {{fields.time}}"
-            fields:
-              - { label: "Deň", name: "day", widget: "string" }
-
-              - label: "Dátum"
-                name: "date"
-                widget: "date"
-                format: "YYYY-MM-DD"
-                date_format: "YYYY-MM-DD"
-                time_format: false
-                default: ""
-                required: false
-
-              - { label: "Čas", name: "time", widget: "string" }
-              - { label: "Úmysel", name: "intention", widget: "string", required: false }
-              - { label: "Miesto", name: "place", widget: "string", required: false }
-              - { label: "Poznámka", name: "note", widget: "string", required: false }
+          - { label: "Deň", name: "day", widget: "string" }
+          - { label: "Dátum", name: "date", widget: "string" }
+          - { label: "Čas", name: "time", widget: "string" }
+          - { label: "Úmysel", name: "intention", widget: "string", required: false }
+          - { label: "Miesto", name: "place", widget: "string", required: false }
+          - { label: "Poznámka", name: "note", widget: "string", required: false }
