@@ -1,89 +1,64 @@
-import { WeeklyAnnouncements } from "./types"
+import { generateWeekMasses } from './generateWeekMasses.js';
 
-const DAY_NAMES = [
-  "Pondelok",
-  "Utorok",
-  "Streda",
-  "Štvrtok",
-  "Piatok",
-  "Sobota",
-  "Nedeľa",
-]
-
-const DEFAULT_MASSES = [
-  ["17:00"],
-  ["09:00"],
-  ["17:00"],
-  ["17:00"],
-  ["17:00"],
-  ["08:00"],
-  ["09:00"],
-]
-
-function getNextMonday(date = new Date()) {
-  const d = new Date(date)
-
-  const day = d.getDay()
-  const diff = day === 0 ? 1 : 8 - day
-
-  d.setDate(d.getDate() + diff)
-
-  return d
+function formatDate(date: Date): string {
+  return date.toISOString().split('T')[0];
 }
 
-function formatDate(date: Date) {
-  return date.toISOString().split("T")[0]
+function getNextMonday(): Date {
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+
+  const day = today.getDay(); // 0 = Sunday, 1 = Monday
+  let diff = (8 - day) % 7;
+
+  // ak je dnes pondelok, ber nasledujúci týždeň
+  if (diff === 0) {
+    diff = 7;
+  }
+
+  const monday = new Date(today);
+  monday.setDate(today.getDate() + diff);
+
+  return monday;
 }
 
-function getWeekNumber(date: Date) {
-  const d = new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()))
+function getISOWeek(date: Date): number {
+  const d = new Date(date);
+  d.setHours(0, 0, 0, 0);
 
-  d.setUTCDate(d.getUTCDate() + 4 - (d.getUTCDay() || 7))
+  const day = d.getDay() || 7;
+  d.setDate(d.getDate() + 4 - day);
 
-  const yearStart = new Date(Date.UTC(d.getUTCFullYear(), 0, 1))
+  const yearStart = new Date(d.getFullYear(), 0, 1);
 
-  const weekNo = Math.ceil((((d.getTime() - yearStart.getTime()) / 86400000) + 1) / 7)
-
-  return weekNo
+  return Math.ceil(
+    ((d.getTime() - yearStart.getTime()) / 86400000 + 1) / 7
+  );
 }
 
-export function generateWeekTemplate(): WeeklyAnnouncements {
-  const monday = getNextMonday()
+export function generateWeekTemplate() {
+  const monday = getNextMonday();
 
-  const sunday = new Date(monday)
-  sunday.setDate(monday.getDate() + 6)
+  const sunday = new Date(monday);
+  sunday.setDate(monday.getDate() + 6);
 
-  const weekNumber = getWeekNumber(monday)
-
-  const days = DAY_NAMES.map((dayName, index) => {
-    const date = new Date(monday)
-
-    date.setDate(monday.getDate() + index)
-
-    return {
-      date: formatDate(date),
-      dayName,
-      feast: "",
-      masses: DEFAULT_MASSES[index].map((time) => ({
-        time,
-        intention: "",
-      })),
-    }
-  })
+  const weekNumber = getISOWeek(monday);
+  const year = monday.getFullYear();
 
   return {
+    title: `Farské oznamy – ${weekNumber}. týždeň ${year}`,
     weekNumber,
-    year: monday.getFullYear(),
-
-    from: formatDate(monday),
-    to: formatDate(sunday),
-
-    title: `${weekNumber}. týždeň`,
-
-    published: false,
-
-    announcements: [],
-
-    days,
-  }
+    year,
+    weekStart: formatDate(monday),
+    weekEnd: formatDate(sunday),
+    general: '',
+    masses: generateWeekMasses(monday).map((m) => ({
+      day: m.day,               // ← dôležité pre CMS
+      date: m.date,
+      time: m.time,
+      intention: '',
+      place: 'Farský kostol',
+      note: '',
+    })),
+  };
 }
