@@ -6,17 +6,13 @@
     <title>Správa obsahu</title>
   </head>
   <body>
+    <script src="https://unpkg.com/decap-cms@3/dist/decap-cms.js"></script>
+
     <script>
-      // Odstráni problematickú lokálnu preferenciu, ktorá môže
-      // spôsobiť zaseknutie Decap CMS na /admin/#/
-      localStorage.removeItem('decap-cms.entries.viewStyle');
-
-      // Manuálne spracovanie OAuth správy z popup okna
+      // ==========================================
+      // 1. Spracovanie OAuth prihlásenia cez GitHub
+      // ==========================================
       window.addEventListener('message', function (event) {
-        if (event.origin !== window.location.origin) {
-          return;
-        }
-
         const msg = event.data;
 
         if (
@@ -38,12 +34,151 @@
             })
           );
 
-          // Znovunačítanie administrácie po úspešnom prihlásení
-          window.location.href = '/admin/';
+          // Odstráni problematický záznam, ktorý môže blokovať CMS
+          localStorage.removeItem('decap-cms.entries.viewStyle');
+
+          // Presmerovanie späť do CMS
+          window.location.href = '/admin/#/';
         }
       });
-    </script>
 
-    <script src="https://unpkg.com/decap-cms@3/dist/decap-cms.js"></script>
+      // ==========================
+      // 2. Konštanty pre nový týždeň
+      // ==========================
+      const DAY_NAMES = [
+        'Pondelok',
+        'Utorok',
+        'Streda',
+        'Štvrtok',
+        'Piatok',
+        'Sobota',
+        'Nedeľa',
+      ];
+
+      // Štandardné časy omší
+      // (neskôr ich môžeme načítavať z src/data/masses.json)
+      const DEFAULT_MASS_TIMES = [
+        '17:00',
+        '9:00',
+        '17:00',
+        '17:00',
+        '17:00',
+        '8:00',
+        '9:00',
+      ];
+
+      // ==========================
+      // 3. Pomocné funkcie
+      // ==========================
+      function formatDate(date) {
+        const year = date.getFullYear();
+        const month = String(date.getMonth() + 1).padStart(2, '0');
+        const day = String(date.getDate()).padStart(2, '0');
+
+        return `${year}-${month}-${day}`;
+      }
+
+      // ISO číslo týždňa
+      function getISOWeek(date) {
+        const d = new Date(date);
+        d.setHours(0, 0, 0, 0);
+
+        const day = d.getDay() || 7;
+        d.setDate(d.getDate() + 4 - day);
+
+        const yearStart = new Date(d.getFullYear(), 0, 1);
+
+        return Math.ceil(
+          ((d - yearStart) / 86400000 + 1) / 7
+        );
+      }
+
+      // Vráti nasledujúci pondelok
+      // Ak je dnes pondelok, vráti pondelok o 7 dní
+      function getNextMonday() {
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+
+        const day = today.getDay(); // 0 = nedeľa, 1 = pondelok
+        let daysUntilMonday = (8 - day) % 7;
+
+        if (daysUntilMonday === 0) {
+          daysUntilMonday = 7;
+        }
+
+        const monday = new Date(today);
+        monday.setDate(today.getDate() + daysUntilMonday);
+
+        return monday;
+      }
+
+      // ==========================
+      // 4. Vytvorenie nového týždňa
+      // ==========================
+      function buildNextWeek() {
+        const monday = getNextMonday();
+
+        const sunday = new Date(monday);
+        sunday.setDate(monday.getDate() + 6);
+
+        const year = monday.getFullYear();
+        const weekNumber = getISOWeek(monday);
+
+        const masses = DAY_NAMES.map(function (dayName, index) {
+          const date = new Date(monday);
+          date.setDate(monday.getDate() + index);
+
+          return {
+            day: dayName,
+            date: formatDate(date),
+            time: DEFAULT_MASS_TIMES[index],
+            intention: '',
+            place: 'Farský kostol',
+            note: '',
+          };
+        });
+
+        return {
+          title: `Farské oznamy – ${weekNumber}. týždeň ${year}`,
+          weekNumber: weekNumber,
+          year: year,
+          weekStart: formatDate(monday),
+          weekEnd: formatDate(sunday),
+          general: '',
+          masses: masses,
+        };
+      }
+
+      // ==========================
+      // 5. Inicializácia CMS
+      // ==========================
+      CMS.init({
+        load_config_file: true,
+      });
+
+      // ==========================
+      // 6. Predvyplnenie kolekcie
+      // ==========================
+      CMS.registerEventListener({
+        name: 'postInit',
+        handler: function () {
+          const config = CMS.getConfig();
+          const collections = config.get('collections');
+
+          const updatedCollections = collections.map(function (collection) {
+            if (collection.get('name') !== 'weeks') {
+              return collection;
+            }
+
+            return collection.set(
+              'default',
+              CMS.Immutable.fromJS(buildNextWeek())
+            );
+          });
+
+          config.set('collections', updatedCollections);
+        },
+      });
+    </script>
   </body>
 </html>
