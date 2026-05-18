@@ -5,92 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Správa obsahu</title>
   </head>
-
   <body>
-    <!-- =========================
-         AUTH HANDLER (GITHUB)
-    ========================== -->
-    <script>
-      window.addEventListener('message', function (event) {
-        const msg = event.data;
+<script>
+async function createWeekEntry() {
+  try {
+    const res = await fetch('/api/week-template');
+    const data = await res.json();
 
-        if (
-          typeof msg === 'string' &&
-          msg.startsWith('authorization:github:success:')
-        ) {
-          const json = msg.replace(
-            'authorization:github:success:',
-            ''
-          );
+    sessionStorage.setItem('cms-week-slug', data.slug);
 
-          const data = JSON.parse(json);
+    window.location.hash = '#/collections/weeks/new';
+  } catch (e) {
+    console.error('Failed to create week:', e);
+  }
+}
 
-          localStorage.setItem(
-            'decap-cms-user',
-            JSON.stringify({
-              backendName: 'github',
-              token: data.token,
-            })
-          );
+function bindButton() {
+  const btn = document.querySelector('a[href="#/collections/weeks/new"]');
 
-          // fix UI glitch
-          localStorage.removeItem('decap-cms.entries.viewStyle');
+  if (btn && !btn.dataset.bound) {
+    btn.dataset.bound = "true";
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      createWeekEntry();
+    });
+  }
+}
 
-          window.location.href = '/admin/#/';
-        }
-      });
-    </script>
+// CMS sa renderuje dynamicky → musíme pollovať
+const observer = new MutationObserver(() => {
+  bindButton();
+});
 
-    <!-- =========================
-         CMS LOAD
-    ========================== -->
+observer.observe(document.body, {
+  childList: true,
+  subtree: true
+});
+
+window.addEventListener('load', bindButton);
+</script>
+
     <script src="https://unpkg.com/decap-cms@3/dist/decap-cms.js"></script>
-
-    <!-- =========================
-         TEMPLATE LOADER
-    ========================== -->
-    <script>
-      let WEEK_TEMPLATE = null;
-
-      async function loadTemplate() {
-        try {
-          const res = await fetch('/api/week-template');
-          const data = await res.json();
-
-          WEEK_TEMPLATE = data.template;
-
-          // debug (môžeš vymazať)
-          console.log('Week template loaded:', WEEK_TEMPLATE);
-        } catch (e) {
-          console.error('Failed to load week template', e);
-        }
-      }
-
-      loadTemplate();
-    </script>
-
-    <!-- =========================
-         CMS HOOK
-    ========================== -->
-    <script>
-      CMS.registerEventListener({
-        name: 'preSave',
-        handler: function ({ entry }) {
-          const data = entry.get('data');
-
-          // nový záznam → predvyplniť template
-          if (!data || data.size === 0) {
-            if (WEEK_TEMPLATE) {
-              return entry.set(
-                'data',
-                window.Immutable.fromJS(WEEK_TEMPLATE)
-              );
-            }
-          }
-
-          return entry;
-        },
-      });
-    </script>
   </body>
 </html>
