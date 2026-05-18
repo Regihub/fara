@@ -2,7 +2,7 @@ export default function handler(req, res) {
   const clientId = process.env.GITHUB_CLIENT_ID;
 
   const redirectUri =
-    'https://fara.vercel.app/api/auth/callback';
+    'https://fara-beta-pink.vercel.app/api/auth/callback';
 
   const scope = 'repo';
 
