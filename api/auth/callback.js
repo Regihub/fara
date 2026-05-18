@@ -1,7 +1,7 @@
 export default async function handler(req, res) {
   const { code } = req.query;
 
-  const tokenRes = await fetch(
+  const response = await fetch(
     'https://github.com/login/oauth/access_token',
     {
       method: 'POST',
@@ -17,34 +17,27 @@ export default async function handler(req, res) {
     }
   );
 
-  const data = await tokenRes.json();
+  const data = await response.json();
 
-  if (data.error || !data.access_token) {
-    return res.status(400).send(
-      data.error_description || data.error || 'No access token'
-    );
+  if (!data.access_token) {
+    return res.status(400).send('OAuth failed');
   }
 
-  const payload = {
-    token: data.access_token,
-    provider: 'github',
-  };
-
   res.setHeader('Content-Type', 'text/html');
-  res.status(200).send(`
+
+  res.end(`
 <!doctype html>
 <html>
   <body>
     <script>
-      (function() {
-        if (window.opener) {
-          window.opener.postMessage(
-            'authorization:github:success:' + JSON.stringify(${JSON.stringify(payload)}),
-            '*'
-          );
-        }
-        window.close();
-      })();
+      window.opener.postMessage(
+        {
+          token: "${data.access_token}",
+          provider: "github"
+        },
+        "*"
+      );
+      window.close();
     </script>
   </body>
 </html>
