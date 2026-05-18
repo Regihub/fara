@@ -20,9 +20,7 @@ export default async function handler(req, res) {
   const data = await response.json();
 
   if (!data.access_token) {
-    return res.status(400).send(
-      `<pre>${JSON.stringify(data, null, 2)}</pre>`
-    );
+    return res.status(400).send('OAuth failed');
   }
 
   const message =
@@ -36,18 +34,14 @@ export default async function handler(req, res) {
 <!doctype html>
 <html>
   <body>
-    <h1>OAuth OK</h1>
-    <pre id="msg"></pre>
-
     <script>
-      const message = ${JSON.stringify(message)};
-      document.getElementById('msg').textContent = message;
-
       if (window.opener) {
-        window.opener.postMessage(message, '*');
+        window.opener.postMessage(
+          ${JSON.stringify(message)},
+          window.location.origin
+        );
       }
-
-      // okno nechávame otvorené na diagnostiku
+      window.close();
     </script>
   </body>
 </html>
