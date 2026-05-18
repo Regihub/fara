@@ -46,7 +46,8 @@
     },
     {
       "day": "Sobota",
-      "time": "11:00"
+      "time": "11:00",
+      "date": "26-05-23"
     },
     {
       "day": "Nedeľa",
@@ -56,5 +57,7 @@
       "place": "Farský kostol",
       "note": ""
     }
-  ]
+  ],
+  "weekNumber": 20,
+  "year": 2026
 }
