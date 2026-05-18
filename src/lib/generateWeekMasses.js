@@ -31,9 +31,12 @@ export function generateWeekMasses(startDate) {
 
     dayMasses.forEach((mass) => {
       result.push({
+        day: dayName,
         date: current.toLocaleDateString("sv-SE"),
         time: mass.time,
-        intention: ""
+        intention: "",
+        place: "",
+        note: ""
       });
     });
   }
