@@ -1,5 +1,8 @@
 ---
 import masses from "../data/masses.json";
+import { getLatestWeek } from '../lib/getLatestWeek';
+
+const week = await getLatestWeek();
 
 const days = ["Nedeľa","Pondelok","Utorok","Streda","Štvrtok","Piatok","Sobota"];
 

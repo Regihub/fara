@@ -6,6 +6,44 @@
     <title>Správa obsahu</title>
   </head>
   <body>
+    <script>
+      // Odstráni problematickú lokálnu preferenciu, ktorá môže
+      // spôsobiť zaseknutie Decap CMS na /admin/#/
+      localStorage.removeItem('decap-cms.entries.viewStyle');
+
+      // Manuálne spracovanie OAuth správy z popup okna
+      window.addEventListener('message', function (event) {
+        if (event.origin !== window.location.origin) {
+          return;
+        }
+
+        const msg = event.data;
+
+        if (
+          typeof msg === 'string' &&
+          msg.startsWith('authorization:github:success:')
+        ) {
+          const json = msg.replace(
+            'authorization:github:success:',
+            ''
+          );
+
+          const data = JSON.parse(json);
+
+          localStorage.setItem(
+            'decap-cms-user',
+            JSON.stringify({
+              backendName: 'github',
+              token: data.token,
+            })
+          );
+
+          // Znovunačítanie administrácie po úspešnom prihlásení
+          window.location.href = '/admin/';
+        }
+      });
+    </script>
+
     <script src="https://unpkg.com/decap-cms@3/dist/decap-cms.js"></script>
   </body>
 </html>

@@ -1,7 +1,8 @@
 ---
 import Base from '../layouts/Base.astro';
-import week from '../content/weeks/current.json';
+import { getLatestWeek } from '../lib/getLatestWeek';
 
+const week = await getLatestWeek();
 const masses = week.masses || [];
 ---
 
