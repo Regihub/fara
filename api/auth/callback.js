@@ -23,6 +23,12 @@ export default async function handler(req, res) {
     return res.status(400).send('OAuth failed');
   }
 
+  const message =
+    'authorization:github:success:' +
+    JSON.stringify({
+      token: data.access_token,
+    });
+
   res.setHeader('Content-Type', 'text/html');
 
   res.end(`
@@ -30,13 +36,12 @@ export default async function handler(req, res) {
 <html>
   <body>
     <script>
-      window.opener.postMessage(
-        {
-          token: "${data.access_token}",
-          provider: "github"
-        },
-        "*"
-      );
+      if (window.opener) {
+        window.opener.postMessage(
+          ${JSON.stringify(message)},
+          '*'
+        );
+      }
       window.close();
     </script>
   </body>
