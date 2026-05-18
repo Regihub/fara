@@ -2,7 +2,7 @@ backend:
   name: github
   repo: Regihub/fara
   branch: main
-  base_url: https://fara.vercel.app
+  base_url: https://fara-beta-pink.vercel.app
   auth_endpoint: api/auth
 
 media_folder: "public/images/uploads"
