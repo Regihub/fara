@@ -1,3 +1,5 @@
+/// <reference types="astro/client" />
+
 import { defineCollection, z } from 'astro:content';
 
 const weeks = defineCollection({

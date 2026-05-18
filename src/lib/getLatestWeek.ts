@@ -1,9 +1,11 @@
+/// <reference types="vite/client" />
+
 export async function getLatestWeek() {
   const modules = import.meta.glob('../content/weeks/*.json');
 
-  const weeks = [];
+  const weeks: any[] = [];
 
-  for (const loader of Object.values(modules)) {
+  for (const loader of Object.values(modules) as Array<() => Promise<any>>) {
     const mod = await loader();
     weeks.push(mod.default);
   }
