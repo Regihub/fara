@@ -26,14 +26,18 @@ export default async function handler(req, res) {
     return res.status(400).send(data.error_description || data.error);
   }
 
+  const message =
+    'authorization:github:success:' +
+    JSON.stringify({ token: data.access_token });
+
   const html = `
 <!doctype html>
 <html>
   <body>
     <script>
       window.opener.postMessage(
-        'authorization:github:success:${data.access_token}',
-        '*'
+        ${JSON.stringify(message)},
+        ${JSON.stringify(process.env.ORIGIN || '*')}
       );
       window.close();
     </script>
