@@ -7,7 +7,16 @@
   </head>
   <body>
     <script>
+      // Odstráni problematickú lokálnu preferenciu, ktorá môže
+      // spôsobiť zaseknutie Decap CMS na /admin/#/
+      localStorage.removeItem('decap-cms.entries.viewStyle');
+
+      // Manuálne spracovanie OAuth správy z popup okna
       window.addEventListener('message', function (event) {
+        if (event.origin !== window.location.origin) {
+          return;
+        }
+
         const msg = event.data;
 
         if (
@@ -29,127 +38,12 @@
             })
           );
 
-          localStorage.removeItem('decap-cms.entries.viewStyle');
-
-          window.location.href = '/admin/#/';
+          // Znovunačítanie administrácie po úspešnom prihlásení
+          window.location.href = '/admin/';
         }
       });
     </script>
 
     <script src="https://unpkg.com/decap-cms@3/dist/decap-cms.js"></script>
-
-    <script>
-      const DAY_NAMES = [
-        'Pondelok',
-        'Utorok',
-        'Streda',
-        'Štvrtok',
-        'Piatok',
-        'Sobota',
-        'Nedeľa',
-      ];
-
-      // Časy prevzaté z src/data/masses.json
-      const MASS_TIMES = [
-        '17:00',
-        '9:00',
-        '17:00',
-        '17:00',
-        '17:00',
-        '8:00',
-        '9:00',
-      ];
-
-      function formatDate(date) {
-        const y = date.getFullYear();
-        const m = String(date.getMonth() + 1).padStart(2, '0');
-        const d = String(date.getDate()).padStart(2, '0');
-        return `${y}-${m}-${d}`;
-      }
-
-      function getISOWeek(date) {
-        const d = new Date(date);
-        d.setHours(0, 0, 0, 0);
-
-        const day = d.getDay() || 7;
-        d.setDate(d.getDate() + 4 - day);
-
-        const yearStart = new Date(d.getFullYear(), 0, 1);
-
-        return Math.ceil(((d - yearStart) / 86400000 + 1) / 7);
-      }
-
-      function getNextMonday() {
-        const today = new Date();
-        today.setHours(0, 0, 0, 0);
-
-        const day = today.getDay();
-        let diff = (8 - day) % 7;
-
-        if (diff === 0) {
-          diff = 7;
-        }
-
-        const monday = new Date(today);
-        monday.setDate(today.getDate() + diff);
-
-        return monday;
-      }
-
-      function buildNextWeek() {
-        const monday = getNextMonday();
-
-        const sunday = new Date(monday);
-        sunday.setDate(monday.getDate() + 6);
-
-        const weekNumber = getISOWeek(monday);
-        const year = monday.getFullYear();
-
-        const masses = DAY_NAMES.map(function (dayName, index) {
-          const date = new Date(monday);
-          date.setDate(monday.getDate() + index);
-
-          return {
-            day: dayName,
-            date: formatDate(date),
-            time: MASS_TIMES[index],
-            intention: '',
-            place: 'Farský kostol',
-            note: '',
-          };
-        });
-
-        return {
-          title: `Farské oznamy – ${weekNumber}. týždeň ${year}`,
-          weekNumber: weekNumber,
-          year: year,
-          weekStart: formatDate(monday),
-          weekEnd: formatDate(sunday),
-          general: '',
-          masses: masses,
-        };
-      }
-
-      CMS.init({
-        load_config_file: true,
-      });
-
-      // Pri vytvorení nového záznamu automaticky doplní všetky polia
-      CMS.registerEventListener({
-        name: 'prePublish',
-        handler: function ({ entry }) {
-          const data = entry.get('data');
-
-          if (data && data.size === 0) {
-            return entry.set(
-              'data',
-              window.Immutable.fromJS(buildNextWeek())
-            );
-          }
-
-          return entry;
-        },
-      });
-    </script>
   </body>
 </html>
