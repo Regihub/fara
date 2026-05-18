@@ -7,61 +7,42 @@
   </head>
   <body>
     <script>
-      // Zabránime automatickej inicializácii CMS,
-      // aby sme mali istotu, že sa načíta aktuálny config.yml.
-      window.CMS_MANUAL_INIT = true;
+      // Odstráni lokálnu preferenciu, ktorá môže spôsobiť problémy v CMS
+      localStorage.removeItem('decap-cms.entries.viewStyle');
 
-      async function createWeekEntry() {
-        try {
-          const res = await fetch('/api/week-template');
-          const data = await res.json();
-
-          // Dočasne uložíme slug pre ďalšie použitie.
-          sessionStorage.setItem('cms-week-slug', data.slug);
-
-          // Otvoríme formulár pre nový záznam.
-          window.location.hash = '#/collections/weeks/new';
-        } catch (e) {
-          console.error('Failed to create week:', e);
+      // Spracovanie OAuth odpovede z popup okna
+      window.addEventListener('message', function (event) {
+        if (event.origin !== window.location.origin) {
+          return;
         }
-      }
 
-      function bindButton() {
-        const btn = document.querySelector(
-          'a[href="#/collections/weeks/new"]'
-        );
+        const msg = event.data;
 
-        // Listener pridáme len raz.
-        if (btn && !btn.dataset.bound) {
-          btn.dataset.bound = 'true';
+        if (
+          typeof msg === 'string' &&
+          msg.startsWith('authorization:github:success:')
+        ) {
+          const json = msg.replace(
+            'authorization:github:success:',
+            ''
+          );
 
-          btn.addEventListener('click', (e) => {
-            e.preventDefault();
-            createWeekEntry();
-          });
+          const data = JSON.parse(json);
+
+          localStorage.setItem(
+            'decap-cms-user',
+            JSON.stringify({
+              backendName: 'github',
+              token: data.token,
+            })
+          );
+
+          // Po úspešnom prihlásení načítaj CMS znova
+          window.location.href = '/admin/';
         }
-      }
+      });
     </script>
 
-    <!-- DÔLEŽITÉ: načítanie kompletného CMS bundle -->
     <script src="https://unpkg.com/decap-cms@3/dist/decap-cms.js"></script>
-
-    <script>
-      // Manuálna inicializácia CMS.
-      CMS.init();
-
-      // CMS renderuje rozhranie dynamicky, preto sledujeme zmeny DOM.
-      const observer = new MutationObserver(() => {
-        bindButton();
-      });
-
-      observer.observe(document.body, {
-        childList: true,
-        subtree: true
-      });
-
-      // Pokus o naviazanie tlačidla po načítaní stránky.
-      window.addEventListener('load', bindButton);
-    </script>
   </body>
 </html>
