@@ -30,7 +30,6 @@ const message =
   'authorization:github:success:' +
   JSON.stringify({
     token: data.access_token,
-    provider: 'github',
   });
 
   const html = `
