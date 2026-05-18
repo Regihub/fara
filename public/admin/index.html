@@ -5,13 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Správa obsahu</title>
   </head>
-
   <body>
-    <!-- =========================
-         AUTH HANDLER (GITHUB)
-    ========================== -->
     <script>
+      // Odstráni problematickú lokálnu preferenciu, ktorá môže
+      // spôsobiť zaseknutie Decap CMS na /admin/#/
+      localStorage.removeItem('decap-cms.entries.viewStyle');
+
+      // Manuálne spracovanie OAuth správy z popup okna
       window.addEventListener('message', function (event) {
+        if (event.origin !== window.location.origin) {
+          return;
+        }
+
         const msg = event.data;
 
         if (
@@ -33,64 +38,12 @@
             })
           );
 
-          // fix UI glitch
-          localStorage.removeItem('decap-cms.entries.viewStyle');
-
-          window.location.href = '/admin/#/';
+          // Znovunačítanie administrácie po úspešnom prihlásení
+          window.location.href = '/admin/';
         }
       });
     </script>
 
-    <!-- =========================
-         CMS LOAD
-    ========================== -->
     <script src="https://unpkg.com/decap-cms@3/dist/decap-cms.js"></script>
-
-    <!-- =========================
-         TEMPLATE LOADER
-    ========================== -->
-    <script>
-      let WEEK_TEMPLATE = null;
-
-      async function loadTemplate() {
-        try {
-          const res = await fetch('/api/week-template');
-          const data = await res.json();
-
-          WEEK_TEMPLATE = data.template;
-
-          // debug (môžeš vymazať)
-          console.log('Week template loaded:', WEEK_TEMPLATE);
-        } catch (e) {
-          console.error('Failed to load week template', e);
-        }
-      }
-
-      loadTemplate();
-    </script>
-
-    <!-- =========================
-         CMS HOOK
-    ========================== -->
-    <script>
-      CMS.registerEventListener({
-        name: 'preSave',
-        handler: function ({ entry }) {
-          const data = entry.get('data');
-
-          // nový záznam → predvyplniť template
-          if (!data || data.size === 0) {
-            if (WEEK_TEMPLATE) {
-              return entry.set(
-                'data',
-                window.Immutable.fromJS(WEEK_TEMPLATE)
-              );
-            }
-          }
-
-          return entry;
-        },
-      });
-    </script>
   </body>
 </html>
