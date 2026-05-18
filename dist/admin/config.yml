@@ -25,14 +25,14 @@ collections:
 
       - label: "Platné od"
         name: "weekStart"
-        widget: "date"
+        widget: "datetime"
         format: "YYYY-MM-DD"
         date_format: "YYYY-MM-DD"
         time_format: false
 
       - label: "Platné do"
         name: "weekEnd"
-        widget: "date"
+        widget: "datetime"
         format: "YYYY-MM-DD"
         date_format: "YYYY-MM-DD"
         time_format: false

@@ -1,5 +1,7 @@
 {
   "title": "Farské oznamy",
+  "weekNumber": 21,
+  "year": 2026,
   "weekStart": "2026-05-18",
   "weekEnd": "2026-05-24",
   "general": "* V stredu po svätej omši bude adorácia.\n* V sobotu bude upratovanie kostola.\n* nový oznam",
@@ -46,8 +48,11 @@
     },
     {
       "day": "Sobota",
+      "date": "2026-05-23",
       "time": "11:00",
-      "date": "26-05-23"
+      "intention": "",
+      "place": "Farský kostol",
+      "note": ""
     },
     {
       "day": "Nedeľa",
@@ -57,7 +62,5 @@
       "place": "Farský kostol",
       "note": ""
     }
-  ],
-  "weekNumber": 20,
-  "year": 2026
+  ]
 }
