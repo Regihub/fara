@@ -7,6 +7,11 @@
   </head>
   <body>
     <script>
+      // Odstráni problematickú lokálnu preferenciu, ktorá môže
+      // spôsobiť zaseknutie Decap CMS na /admin/#/
+      localStorage.removeItem('decap-cms.entries.viewStyle');
+
+      // Manuálne spracovanie OAuth správy z popup okna
       window.addEventListener('message', function (event) {
         if (event.origin !== window.location.origin) {
           return;
@@ -33,7 +38,8 @@
             })
           );
 
-          window.location.href = '/admin/#/';
+          // Znovunačítanie administrácie po úspešnom prihlásení
+          window.location.href = '/admin/';
         }
       });
     </script>
