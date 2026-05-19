@@ -16,20 +16,32 @@ const weeks = Object.values(files)
 
 <Base title="Archív farských oznamov">
   <section class="px-4 py-8">
-    <h1 class="mb-6 text-2xl text-center font-bold text-slate-900">
+
+    <!-- História farnosti a kostola -->
+    <a
+      href="/historia"
+      class="mb-8 block rounded-3xl bg-gradient-to-br from-green-50 to-emerald-100 p-6 shadow-sm ring-1 ring-green-200"
+    >
+      <h1 class="text-2xl font-bold text-green-900">
+        História farnosti a kostola
+      </h1>
+
+      <p class="mt-2 text-sm leading-relaxed text-green-800">
+        Dejiny farnosti Stará Sásová, gotického kostola sv. Antona a Pavla
+        pustovníkov a príbehy patrónov našej farnosti.
+      </p>
+
+      <p class="mt-4 font-medium text-green-700">
+        Zobraziť históriu →
+      </p>
+    </a>
+
+    <!-- Nadpis archívu -->
+    <h2 class="mb-6 text-2xl text-center font-bold text-slate-900">
       Archív farských oznamov
-    </h1>
-    
-    <a href="/historia" class="block mb-6">
-  <article class="p-5 rounded-2xl bg-white shadow-sm ring-1 ring-slate-200">
-    <h2 class="text-lg font-semibold text-slate-900">
-      História farnosti a kostola
     </h2>
-    <p class="mt-2 text-sm text-slate-600">
-      Dejiny farnosti, kostola a patróni sv. Anton a Pavol.
-    </p>
-  </article>
-</a>
+
+    <!-- Zoznam týždňov -->
     {weeks.map((week) => (
       <a
         href={`/archiv/${week.year}-W${week.weekNumber}`}
