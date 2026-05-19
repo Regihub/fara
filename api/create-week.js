@@ -82,7 +82,7 @@ function generateWeekTemplate() {
     year,
     weekStart: formatDate(monday),
     weekEnd: formatDate(sunday),
-    general: '',
+    general: 'Tento týždeň upratuje skupina číslo ',
     masses
   };
 }
