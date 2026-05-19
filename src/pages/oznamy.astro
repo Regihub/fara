@@ -42,6 +42,7 @@ const {
               <th class="px-4 py-3">Dátum</th>
               <th class="px-4 py-3">Čas</th>
               <th class="px-4 py-3">Úmysel</th>
+              <th class="px-4 py-3">Slávime</th>
               <th class="px-4 py-3">Miesto</th>
             </tr>
           </thead>
@@ -52,7 +53,8 @@ const {
                 <td class="px-4 py-3">{formatDate(mass.date)}</td>
                 <td class="px-4 py-3">{mass.time}</td>
                 <td class="px-4 py-3">{mass.intention || '—'}</td>
-                <td class="px-4 py-3">{mass.place || 'Farský kostol'}</td>
+                <td class="px-4 py-3">{mass.note && mass.note}</td>
+                <td class="px-4 py-3">{mass.place && mass.place}</td>
               </tr>
             ))}
           </tbody>
