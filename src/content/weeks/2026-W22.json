@@ -4,63 +4,63 @@
   "year": 2026,
   "weekStart": "2026-05-25",
   "weekEnd": "2026-05-31",
-  "general": "Tento týždeň upratuje skupina číslo ",
+  "general": "1\n\n2\n\n3\n\n4\n\nTento týždeň upratuje skupina číslo 3",
   "masses": [
     {
       "day": "Pondelok",
       "date": "2026-05-25",
       "time": "17:00",
-      "intention": "",
+      "intention": "1",
       "place": "",
-      "note": ""
+      "note": "1"
     },
     {
       "day": "Utorok",
       "date": "2026-05-26",
       "time": "09:00",
-      "intention": "",
+      "intention": "2",
       "place": "",
-      "note": ""
+      "note": "2"
     },
     {
       "day": "Streda",
       "date": "2026-05-27",
       "time": "17:00",
-      "intention": "",
+      "intention": "3",
       "place": "",
-      "note": ""
+      "note": "3"
     },
     {
       "day": "Štvrtok",
       "date": "2026-05-28",
       "time": "17:00",
-      "intention": "",
+      "intention": "4",
       "place": "",
-      "note": ""
+      "note": "4"
     },
     {
       "day": "Piatok",
       "date": "2026-05-29",
       "time": "17:00",
-      "intention": "",
+      "intention": "5",
       "place": "",
-      "note": ""
+      "note": "5"
     },
     {
       "day": "Sobota",
       "date": "2026-05-30",
       "time": "08:00",
-      "intention": "",
+      "intention": "6",
       "place": "",
-      "note": ""
+      "note": "6"
     },
     {
       "day": "Nedeľa",
       "date": "2026-05-31",
       "time": "09:00",
-      "intention": "",
+      "intention": "7",
       "place": "",
-      "note": ""
+      "note": "7"
     }
   ]
 }
