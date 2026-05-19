@@ -39,7 +39,6 @@ const {
           <thead class="bg-slate-50 text-left text-slate-600">
             <tr>
               <th class="px-4 py-3">Deň</th>
-              <th class="px-4 py-3">Dátum</th>
               <th class="px-4 py-3">Čas</th>
               <th class="px-4 py-3">Úmysel</th>
               <th class="px-4 py-3">Slávime</th>
@@ -50,7 +49,6 @@ const {
             {masses.map((mass) => (
               <tr class="hover:bg-slate-50">
                 <td class="px-4 py-3 font-medium">{mass.day}</td>
-                <td class="px-4 py-3">{formatDate(mass.date)}</td>
                 <td class="px-4 py-3">{mass.time}</td>
                 <td class="px-4 py-3">{mass.intention || '—'}</td>
                 <td class="px-4 py-3">{mass.note && mass.note}</td>
