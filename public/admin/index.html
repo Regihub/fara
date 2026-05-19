@@ -65,7 +65,10 @@
 
           if (!response.ok) {
             console.error(data);
-            alert('Nepodarilo sa vytvoriť nový týždeň.');
+            alert(
+  'Nepodarilo sa vytvoriť nový týždeň:\n\n' +
+  JSON.stringify(data, null, 2)
+);
             return;
           }
 
@@ -75,7 +78,10 @@
             data.slug;
         } catch (error) {
           console.error(error);
-          alert('Chyba pri vytváraní týždňa.');
+          alert(
+  'Chyba pri vytváraní týždňa:\n\n' +
+  error
+);
         }
       }
     </script>
