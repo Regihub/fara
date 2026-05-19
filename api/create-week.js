@@ -1,12 +1,9 @@
-import { generateWeekTemplate } from '../src/lib/week-template.ts';
-
 function toBase64(str) {
   return Buffer.from(str, 'utf8').toString('base64');
 }
 
 export default async function handler(req, res) {
   try {
-    // Token získaný pri OAuth prihlásení do Decap CMS
     const authHeader = req.headers.authorization || '';
     const token = authHeader.replace('Bearer ', '');
 
@@ -16,11 +13,24 @@ export default async function handler(req, res) {
       });
     }
 
-    const template = generateWeekTemplate();
-    const slug = `${template.year}-W${template.weekNumber}`;
+    // Načítanie template z už funkčného API
+    const origin =
+      req.headers['x-forwarded-proto'] +
+      '://' +
+      req.headers.host;
+
+    const templateResponse = await fetch(
+      `${origin}/api/week-template`
+    );
+
+    const templateData = await templateResponse.json();
+
+    const template = templateData.template;
+    const slug = templateData.slug;
+
     const path = `src/content/weeks/${slug}.json`;
 
-    // Najprv overíme, či súbor už existuje
+    // Overenie, či súbor už existuje
     const existing = await fetch(
       `https://api.github.com/repos/Regihub/fara/contents/${path}`,
       {
@@ -32,7 +42,6 @@ export default async function handler(req, res) {
     );
 
     if (existing.ok) {
-      // Súbor už existuje, len ho otvoríme v CMS
       return res.status(200).json({
         slug,
         existed: true,
@@ -61,6 +70,7 @@ export default async function handler(req, res) {
 
     if (!response.ok) {
       const error = await response.text();
+
       return res.status(500).json({
         error,
       });
