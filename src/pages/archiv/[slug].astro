@@ -1,0 +1,43 @@
+---
+import Base from '../../layouts/Base.astro';
+import Announcements from '../../components/Announcements.astro';
+
+export async function getStaticPaths() {
+  const files = import.meta.glob('../../content/weeks/*.json', {
+    eager: true
+  });
+
+  return Object.entries(files).map(([path]) => {
+    const slug = path
+      .split('/')
+      .pop()
+      .replace('.json', '');
+
+    return {
+      params: { slug }
+    };
+  });
+}
+
+const { slug } = Astro.params;
+
+// načítanie všetkých súborov
+const files = import.meta.glob('../../content/weeks/*.json', {
+  eager: true
+});
+
+// nájdenie správneho súboru
+const entry = Object.entries(files).find(([path]) =>
+  path.endsWith(`/${slug}.json`)
+);
+
+if (!entry) {
+  throw new Error(`Week not found: ${slug}`);
+}
+
+const week = entry[1].default;
+---
+
+<Base title={week.title}>
+  <Announcements week={week} />
+</Base>
