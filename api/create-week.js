@@ -1,3 +1,5 @@
+import { generateWeekTemplate } from '../src/lib/week-template.ts';
+
 function toBase64(str) {
   return Buffer.from(str, 'utf8').toString('base64');
 }
@@ -13,21 +15,10 @@ export default async function handler(req, res) {
       });
     }
 
-    // Načítanie template z už funkčného API
-    const origin =
-      req.headers['x-forwarded-proto'] +
-      '://' +
-      req.headers.host;
+    // Priamo vygenerujeme template
+    const template = generateWeekTemplate();
 
-    const templateResponse = await fetch(
-      `${origin}/api/week-template`
-    );
-
-    const templateData = await templateResponse.json();
-
-    const template = templateData.template;
-    const slug = templateData.slug;
-
+    const slug = `${template.year}-W${template.weekNumber}`;
     const path = `src/content/weeks/${slug}.json`;
 
     // Overenie, či súbor už existuje
