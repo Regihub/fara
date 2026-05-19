@@ -71,7 +71,7 @@ function generateWeekTemplate() {
       date: formatDate(date),
       time: defaultTimes[index],
       intention: '',
-      place: 'Farský kostol',
+      place: '',
       note: ''
     };
   });

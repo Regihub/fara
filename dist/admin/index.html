@@ -7,10 +7,10 @@
   </head>
   <body>
     <script>
-      // Odstráni lokálnu preferenciu, ktorá môže spôsobiť problémy v CMS
+      // Odstráni problematickú lokálnu preferenciu.
       localStorage.removeItem('decap-cms.entries.viewStyle');
 
-      // Spracovanie OAuth odpovede z popup okna
+      // Spracovanie OAuth odpovede z popup okna.
       window.addEventListener('message', function (event) {
         if (event.origin !== window.location.origin) {
           return;
@@ -37,12 +37,83 @@
             })
           );
 
-          // Po úspešnom prihlásení načítaj CMS znova
           window.location.href = '/admin/';
         }
       });
+
+      async function createWeekEntry() {
+        try {
+          const stored = localStorage.getItem(
+            'decap-cms-user'
+          );
+
+          if (!stored) {
+            alert('Nie ste prihlásený.');
+            return;
+          }
+
+          const user = JSON.parse(stored);
+
+          const response = await fetch('/api/create-week', {
+            method: 'GET',
+            headers: {
+              Authorization: `Bearer ${user.token}`,
+            },
+          });
+
+          const data = await response.json();
+
+          if (!response.ok) {
+            console.error(data);
+            alert(
+  'Nepodarilo sa vytvoriť nový týždeň:\n\n' +
+  JSON.stringify(data, null, 2)
+);
+            return;
+          }
+
+          // Otvorí už existujúci alebo práve vytvorený súbor.
+          window.location.hash =
+            '#/collections/weeks/entries/' +
+            data.slug;
+        } catch (error) {
+          console.error(error);
+          alert(
+  'Chyba pri vytváraní týždňa:\n\n' +
+  error
+);
+        }
+      }
     </script>
 
     <script src="https://unpkg.com/decap-cms@3/dist/decap-cms.js"></script>
+
+    <script>
+      function bindNewButton() {
+        const button = document.querySelector(
+          'a[href="#/collections/weeks/new"]'
+        );
+
+        if (button && !button.dataset.bound) {
+          button.dataset.bound = 'true';
+
+          button.addEventListener('click', function (event) {
+            event.preventDefault();
+            createWeekEntry();
+          });
+        }
+      }
+
+      const observer = new MutationObserver(
+        bindNewButton
+      );
+
+      observer.observe(document.body, {
+        childList: true,
+        subtree: true,
+      });
+
+      window.addEventListener('load', bindNewButton);
+    </script>
   </body>
 </html>

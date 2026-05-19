@@ -57,7 +57,7 @@ export function generateWeekTemplate() {
       date: m.date,
       time: m.time,
       intention: '',
-      place: 'Farský kostol',
+      place: '',
       note: '',
     })),
   };
