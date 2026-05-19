@@ -6,14 +6,14 @@ function isActive(url) {
 }
 ---
 
-<nav class="fixed bottom-0 left-0 right-0 z-50">
+<nav class="fixed bottom-4 left-0 right-0 z-50">
   <div
-    class="mx-auto w-full max-w-md rounded-t-2xl border-t-2 border-green-700 bg-green-50 shadow-lg"
+    class="mx-auto w-[calc(100%-1rem)] max-w-md rounded-3xl border border-green-200 bg-white shadow-2xl"
   >
-    <div class="grid grid-cols-5 text-xs">
+    <div class="grid grid-cols-5">
       <a
         href="/"
-        class={`py-3 text-center ${
+        class={`px-1 py-4 text-center text-sm font-medium rounded-l-3xl ${
           isActive('/')
             ? 'bg-green-100 font-bold text-green-700'
             : 'text-gray-700'
@@ -24,7 +24,7 @@ function isActive(url) {
 
       <a
         href="/archiv"
-        class={`py-3 text-center ${
+        class={`px-1 py-4 text-center text-sm font-medium ${
           isActive('/archiv')
             ? 'bg-green-100 font-bold text-green-700'
             : 'text-gray-700'
@@ -35,7 +35,7 @@ function isActive(url) {
 
       <a
         href="/sviatosti"
-        class={`py-3 text-center ${
+        class={`px-1 py-4 text-center text-sm font-medium ${
           isActive('/sviatosti')
             ? 'bg-green-100 font-bold text-green-700'
             : 'text-gray-700'
@@ -46,7 +46,7 @@ function isActive(url) {
 
       <a
         href="/kontakt"
-        class={`py-3 text-center ${
+        class={`px-1 py-4 text-center text-sm font-medium ${
           isActive('/kontakt')
             ? 'bg-green-100 font-bold text-green-700'
             : 'text-gray-700'
@@ -57,7 +57,7 @@ function isActive(url) {
 
       <a
         href="/viac"
-        class={`py-3 text-center ${
+        class={`px-1 py-4 text-center text-sm font-medium rounded-r-3xl ${
           isActive('/viac')
             ? 'bg-green-100 font-bold text-green-700'
             : 'text-gray-700'
