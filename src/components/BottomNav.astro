@@ -1,8 +1,14 @@
 ---
 const path = Astro.url.pathname;
 
+function normalize(url) {
+  return url.endsWith('/') && url !== '/'
+    ? url.slice(0, -1)
+    : url;
+}
+
 function isActive(url) {
-  return path === url;
+  return normalize(path) === normalize(url);
 }
 ---
 

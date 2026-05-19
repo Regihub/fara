@@ -1,31 +1,18 @@
 ---
 import Base from '../layouts/Base.astro';
+import Announcements from '../components/Announcements.astro';
 ---
 
-<Base title="Farnosť">
-  <section class="mx-auto max-w-4xl px-4 py-12">
-    <h1 class="mb-4 text-4xl font-bold text-slate-900">
-      Rímskokatolícka farnosť
+<Base title="Farnosť Stará Sásová">
+  <section class="px-4 pt-8 pb-4 text-center">
+    <h1 class="text-3xl font-bold text-slate-900">
+      Farnosť Stará Sásová
     </h1>
 
-    <p class="mb-8 text-lg text-slate-600">
+    <p class="mt-2 text-slate-600">
       Vitajte na oficiálnej stránke našej farnosti.
     </p>
-
-    <div class="flex flex-wrap gap-4">
-      <a
-        href="/oznamy"
-        class="rounded-xl bg-blue-600 px-6 py-3 font-medium text-white hover:bg-blue-700"
-      >
-        Farské oznamy
-      </a>
-
-      <a
-        href="/omse"
-        class="rounded-xl bg-slate-100 px-6 py-3 font-medium text-slate-900 hover:bg-slate-200"
-      >
-        Sväté omše
-      </a>
-    </div>
   </section>
+
+  <Announcements />
 </Base>

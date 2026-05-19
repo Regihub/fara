@@ -1,0 +1,82 @@
+---
+import { getLatestWeek } from '../lib/getLatestWeek';
+import { formatDate } from '../lib/formatDate';
+
+const week = await getLatestWeek();
+
+const today = new Date().toLocaleDateString('sv-SE');
+
+const {
+  title,
+  weekStart,
+  weekEnd,
+  general,
+  masses = []
+} = week;
+---
+
+<section class="mx-auto max-w-5xl px-4 py-8">
+  <h1 class="mb-2 text-2xl text-center font-bold text-slate-900">{title}</h1>
+
+  <p class="mb-6 text-center text-sm text-slate-600">
+    <strong>Platnosť:</strong>
+    {formatDate(weekStart).slice(0, 6)} – {formatDate(weekEnd)}
+  </p>
+
+  {general && general.trim() && (
+    <section class="mb-8 rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
+      <h2 class="mb-4 text-2xl text-center font-semibold text-slate-900">
+        Všeobecné oznamy
+      </h2>
+
+      <div
+        class="text-slate-900 leading-none"
+        set:html={general.replace(/\n/g, '<br>')}
+      />
+    </section>
+  )}
+
+  <section class="overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-slate-200">
+    <div class="border-b border-slate-200 px-6 py-4">
+      <h2 class="text-2xl text-center font-semibold text-slate-900">
+        Sväté omše
+      </h2>
+    </div>
+
+    <div class="divide-y divide-slate-100">
+      {masses.map((mass) => (
+        <div
+          class:list={[
+            'px-6 py-4',
+            mass.date === today &&
+              'bg-amber-50 border-l-4 border-amber-400'
+          ]}
+        >
+          <div class="flex items-baseline justify-between gap-4">
+            <div class="font-medium text-slate-900">
+              {mass.day} • {mass.time}
+            </div>
+
+            {mass.place && (
+              <div class="text-right text-slate-900">
+                {mass.place}
+              </div>
+            )}
+          </div>
+
+          {mass.note && (
+            <div class="mt-1 text-sm text-slate-900">
+              * {mass.note}
+            </div>
+          )}
+
+          {mass.intention && (
+            <div class="mt-1 text-sm text-slate-900">
+              * {mass.intention}
+            </div>
+          )}
+        </div>
+      ))}
+    </div>
+  </section>
+</section>
