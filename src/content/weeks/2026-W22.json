@@ -4,22 +4,22 @@
   "year": 2026,
   "weekStart": "2026-05-25",
   "weekEnd": "2026-05-31",
-  "general": "",
+  "general": "nové",
   "masses": [
     {
       "day": "Pondelok",
       "date": "2026-05-25",
       "time": "17:00",
-      "intention": "",
+      "intention": "za web",
       "place": "",
-      "note": ""
+      "note": "Velkodusny pondelok"
     },
     {
       "day": "Utorok",
       "date": "2026-05-26",
       "time": "09:00",
-      "intention": "",
-      "place": "",
+      "intention": "za cms",
+      "place": "Kaplnka na fare",
       "note": ""
     },
     {
