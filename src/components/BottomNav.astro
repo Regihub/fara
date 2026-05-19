@@ -1,45 +1,70 @@
 ---
 const path = Astro.url.pathname;
+
+function isActive(url) {
+  return path === url;
+}
 ---
 
-<nav class="fixed bottom-0 left-0 right-0 flex justify-center">
-  <div class="w-full max-w-md bg-green-50 border-t-2 border-green-700 shadow-lg flex justify-around py-2 text-sm rounded-t-2xl">
+<nav class="fixed bottom-0 left-0 right-0 z-50">
+  <div
+    class="mx-auto w-full max-w-md rounded-t-2xl border-t-2 border-green-700 bg-green-50 shadow-lg"
+  >
+    <div class="grid grid-cols-5 text-xs">
+      <a
+        href="/"
+        class={`py-3 text-center ${
+          isActive('/')
+            ? 'bg-green-100 font-bold text-green-700'
+            : 'text-gray-700'
+        }`}
+      >
+        Domov
+      </a>
 
-    <a
-      href="/"
-      class={`flex flex-col items-center py-2 px-3 rounded-xl transition ${
-        path === "/" ? "text-green-700 font-bold bg-green-100" : "text-gray-700 hover:text-green-700 hover:bg-green-100"
-      }`}
-    >
-      Domov
-    </a>
+      <a
+        href="/archiv"
+        class={`py-3 text-center ${
+          isActive('/archiv')
+            ? 'bg-green-100 font-bold text-green-700'
+            : 'text-gray-700'
+        }`}
+      >
+        Archív
+      </a>
 
-    <a
-      href="/omse"
-      class={`flex flex-col items-center py-2 px-3 rounded-xl transition ${
-        path === "/omse" ? "text-green-700 font-bold bg-green-100" : "text-gray-700 hover:text-green-700 hover:bg-green-100"
-      }`}
-    >
-      Omše
-    </a>
+      <a
+        href="/sviatosti"
+        class={`py-3 text-center ${
+          isActive('/sviatosti')
+            ? 'bg-green-100 font-bold text-green-700'
+            : 'text-gray-700'
+        }`}
+      >
+        Sviatosti
+      </a>
 
-    <a
-      href="/oznamy"
-      class={`flex flex-col items-center py-2 px-3 rounded-xl transition ${
-        path === "/oznamy" ? "text-green-700 font-bold bg-green-100" : "text-gray-700 hover:text-green-700 hover:bg-green-100"
-      }`}
-    >
-      Oznamy
-    </a>
+      <a
+        href="/kontakt"
+        class={`py-3 text-center ${
+          isActive('/kontakt')
+            ? 'bg-green-100 font-bold text-green-700'
+            : 'text-gray-700'
+        }`}
+      >
+        Kontakt
+      </a>
 
-    <a
-      href="/kontakt"
-      class={`flex flex-col items-center py-2 px-3 rounded-xl transition ${
-        path === "/kontakt" ? "text-green-700 font-bold bg-green-100" : "text-gray-700 hover:text-green-700 hover:bg-green-100"
-      }`}
-    >
-      Kontakt
-    </a>
-
+      <a
+        href="/viac"
+        class={`py-3 text-center ${
+          isActive('/viac')
+            ? 'bg-green-100 font-bold text-green-700'
+            : 'text-gray-700'
+        }`}
+      >
+        Viac
+      </a>
+    </div>
   </div>
 </nav>
