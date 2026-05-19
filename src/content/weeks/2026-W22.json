@@ -4,13 +4,13 @@
   "year": 2026,
   "weekStart": "2026-05-25",
   "weekEnd": "2026-05-31",
-  "general": "Tento týždeň upratuje skupina číslo ",
+  "general": "Bude guláš\n\nTento týždeň upratuje skupina číslo 3",
   "masses": [
     {
       "day": "Pondelok",
       "date": "2026-05-25",
       "time": "17:00",
-      "intention": "",
+      "intention": "Na úmysel",
       "place": "",
       "note": ""
     },
@@ -18,16 +18,16 @@
       "day": "Utorok",
       "date": "2026-05-26",
       "time": "09:00",
-      "intention": "",
+      "intention": "Za funkčnú stránku",
       "place": "",
       "note": ""
     },
     {
       "day": "Streda",
       "date": "2026-05-27",
-      "time": "17:00",
-      "intention": "",
-      "place": "",
+      "time": "20:00",
+      "intention": "Za veriacich",
+      "place": "Kaplnka",
       "note": ""
     },
     {
