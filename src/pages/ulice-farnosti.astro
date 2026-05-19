@@ -1,0 +1,106 @@
+---
+// src/pages/ulice-farnosti.astro
+import Base from "../layouts/Base.astro";
+
+const sasova = [
+  "Agátová",
+  "Beskydská",
+  "Dubová",
+  "Fatranská",
+  "Garbanka",
+  "Haškova",
+  "Hlboká",
+  "Inovecká",
+  "Kráľovohoľská",
+  "Mateja Bela",
+  "Na Dolinky",
+  "Na plaváreň",
+  "Na Skalici",
+  "Na Tále",
+  "Na Zábave",
+  "Pod cintorínom",
+  "Pod Skalkou",
+  "Sásovská cesta",
+  "Stránska",
+  "Surovská",
+  "Veterná"
+];
+
+const rudlova = [
+  "Dedinská",
+  "Ďumbierka",
+  "Gerlachovská",
+  "Chabenecká",
+  "Kapitána Jaroša",
+  "Marka Čulena",
+  "Odbojárov",
+  "Pod Bánošom",
+  "Pod Hôrkou",
+  "Rudlovská cesta",
+  "Ružová",
+  "Strmá"
+];
+---
+
+<Base>
+  <section class="p-5 pb-16">
+    <h1 class="text-3xl font-bold text-green-800 mb-3">
+      Ulice farnosti
+    </h1>
+
+    <p class="text-gray-600 mb-6 leading-relaxed">
+      Do Farnosti Banská Bystrica – Stará Sásová patria tieto ulice
+      v mestských častiach Sásová a Rudlová.
+    </p>
+
+    <div class="space-y-6">
+
+      <!-- SÁSOVÁ -->
+      <div class="bg-white border border-gray-200 rounded-2xl shadow-sm overflow-hidden">
+        <div class="bg-green-50 px-4 py-3 border-b border-green-100">
+          <h2 class="font-bold text-green-800">
+            Sásová ({sasova.length})
+          </h2>
+        </div>
+
+        <div class="p-4">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm text-gray-700">
+            {sasova.map((street, index) => (
+              <div>
+                {index + 1}. {street}
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <!-- RUDLOVÁ -->
+      <div class="bg-white border border-gray-200 rounded-2xl shadow-sm overflow-hidden">
+        <div class="bg-green-50 px-4 py-3 border-b border-green-100">
+          <h2 class="font-bold text-green-800">
+            Rudlová ({rudlova.length})
+          </h2>
+        </div>
+
+        <div class="p-4">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm text-gray-700">
+            {rudlova.map((street, index) => (
+              <div>
+                {index + 1}. {street}
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <!-- INFO -->
+      <div class="bg-blue-50 border border-blue-100 rounded-2xl p-4">
+        <p class="text-sm text-blue-900 leading-relaxed">
+          Ak bývate na niektorej z uvedených ulíc, patríte do Farnosti
+          Banská Bystrica – Stará Sásová.
+        </p>
+      </div>
+
+    </div>
+  </section>
+</Base>

@@ -1,4 +1,6 @@
 ---
+// src/pages/kontakt.astro
+
 import Base from "../layouts/Base.astro";
 import church from "../data/church.json";
 import {
@@ -31,17 +33,6 @@ const locations = {
       "https://mapy.com/sk/zakladni?planovani-trasy&rc=9s-aHxR8GQ&rs=&rs=osm&ri=&ri=1067211612&mrp=%7B%22c%22%3A112%2C%22dt%22%3A%22%22%2C%22d%22%3Atrue%7D&xc=%5B%5D&rut=1&x=19.1570673&y=48.7574669&z=19"
   }
 };
-
-const streets = [
-  "Agátová", "Beskydská", "Dedinská", "Dubová", "Ďumbierka",
-  "Fatranská", "Garbanka", "Gerlachovská", "Haškova", "Hlboká",
-  "Chabenecká", "Inovecká", "Kapitána Jaroša", "Kráľovohoľská",
-  "Marka Čulena", "Mateja Bela", "Na Dolinky", "Na plaváreň",
-  "Na Skalici", "Na Tále", "Na Zábave", "Odbojárov",
-  "Pod Bánošom", "Pod cintorínom", "Pod Hôrkou", "Pod Skalkou",
-  "Rudlovská cesta", "Ružová", "Sásovská cesta", "Stránska",
-  "Strmá", "Surovská", "Veterná"
-];
 ---
 
 <Base>
@@ -65,6 +56,7 @@ const streets = [
 
         <div class="p-4 space-y-4">
 
+          <!-- Adresa -->
           <div class="flex items-start gap-3">
             <MapPin class="w-5 h-5 text-gray-400 mt-0.5 shrink-0" />
             <p class="text-sm text-gray-700">
@@ -72,6 +64,7 @@ const streets = [
             </p>
           </div>
 
+          <!-- Telefón -->
           <a
             href={`tel:${church.phone}`}
             class="flex items-center gap-3 text-blue-600 font-medium"
@@ -80,6 +73,7 @@ const streets = [
             <span>{church.phone}</span>
           </a>
 
+          <!-- Email -->
           <a
             href={`mailto:${church.email}`}
             class="flex items-center gap-3 text-blue-600 font-medium break-all"
@@ -88,6 +82,7 @@ const streets = [
             <span>{church.email}</span>
           </a>
 
+          <!-- Web -->
           <a
             href="https://starasasova.fara.sk"
             target="_blank"
@@ -98,6 +93,7 @@ const streets = [
             <span>www.starasasova.fara.sk</span>
           </a>
 
+          <!-- Správca farnosti -->
           <div class="flex items-start gap-3">
             <User class="w-5 h-5 text-gray-400 mt-0.5 shrink-0" />
             <div class="text-sm text-gray-700">
@@ -106,6 +102,7 @@ const streets = [
             </div>
           </div>
 
+          <!-- IČO / DIČ / IBAN -->
           <div class="flex items-start gap-3">
             <CreditCard class="w-5 h-5 text-gray-400 mt-0.5 shrink-0" />
             <div class="text-sm text-gray-700 space-y-1">
@@ -118,6 +115,7 @@ const streets = [
             </div>
           </div>
 
+          <!-- Mapy -->
           <div class="grid grid-cols-2 gap-3 pt-2">
             <a
               href={locations.fara.google}
@@ -180,23 +178,6 @@ const streets = [
           </div>
         </div>
       </div>
-
-      <!-- ULICE FARNOSTI -->
-      <details class="bg-white border border-gray-200 rounded-2xl shadow-sm">
-        <summary class="cursor-pointer px-4 py-4 font-semibold text-green-800">
-          Ulice patriace do farnosti ({streets.length})
-        </summary>
-
-        <div class="px-4 pb-4 border-t border-gray-100">
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 mt-4 text-sm text-gray-700">
-            {streets.map((street, index) => (
-              <div>
-                {index + 1}. {street}
-              </div>
-            ))}
-          </div>
-        </div>
-      </details>
 
     </div>
   </section>
