@@ -7,46 +7,42 @@
   </head>
   <body>
     <script>
-      async function createWeekEntry() {
-        try {
-          const res = await fetch('/api/week-template');
-          const data = await res.json();
+      // Odstráni lokálnu preferenciu, ktorá môže spôsobiť problémy v CMS
+      localStorage.removeItem('decap-cms.entries.viewStyle');
 
-          sessionStorage.setItem('cms-week-slug', data.slug);
-
-          window.location.hash = '#/collections/weeks/new';
-        } catch (e) {
-          console.error('Failed to create week:', e);
+      // Spracovanie OAuth odpovede z popup okna
+      window.addEventListener('message', function (event) {
+        if (event.origin !== window.location.origin) {
+          return;
         }
-      }
 
-      function bindButton() {
-        const btn = document.querySelector(
-          'a[href="#/collections/weeks/new"]'
-        );
+        const msg = event.data;
 
-        if (btn && !btn.dataset.bound) {
-          btn.dataset.bound = 'true';
-          btn.addEventListener('click', (e) => {
-            e.preventDefault();
-            createWeekEntry();
-          });
+        if (
+          typeof msg === 'string' &&
+          msg.startsWith('authorization:github:success:')
+        ) {
+          const json = msg.replace(
+            'authorization:github:success:',
+            ''
+          );
+
+          const data = JSON.parse(json);
+
+          localStorage.setItem(
+            'decap-cms-user',
+            JSON.stringify({
+              backendName: 'github',
+              token: data.token,
+            })
+          );
+
+          // Po úspešnom prihlásení načítaj CMS znova
+          window.location.href = '/admin/';
         }
-      }
-
-      const observer = new MutationObserver(() => {
-        bindButton();
       });
-
-      observer.observe(document.body, {
-        childList: true,
-        subtree: true
-      });
-
-      window.addEventListener('load', bindButton);
     </script>
 
-    <!-- DÔLEŽITÉ: načítanie kompletného CMS bundle -->
     <script src="https://unpkg.com/decap-cms@3/dist/decap-cms.js"></script>
   </body>
 </html>

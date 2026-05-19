@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import { getLatestWeek } from '../lib/getLatestWeek';
+import { formatDate } from '../lib/formatDate';
 
 const week = await getLatestWeek();
 const {
@@ -48,7 +49,7 @@ const {
             {masses.map((mass) => (
               <tr class="hover:bg-slate-50">
                 <td class="px-4 py-3 font-medium">{mass.day}</td>
-                <td class="px-4 py-3">{mass.date}</td>
+                <td class="px-4 py-3">{formatDate(mass.date)}</td>
                 <td class="px-4 py-3">{mass.time}</td>
                 <td class="px-4 py-3">{mass.intention || '—'}</td>
                 <td class="px-4 py-3">{mass.place || 'Farský kostol'}</td>
