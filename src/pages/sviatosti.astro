@@ -1,0 +1,87 @@
+---
+import Base from "../layouts/Base.astro";
+
+const sviatosti = [
+  {
+    title: "Potvrdenie o krste",
+    icon: "📄",
+    href: "/sviatosti/potvrdenie-o-krste",
+    description: "Ako získať krstný list."
+  },
+  {
+    title: "Krst",
+    icon: "💧",
+    href: "/sviatosti/krst",
+    description: "Podmienky a príprava na krst."
+  },
+  {
+    title: "Eucharistia",
+    icon: "🍞",
+    href: "/sviatosti/eucharistia",
+    description: "Prvé sväté prijímanie."
+  },
+  {
+    title: "Birmovanie",
+    icon: "🕊️",
+    href: "/sviatosti/birmovanie",
+    description: "Príprava na prijatie Ducha Svätého."
+  },
+  {
+    title: "Zmierenie",
+    icon: "🙏",
+    href: "/sviatosti/zmierenie",
+    description: "Sviatosť pokánia a svätej spovede."
+  },
+  {
+    title: "Pomazanie chorých",
+    icon: "🕯️",
+    href: "/sviatosti/pomazanie-chorych",
+    description: "Posila v chorobe a starobe."
+  },
+  {
+    title: "Manželstvo",
+    icon: "💍",
+    href: "/sviatosti/manzelstvo",
+    description: "Informácie pre snúbencov."
+  },
+  {
+    title: "Kňazstvo",
+    icon: "✝️",
+    href: "/sviatosti/knazstvo",
+    description: "Sviatosť posvätného stavu."
+  }
+];
+---
+
+<Base>
+  <main class="p-4 pb-16">
+    <h1 class="text-3xl font-bold text-green-800 mb-2">
+      Sviatosti
+    </h1>
+
+    <p class="text-gray-600 mb-6">
+      Základné informácie o siedmich sviatostiach a potvrdení o krste.
+    </p>
+
+    <div class="grid gap-4">
+      {sviatosti.map((item) => (
+        <a
+          href={item.href}
+          class="block bg-white border border-gray-200 rounded-2xl shadow-sm hover:shadow-md transition p-5"
+        >
+          <div class="flex items-start gap-4">
+            <div class="text-3xl">{item.icon}</div>
+            <div>
+              <h2 class="text-xl font-semibold text-green-800">
+                {item.title}
+              </h2>
+              <p class="text-gray-600 text-sm mt-1">
+                {item.description}
+              </p>
+            </div>
+          </div>
+        </a>
+      ))}
+    </div>
+  </main>
+</Base>
