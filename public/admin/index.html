@@ -7,10 +7,10 @@
   </head>
   <body>
     <script>
-      // Odstráni lokálnu preferenciu, ktorá môže spôsobiť problémy v CMS
+      // Odstráni lokálnu preferenciu, ktorá môže spôsobovať problémy.
       localStorage.removeItem('decap-cms.entries.viewStyle');
 
-      // Spracovanie OAuth odpovede z popup okna
+      // Spracovanie OAuth odpovede z popup okna.
       window.addEventListener('message', function (event) {
         if (event.origin !== window.location.origin) {
           return;
@@ -37,12 +37,146 @@
             })
           );
 
-          // Po úspešnom prihlásení načítaj CMS znova
+          // Po úspešnom prihlásení načítaj CMS znova.
           window.location.href = '/admin/';
         }
       });
+
+      // Načíta template budúceho týždňa a uloží ho do sessionStorage.
+      async function prepareWeekTemplate() {
+        try {
+          const response = await fetch('/api/week-template');
+
+          if (!response.ok) {
+            throw new Error('Nepodarilo sa načítať template');
+          }
+
+          const data = await response.json();
+
+          sessionStorage.setItem(
+            'cms-week-template',
+            JSON.stringify(data.template)
+          );
+        } catch (error) {
+          console.error('Failed to prepare week template:', error);
+        }
+      }
     </script>
 
+    <!-- DÔLEŽITÉ: načítanie kompletného CMS bundle -->
     <script src="https://unpkg.com/decap-cms@3/dist/decap-cms.js"></script>
+
+    <script>
+      // Naviazanie tlačidla "New Farské oznamy".
+      function bindNewButton() {
+        const button = document.querySelector(
+          'a[href="#/collections/weeks/new"]'
+        );
+
+        if (button && !button.dataset.bound) {
+          button.dataset.bound = 'true';
+
+          button.addEventListener('click', async function (event) {
+            event.preventDefault();
+
+            await prepareWeekTemplate();
+
+            // Otvor formulár pre nový záznam.
+            window.location.hash = '#/collections/weeks/new';
+          });
+        }
+      }
+
+      // Keď sa otvorí nový formulár, pokúsime sa predvyplniť polia.
+      function tryPrefillForm() {
+        const stored = sessionStorage.getItem('cms-week-template');
+
+        if (!stored) {
+          return;
+        }
+
+        // Musíme byť v editore nového týždňa.
+        if (
+          !window.location.hash.startsWith(
+            '#/collections/weeks/new'
+          )
+        ) {
+          return;
+        }
+
+        // Počkame, kým sa vytvoria inputy.
+        const titleInput = document.querySelector(
+          'input[name="title"]'
+        );
+
+        if (!titleInput) {
+          return;
+        }
+
+        const template = JSON.parse(stored);
+
+        // Použijeme template len raz.
+        sessionStorage.removeItem('cms-week-template');
+
+        // Najstabilnejšie riešenie: uložíme template ako local draft
+        // a obnovíme stránku editora.
+        localStorage.setItem(
+          'decap-cms.prefill',
+          JSON.stringify(template)
+        );
+
+        // Pre jednoduchosť vložíme dáta priamo do formulára tam,
+        // kde sú jednoduché textové polia.
+        const fields = [
+          'title',
+          'weekNumber',
+          'year',
+          'weekStart',
+          'weekEnd',
+          'general'
+        ];
+
+        fields.forEach((field) => {
+          const input =
+            document.querySelector(
+              `[name="${field}"]`
+            ) ||
+            document.querySelector(
+              `textarea[name="${field}"]`
+            );
+
+          if (!input || template[field] === undefined) {
+            return;
+          }
+
+          input.value = template[field];
+          input.dispatchEvent(
+            new Event('input', { bubbles: true })
+          );
+          input.dispatchEvent(
+            new Event('change', { bubbles: true })
+          );
+        });
+
+        // Zoznam masses zatiaľ CMS nevyplní cez DOM jednoducho.
+        // Ak jednoduché polia budú fungovať, doplníme masses v ďalšom kroku.
+      }
+
+      // CMS renderuje UI dynamicky.
+      const observer = new MutationObserver(() => {
+        bindNewButton();
+        tryPrefillForm();
+      });
+
+      observer.observe(document.body, {
+        childList: true,
+        subtree: true
+      });
+
+      window.addEventListener('load', () => {
+        bindNewButton();
+        tryPrefillForm();
+      });
+    </script>
   </body>
 </html>
