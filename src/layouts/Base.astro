@@ -1,26 +1,26 @@
 ---
 import BottomNav from "../components/BottomNav.astro";
 import "../styles/global.css";
+
+const { title = "Farnosť Stará Sásová" } = Astro.props;
 ---
 
 <html lang="sk">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>Farnosť Stará Sásová</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
   </head>
 
-  <body class="bg-gray-100 text-gray-900 m-0">
-
-    <div class="flex justify-center min-h-screen">
+  <body class="m-0 bg-gray-100 text-gray-900">
+    <div class="flex min-h-screen justify-center">
       <div class="w-full max-w-md bg-white">
-
-        <slot />
-
+        <div class="pb-44 md:pb-0">
+          <slot />
+        </div>
       </div>
     </div>
 
     <BottomNav />
-
   </body>
 </html>
