@@ -1,7 +1,7 @@
 ---
 import Base from "../layouts/Base.astro";
 import church from "../data/church.json";
-import { Phone, Mail } from "lucide-astro";
+import { Phone, Mail, MapPin, Church, Building2 } from "lucide-astro";
 
 const locations = {
   fara: {
@@ -29,90 +29,110 @@ const locations = {
 ---
 
 <Base>
-  <section class="p-5">
-    <h1 class="text-xl font-bold mb-5">Kontakt</h1>
+  <section class="p-5 pb-16">
+    <h1 class="text-3xl font-bold text-green-800 mb-6">
+      Kontakt
+    </h1>
 
-    <div class="space-y-5">
+    <div class="space-y-6">
 
-      <!-- FARA -->
-      <div class="p-4 rounded-2xl border bg-white shadow-sm">
-        <h2 class="font-bold text-green-700">
-          {locations.fara.name}
-        </h2>
+      <!-- FARSKÝ ÚRAD -->
+      <div class="bg-white border border-gray-200 rounded-2xl shadow-sm overflow-hidden">
+        <div class="bg-green-50 px-4 py-3 border-b border-green-100">
+          <div class="flex items-center gap-3">
+            <Building2 class="w-5 h-5 text-green-700" />
+            <h2 class="font-bold text-green-800">
+              {locations.fara.name}
+            </h2>
+          </div>
+        </div>
 
-        <p class="text-sm text-gray-600 mt-1">
-          {locations.fara.address}
-        </p>
+        <div class="p-4">
+          <div class="flex items-start gap-3 text-gray-700">
+            <MapPin class="w-5 h-5 text-gray-400 mt-0.5 shrink-0" />
+            <p class="text-sm leading-relaxed">
+              {locations.fara.address}
+            </p>
+          </div>
 
-        <div class="text-sm text-gray-700 mt-3 space-y-2">
+          <div class="mt-4 space-y-3">
+            <a
+              href={`tel:${church.phone}`}
+              class="flex items-center gap-3 text-blue-600 font-medium hover:text-blue-800 transition"
+            >
+              <Phone class="w-5 h-5 shrink-0" />
+              <span>{church.phone}</span>
+            </a>
 
-  <!-- TELEFÓN -->
-  <a
-    href={`tel:${church.phone}`}
-    class="flex items-center gap-2 text-blue-600 font-medium hover:text-blue-800 transition"
-  >
-  <Phone class="w-5 h-5" />
+            <a
+              href={`mailto:${church.email}`}
+              class="flex items-center gap-3 text-blue-600 font-medium hover:text-blue-800 transition break-all"
+            >
+              <Mail class="w-5 h-5 shrink-0" />
+              <span>{church.email}</span>
+            </a>
+          </div>
 
-    <span>{church.phone}</span>
-  </a>
+          <div class="grid grid-cols-2 gap-3 mt-5">
+            <a
+              href={locations.fara.google}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="bg-green-700 text-white text-center py-3 rounded-xl text-sm font-semibold hover:bg-green-800 transition"
+            >
+              Google Maps
+            </a>
 
-  <!-- EMAIL -->
-  <a
-    href={`mailto:${church.email}`}
-    class="flex items-center gap-2 text-blue-600 font-medium hover:text-blue-800 transition break-all"
-  >
-<Mail class="w-5 h-5" />
-
-    <span>{church.email}</span>
-  </a>
-
-</div>
-
-        <div class="grid grid-cols-2 gap-2 mt-4">
-          <a
-            href={locations.fara.google}
-            target="_blank"
-            class="bg-green-700 text-white text-center py-2 rounded-xl text-sm font-medium hover:bg-green-800 transition"
-          >
-            Google Maps
-          </a>
-
-          <a
-            href={locations.fara.mapycz}
-            target="_blank"
-            class="bg-orange-500 text-white text-center py-2 rounded-xl text-sm font-medium hover:bg-orange-600 transition"
-          >
-            Mapy.cz
-          </a>
+            <a
+              href={locations.fara.mapycz}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="bg-orange-500 text-white text-center py-3 rounded-xl text-sm font-semibold hover:bg-orange-600 transition"
+            >
+              Mapy.cz
+            </a>
+          </div>
         </div>
       </div>
 
       <!-- KOSTOL -->
-      <div class="p-4 rounded-2xl border bg-white shadow-sm">
-        <h2 class="font-bold text-green-700">
-          {locations.kostol.name}
-        </h2>
+      <div class="bg-white border border-gray-200 rounded-2xl shadow-sm overflow-hidden">
+        <div class="bg-green-50 px-4 py-3 border-b border-green-100">
+          <div class="flex items-center gap-3">
+            <Church class="w-5 h-5 text-green-700" />
+            <h2 class="font-bold text-green-800">
+              {locations.kostol.name}
+            </h2>
+          </div>
+        </div>
 
-        <p class="text-sm text-gray-600 mt-1">
-          {locations.kostol.address}
-        </p>
+        <div class="p-4">
+          <div class="flex items-start gap-3 text-gray-700">
+            <MapPin class="w-5 h-5 text-gray-400 mt-0.5 shrink-0" />
+            <p class="text-sm leading-relaxed">
+              {locations.kostol.address}
+            </p>
+          </div>
 
-        <div class="grid grid-cols-2 gap-2 mt-4">
-          <a
-            href={locations.kostol.google}
-            target="_blank"
-            class="bg-green-700 text-white text-center py-2 rounded-xl text-sm font-medium hover:bg-green-800 transition"
-          >
-            Google Maps
-          </a>
+          <div class="grid grid-cols-2 gap-3 mt-5">
+            <a
+              href={locations.kostol.google}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="bg-green-700 text-white text-center py-3 rounded-xl text-sm font-semibold hover:bg-green-800 transition"
+            >
+              Google Maps
+            </a>
 
-          <a
-            href={locations.kostol.mapycz}
-            target="_blank"
-            class="bg-orange-500 text-white text-center py-2 rounded-xl text-sm font-medium hover:bg-orange-600 transition"
-          >
-            Mapy.cz
-          </a>
+            <a
+              href={locations.kostol.mapycz}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="bg-orange-500 text-white text-center py-3 rounded-xl text-sm font-semibold hover:bg-orange-600 transition"
+            >
+              Mapy.cz
+            </a>
+          </div>
         </div>
       </div>
 
