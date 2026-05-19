@@ -4,6 +4,9 @@ import { getLatestWeek } from '../lib/getLatestWeek';
 import { formatDate } from '../lib/formatDate';
 
 const week = await getLatestWeek();
+
+const today = new Date().toLocaleDateString('sv-SE');
+
 const {
   title,
   weekStart,
@@ -39,38 +42,41 @@ const {
 
   <div class="divide-y divide-slate-100">
     {masses.map((mass) => (
-      <div class="px-6 py-4">
-
-        <!-- 1. riadok: deň, čas, miesto -->
-        <div class="flex items-baseline justify-between gap-4">
-  <div class="font-medium text-slate-900">
-    {mass.day} • {mass.time}
-  </div>
-
-  {mass.place && (
-    <div class="text-right text-slate-900">
-      {mass.place}
-    </div>
-  )}
-</div>
-
-        <!-- 2. riadok: slávime -->
-        {mass.note && (
-          <div class="mt-1 text-sm text-slate-900">
-            * {mass.note}
-          </div>
-
-        <!-- 3. riadok: úmysel -->
-        {mass.intention && (
-          <div class="mt-1 text-sm text-slate-900">
-            * {mass.intention}
-          </div>
-        )}
-
-        
-        )}
+  <div
+    class:list={[
+      'px-6 py-4',
+      mass.date === today &&
+        'bg-amber-50 border-l-4 border-amber-400'
+    ]}
+  >
+    <!-- 1. riadok -->
+    <div class="flex items-baseline justify-between gap-4">
+      <div class="font-medium text-slate-900">
+        {mass.day} • {mass.time}
       </div>
-    ))}
+
+      {mass.place && (
+        <div class="text-right text-slate-900">
+          {mass.place}
+        </div>
+      )}
+    </div>
+
+    <!-- 2. riadok -->
+    {mass.note && (
+      <div class="mt-1 text-sm text-slate-900">
+        * {mass.note}
+      </div>
+    )}
+
+    <!-- 3. riadok -->
+    {mass.intention && (
+      <div class="mt-1 text-sm text-slate-900">
+        * {mass.intention}
+      </div>
+    )}
+  </div>
+))}
   </div>
 </section>
   </section>
