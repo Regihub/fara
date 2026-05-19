@@ -30,34 +30,41 @@ const {
     </section>
 
     <section class="overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-slate-200">
-      <div class="border-b border-slate-200 px-6 py-4">
-        <h2 class="text-2xl font-semibold text-slate-900">Sväté omše</h2>
-      </div>
+  <div class="border-b border-slate-200 px-6 py-4">
+    <h2 class="text-2xl font-semibold text-slate-900">
+      Sväté omše
+    </h2>
+  </div>
 
-      <div class="overflow-x-auto">
-        <table class="min-w-full text-sm">
-          <thead class="bg-slate-50 text-left text-slate-600">
-            <tr>
-              <th class="px-4 py-3">Deň</th>
-              <th class="px-4 py-3">Čas</th>
-              <th class="px-4 py-3">Úmysel</th>
-              <th class="px-4 py-3">Slávime</th>
-              <th class="px-4 py-3">Miesto</th>
-            </tr>
-          </thead>
-          <tbody class="divide-y divide-slate-100">
-            {masses.map((mass) => (
-              <tr class="hover:bg-slate-50">
-                <td class="px-4 py-3 font-medium">{mass.day}</td>
-                <td class="px-4 py-3">{mass.time}</td>
-                <td class="px-4 py-3">{mass.intention || '—'}</td>
-                <td class="px-4 py-3">{mass.note && mass.note}</td>
-                <td class="px-4 py-3">{mass.place && mass.place}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+  <div class="divide-y divide-slate-100">
+    {masses.map((mass) => (
+      <div class="px-6 py-4">
+        <!-- 1. riadok: deň, čas, miesto -->
+        <div class="font-medium text-slate-900">
+          {mass.day} • {mass.time}
+          {mass.place && (
+            <span class="text-slate-600">
+              {' '}• {mass.place}
+            </span>
+          )}
+        </div>
+
+        <!-- 2. riadok: úmysel -->
+        {mass.intention && (
+          <div class="mt-1 text-slate-700">
+            {mass.intention}
+          </div>
+        )}
+
+        <!-- 3. riadok: slávime -->
+        {mass.note && (
+          <div class="mt-1 text-sm italic text-slate-600">
+            Slávime: {mass.note}
+          </div>
+        )}
       </div>
-    </section>
+    ))}
+  </div>
+</section>
   </section>
 </Base>
