@@ -15,33 +15,45 @@ const {
 } = week;
 ---
 
-<!-- odstránené mx-auto a max-w-5xl, aby komponent využil plnú šírku -->
 <section class="py-8">
-  <h1 class="mb-2 text-2xl text-center font-bold text-slate-900">
-    {title}
-  </h1>
+  <!-- HLAVIČKA -->
+  <header class="mb-8 text-center">
+    <p class="inline-flex items-center rounded-full bg-green-50 px-4 py-1 text-sm font-medium text-green-800 ring-1 ring-green-200">
+      Aktuálne farské oznamy
+    </p>
 
-  <p class="mb-6 text-center text-sm text-slate-600">
-    <strong>Platnosť:</strong>
-    {formatDate(weekStart).slice(0, 6)} – {formatDate(weekEnd)}
-  </p>
+    <h1 class="mt-4 text-3xl font-bold tracking-tight text-slate-900">
+      {title}
+    </h1>
 
+    <p class="mt-2 text-sm text-slate-600">
+      Platnosť:
+      <span class="font-medium text-slate-800">
+        {formatDate(weekStart).slice(0, 6)} – {formatDate(weekEnd)}
+      </span>
+    </p>
+  </header>
+
+  <!-- VŠEOBECNÉ OZNAMY -->
   {general && general.trim() && (
-    <section class="mb-8 rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
-      <h2 class="mb-4 text-2xl text-center font-semibold text-slate-900">
-        Všeobecné oznamy
-      </h2>
+    <section class="mb-8 overflow-hidden rounded-3xl bg-white shadow-sm ring-1 ring-slate-200">
+      <div class="border-b border-slate-100 bg-slate-50 px-6 py-4">
+        <h2 class="text-xl font-semibold text-slate-900">
+          Všeobecné oznamy
+        </h2>
+      </div>
 
       <div
-        class="leading-normal text-slate-900"
+        class="p-6 leading-8 text-slate-800"
         set:html={general.replace(/\n/g, '<br>')}
       />
     </section>
   )}
 
-  <section class="overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-slate-200">
-    <div class="border-b border-slate-200 px-6 py-4">
-      <h2 class="text-2xl text-center font-semibold text-slate-900">
+  <!-- SVÄTÉ OMŠE -->
+  <section class="overflow-hidden rounded-3xl bg-white shadow-sm ring-1 ring-slate-200">
+    <div class="border-b border-slate-100 bg-slate-50 px-6 py-4">
+      <h2 class="text-xl font-semibold text-slate-900">
         Sväté omše
       </h2>
     </div>
@@ -50,32 +62,51 @@ const {
       {masses.map((mass) => (
         <div
           class:list={[
-            'px-6 py-4',
-            mass.date === today &&
-              'bg-amber-50 border-l-4 border-amber-400'
+            'px-6 py-5 transition-colors',
+            mass.date === today
+              ? 'bg-amber-50 border-l-4 border-amber-400'
+              : 'bg-white'
           ]}
         >
-          <div class="flex items-baseline justify-between gap-4">
-            <div class="font-medium text-slate-900">
-              {mass.day} • {mass.time}
+          <!-- RIADOK DŇA -->
+          <div class="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
+            <div>
+              <div class="text-lg font-semibold text-slate-900">
+                {mass.day}
+              </div>
+
+              <div class="text-sm font-medium text-green-700">
+                {mass.time}
+              </div>
             </div>
 
             {mass.place && (
-              <div class="text-right text-slate-900">
+              <div class="text-sm text-slate-500 sm:text-right">
                 {mass.place}
               </div>
             )}
           </div>
 
+          <!-- POZNÁMKA -->
           {mass.note && (
-            <div class="mt-1 text-sm text-slate-900">
-              * {mass.note}
+            <div class="mt-3 rounded-xl bg-slate-50 px-3 py-2 text-sm text-slate-700">
+              {mass.note}
             </div>
           )}
 
+          <!-- ÚMYSEL -->
           {mass.intention && (
-            <div class="mt-1 text-sm text-slate-900">
-              * {mass.intention}
+            <div class="mt-2 text-sm leading-6 text-slate-800">
+              <span class="font-medium text-slate-600">Úmysel:</span>
+              {' '}
+              {mass.intention}
+            </div>
+          )}
+
+          <!-- OZNAČENIE DNEŠNÉHO DŇA -->
+          {mass.date === today && (
+            <div class="mt-3 inline-flex items-center rounded-full bg-amber-100 px-3 py-1 text-xs font-semibold text-amber-800">
+              Dnes
             </div>
           )}
         </div>
