@@ -1,44 +1,77 @@
 ---
+// src/pages/viac/ulice.astro
 import Base from "../../layouts/Base.astro";
+
+const streets = [
+  "Agátová",
+  "Beskydská",
+  "Dedinská",
+  "Dubová",
+  "Ďumbierka",
+  "Fatranská",
+  "Garbanka",
+  "Gerlachovská",
+  "Haškova",
+  "Hlboká",
+  "Chabenecká",
+  "Inovecká",
+  "Kapitána Jaroša",
+  "Kráľovohoľská",
+  "Marka Čulena",
+  "Mateja Bela",
+  "Na Dolinky",
+  "Na plaváreň",
+  "Na Skalici",
+  "Na Tále",
+  "Na Zábave",
+  "Odbojárov",
+  "Pod Bánošom",
+  "Pod cintorínom",
+  "Pod Hôrkou",
+  "Pod Skalkou",
+  "Rudlovská cesta",
+  "Ružová",
+  "Sásovská cesta",
+  "Stránska",
+  "Strmá",
+  "Surovská",
+  "Veterná"
+];
 ---
 
 <Base>
-  <section class="p-5">
+  <section class="p-5 pb-16">
+    <h1 class="text-3xl font-bold text-green-800 mb-3">
+      Ulice farnosti
+    </h1>
 
-    <h1 class="text-xl font-bold mb-5">Ulice farnosti</h1>
+    <p class="text-gray-600 mb-6 leading-relaxed">
+      Do Farnosti Banská Bystrica – Stará Sásová patria tieto ulice.
+      Ak bývate na niektorej z uvedených ulíc, patríte do našej farnosti.
+    </p>
 
-    <div class="space-y-3">
-
-      <!-- Sásová -->
-      <div class="p-4 bg-white border rounded-xl">
-        <h2 class="font-bold mb-2">Sásová</h2>
-        <p class="text-sm text-gray-700">
-          Agátová, Beskydská, Dubová, Fatranská, Garbanka, Haškova, Inovecká,
-          Kráľovohoľská, Mateja Bela, Na Dolinky, Na plaváreň, Na Skalici,
-          Na Tále, Na Zábave, Pod cintorínom, Pod Skalkou, Sásovská cesta,
-          Stránska, Surovská, Veterná
-        </p>
+    <div class="bg-white border border-gray-200 rounded-2xl shadow-sm overflow-hidden">
+      <div class="bg-green-50 px-4 py-3 border-b border-green-100">
+        <h2 class="font-bold text-green-800">
+          Zoznam ulíc ({streets.length})
+        </h2>
       </div>
 
-      <!-- Rudlová -->
-      <div class="p-4 bg-white border rounded-xl">
-        <h2 class="font-bold mb-2">Rudlová</h2>
-        <p class="text-sm text-gray-700">
-          Dedinská, Ďumbierka, Gerlachovská, Chabenecká, Kapitána Jaroša,
-          Marka Čulena, Odbojárov, Pod Bánošom, Pod Hôrkou, Ružová,
-          Strmá
-        </p>
+      <div class="p-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm text-gray-700">
+          {streets.map((street, index) => (
+            <div>
+              {index + 1}. {street}
+            </div>
+          ))}
+        </div>
       </div>
-
-      <!-- zmiešané -->
-      <div class="p-4 bg-white border rounded-xl">
-        <h2 class="font-bold mb-2">Ostatné</h2>
-        <p class="text-sm text-gray-700">
-          Na Tále (Sásová), Rudlovská cesta (hranica), Pod cintorínom a ďalšie podľa administratívy farnosti
-        </p>
-      </div>
-
     </div>
 
+    <div class="mt-6 bg-blue-50 border border-blue-100 rounded-2xl p-4">
+      <p class="text-sm text-blue-900 leading-relaxed">
+        V prípade nejasností o príslušnosti k farnosti nás neváhajte kontaktovať.
+      </p>
+    </div>
   </section>
 </Base>
