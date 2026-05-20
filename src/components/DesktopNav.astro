@@ -1,0 +1,55 @@
+---
+const links = [
+  { href: "/", label: "Domov" },
+  { href: "/archiv", label: "Archív" },
+  { href: "/sviatosti", label: "Sviatosti" },
+  { href: "/kontakt", label: "Kontakt" },
+  { href: "/viac", label: "Viac" }
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<!-- Zobrazuje sa iba na desktopoch -->
+<header class="hidden lg:block sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-slate-200 shadow-sm">
+  <div class="mx-auto max-w-7xl px-6">
+    <div class="flex items-center justify-between h-20">
+
+      <!-- Názov farnosti -->
+      <a href="/" class="group">
+        <div class="text-xl font-bold text-green-800 group-hover:text-green-900 transition">
+          Farnosť Stará Sásová
+        </div>
+        <div class="text-sm text-slate-500">
+          Banská Bystrica
+        </div>
+      </a>
+
+      <!-- Navigácia -->
+      <nav class="flex items-center gap-2">
+        {links.map((link) => {
+          const active =
+            link.href === "/"
+              ? currentPath === "/"
+              : currentPath === link.href ||
+                currentPath.startsWith(`${link.href}/`);
+
+          return (
+            <a
+              href={link.href}
+              class:list={[
+                "px-4 py-2 rounded-xl text-sm font-medium transition",
+                active
+                  ? "bg-green-700 text-white shadow-sm"
+                  : "text-slate-700 hover:bg-slate-100 hover:text-green-800"
+              ]}
+              aria-current={active ? "page" : undefined}
+            >
+              {link.label}
+            </a>
+          );
+        })}
+      </nav>
+    </div>
+  </div>
+</header>

@@ -1,5 +1,6 @@
 ---
 import BottomNav from "../components/BottomNav.astro";
+import DesktopNav from "../components/DesktopNav.astro";
 import "../styles/global.css";
 
 const { title = "Farnosť Stará Sásová" } = Astro.props;
@@ -13,14 +14,27 @@ const { title = "Farnosť Stará Sásová" } = Astro.props;
   </head>
 
   <body class="m-0 bg-gray-100 text-gray-900">
+    <!-- Horná navigácia iba pre desktop -->
+    <DesktopNav />
+
+    <!-- Hlavný obsah -->
     <div class="flex min-h-screen justify-center">
-      <div class="w-full max-w-md bg-white">
+      <!--
+        Mobil: max-w-md (rovnaké ako doteraz)
+        Desktop: širší kontajner kvôli desktop menu
+      -->
+      <div class="w-full max-w-md lg:max-w-7xl bg-white">
+        <!--
+          Mobile: spodný padding pre BottomNav
+          Desktop: bez paddingu
+        -->
         <div class="pb-20 md:pb-0">
           <slot />
         </div>
       </div>
     </div>
 
+    <!-- Spodná navigácia iba pre mobil (už rieši BottomNav komponent) -->
     <BottomNav />
   </body>
 </html>
