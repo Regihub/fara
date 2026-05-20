@@ -1,37 +1,199 @@
 ---
-// src/pages/historia.astro
-import Base from "../layouts/Base.astro";
-import sections from "../data/history.json";
+import Base from '../layouts/Base.astro';
 ---
 
 <Base title="História farnosti a kostola">
-  <section class="px-5 py-8 pb-16">
-    <h1 class="mb-6 text-3xl font-bold text-green-800">
+  <section class="px-4 py-8">
+    <h1 class="mb-6 text-3xl text-center font-bold text-slate-900">
       História farnosti a kostola
     </h1>
 
-    <div class="space-y-4">
-      {sections.map((section, index) => (
-        <details
-          name="historia"
-          class="group rounded-2xl border border-gray-200 bg-white shadow-sm"
-          open={index === 0}
-        >
-          <summary class="cursor-pointer list-none px-5 py-4 font-semibold text-green-800 flex items-center justify-between">
-            <span>{section.title}</span>
-            <span class="text-xl transition-transform group-open:rotate-45">
-              +
-            </span>
-          </summary>
+    <p class="mb-8 text-center text-slate-600">
+      Dejiny farnosti Stará Sásová, gotického kostola sv. Antona a Pavla
+      pustovníkov a príbehy patrónov našej farnosti.
+    </p>
 
-          <div class="border-t border-gray-100 px-5 py-4">
-            <div
-              class="prose prose-sm max-w-none text-gray-700 leading-relaxed"
-              set:html={section.content.replace(/\n/g, "<br>")}
-            />
-          </div>
-        </details>
-      ))}
-    </div>
+    <!-- História farnosti -->
+    <details class="mb-4 overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-slate-200">
+      <summary class="cursor-pointer list-none px-6 py-4 text-xl font-semibold text-slate-900">
+        História farnosti
+      </summary>
+
+      <div class="border-t border-slate-100 px-6 py-6 space-y-4 leading-relaxed text-slate-800">
+        <p>
+          Diecézny banskobystrický biskup Mons. Rudolf Baláž zriadil dňa
+          1. 11. 1990 farnosť Banská Bystrica – Sásová – Rudlová a zveril ju do
+          duchovnej správy rehoľnej spoločnosti Saleziáni don Bosca. Kostol
+          sv. Antona a Pavla je farským kostolom tejto farnosti. Prvým správcom
+          farnosti bol don Štefan Kovalík. Pod jeho vedením sa kostol upravil a
+          sprístupnil pre každodenné bohoslužby. Dovtedy boli bohoslužby len raz
+          týždenne.
+        </p>
+
+        <p>
+          V roku 1994 bol menovaný za farára don Vincent Feledik. Počas jeho
+          duchovnej správy bola v roku 1998 zavedená do kostola voda, základy
+          kostola boli zvonka izolované a voda zo strechy odvedená do
+          kanalizácie. Kovové okná sa nahradili drevenými dubovými. Starý
+          nefunkčný organ bol nahradený novým elektronickým.
+        </p>
+
+        <p>
+          V roku 2000 bola vykonaná rekonštrukcia vnútra kostola. Vymenila sa
+          elektroinštalácia, zaviedlo sa nové osvetlenie a ozvučenie kostola,
+          opravili sa lavice, vymenili sa schody vedúce na chór a podlaha na
+          chóre. Kostol bol zvnútra vymaľovaný. Oboje vchodové dvere boli
+          nahradené novými dubovými.
+        </p>
+
+        <p>
+          V interiéri bol so súhlasom Diecéznej liturgickej komisie na miesto
+          pôvodne umiestneného oltára sv. Žofie uložený bohostánok. Pod
+          bohostánkom sa upravila oltárna menza tak, aby sa vytvoril priestor
+          pre jasličky a Boží hrob.
+        </p>
+
+        <p>
+          V roku 2004 vznikla vyčlenením starej časti Sásovej, časti novej
+          Sásovej a Rudlovej nová farnosť pod názvom Banská Bystrica – Stará
+          Sásová zasvätená sv. Antonovi a Pavlovi, pustovníkom. Správcom sa stal
+          diecézny kňaz Peter Jurčík.
+        </p>
+      </div>
+    </details>
+
+    <!-- Kostol -->
+    <details class="mb-4 overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-slate-200">
+      <summary class="cursor-pointer list-none px-6 py-4 text-xl font-semibold text-slate-900">
+        Kostol
+      </summary>
+
+      <div class="border-t border-slate-100 px-6 py-6 space-y-4 leading-relaxed text-slate-800">
+        <p>
+          Kostol sv. Antona a Pavla pustovníkov v obci Sásová bol
+          pravdepodobne postavený v prvej polovici 14. storočia, prestavaný a
+          obohnaný múrom v 15. a začiatkom 16. storočia. Odpustková listina bola
+          vydaná v Avignone 13. februára 1350 na žiadosť Vavrinca, syna
+          zvolenského župana Mikuláša Sasa.
+        </p>
+
+        <p>
+          Obyvatelia obce sa živili prevažne poľnohospodárstvom, preto názov
+          obce „Ide Anthonio“ (1401) i zasvätenie kostola sv. Antonovi,
+          patrónovi poľnohospodárov.
+        </p>
+
+        <p>
+          Niektorí historici považujú kostolík v Sásovej za prvý farský kostol
+          pre kresťanov v okolí Banskej Bystrice.
+        </p>
+
+        <p>
+          Stavba kostola je jednoloďová gotická stavba s rovným uzáverom
+          presbytéria, sakristiou a vežou na západnej strane.
+        </p>
+
+        <p>
+          V kostole sa nachádzajú dva z pôvodne troch oltárov. Najstarší
+          maľovaný oltár sv. Žofie z roku 1440 je vystavený v Stredoslovenskom
+          múzeu v Banskej Bystrici.
+        </p>
+
+        <p>
+          Hlavný neskorogotický oltár sv. Antona a Pavla z roku 1500 patrí k
+          najvýznamnejším umeleckým pamiatkam regiónu.
+        </p>
+
+        <p>
+          Bočný neskorogotický oltár sv. Heleny a sv. Egídia z roku 1510 je
+          významným dielom neskorej gotiky.
+        </p>
+      </div>
+    </details>
+
+    <!-- Patróni farnosti -->
+    <details class="mb-4 overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-slate-200">
+      <summary class="cursor-pointer list-none px-6 py-4 text-xl font-semibold text-slate-900">
+        Patróni farnosti
+      </summary>
+
+      <div class="border-t border-slate-100 px-6 py-6 space-y-6 leading-relaxed text-slate-800">
+        <div>
+          <h3 class="mb-2 text-lg font-semibold text-slate-900">
+            Svätý Anton
+          </h3>
+
+          <p>
+            Svätý Anton (251 – 356) sa pokladá za zakladateľa kláštorného
+            života. Väčšinu života prežil v samote v Egypte, kde sa venoval
+            modlitbe, štúdiu a telesnej práci.
+          </p>
+
+          <p class="mt-3">
+            Jeho atribútmi sú zvonček a prasiatko pri nohách.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="mb-2 text-lg font-semibold text-slate-900">
+            Svätý Pavol Thébsky
+          </h3>
+
+          <p>
+            Svätý Pavol Thébsky (228 – 341) žil ako pustovník v samote medzi
+            Nílom a Červeným morom, kde zasvätil život Bohu.
+          </p>
+
+          <p class="mt-3">
+            Podľa tradície mu havran prinášal chlieb a po jeho smrti pomohli
+            vykopať hrob dva levy.
+          </p>
+        </div>
+      </div>
+    </details>
+
+    <!-- Fotogaléria a odkazy -->
+    <details class="overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-slate-200">
+      <summary class="cursor-pointer list-none px-6 py-4 text-xl font-semibold text-slate-900">
+        Fotogaléria a odkazy
+      </summary>
+
+      <div class="border-t border-slate-100 px-6 py-6">
+        <ul class="space-y-3 text-green-700">
+          <li>
+            <a
+              href="https://www.zonerama.com/starasasova/Album/5053400"
+              class="underline"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Fotogaléria – kostolný zvon
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="https://www.zonerama.com/starasasova/Album/5061689"
+              class="underline"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Fotogaléria – krížová cesta
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="http://apsida.sk/c/1398/banska-bystrica-sasova"
+              class="underline"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Článok o kostole na apsida.sk
+            </a>
+          </li>
+        </ul>
+      </div>
+    </details>
   </section>
 </Base>
