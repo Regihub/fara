@@ -1,18 +1,162 @@
 ---
-import Base from '../layouts/Base.astro';
-import Announcements from '../components/Announcements.astro';
+import Base from "../layouts/Base.astro";
+import Announcements from "../components/Announcements.astro";
 ---
 
-<Base title="Farnosť Stará Sásová">
-  <section class="px-4 pt-8 pb-4 text-center">
-    <h1 class="text-3xl font-bold text-slate-900">
-      Farnosť Stará Sásová
-    </h1>
+<Base title="Farnosť Banská Bystrica – Stará Sásová">
+  <!-- HERO -->
+  <section class="relative">
+    <div class="relative h-64 sm:h-80 md:h-[28rem] overflow-hidden">
+      <img
+        src="/images/kostol-stara-sasova.jpg"
+        alt="Kostol sv. Antona a Pavla pustovníkov"
+        class="w-full h-full object-cover"
+      />
 
-    <p class="mt-2 text-slate-600">
-      Vitajte na oficiálnej stránke našej farnosti.
-    </p>
+      <!-- prekrytie -->
+      <div class="absolute inset-0 bg-black/45"></div>
+
+      <!-- text -->
+      <div class="absolute inset-0 flex items-center justify-center px-6">
+        <div class="text-center text-white max-w-3xl">
+          <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
+            Farnosť Banská Bystrica – Stará Sásová
+          </h1>
+
+          <p class="mt-4 text-base sm:text-lg text-white/90 leading-relaxed">
+            Kostol sv. Antona a Pavla pustovníkov
+          </p>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <Announcements />
+  <!-- UVÍTANIE -->
+  <section class="px-5 py-8">
+    <div class="max-w-4xl mx-auto">
+      <div class="bg-white border border-gray-200 rounded-2xl shadow-sm p-6">
+        <h2 class="text-xl font-bold text-green-800 mb-3">
+          Vitajte na stránke našej farnosti
+        </h2>
+
+        <p class="text-gray-700 leading-relaxed">
+          Nájdete tu aktuálne farské oznamy, informácie o sviatostiach,
+          kontaktné údaje, históriu farnosti a ďalšie dôležité informácie
+          pre veriacich i návštevníkov.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SVÄTÉ OMŠE -->
+  <section class="px-5 pb-8">
+    <div class="max-w-4xl mx-auto">
+      <div class="bg-white border border-gray-200 rounded-2xl shadow-sm overflow-hidden">
+        <div class="bg-green-50 px-6 py-4 border-b border-green-100">
+          <h2 class="text-xl font-bold text-green-800">
+            Sväté omše
+          </h2>
+        </div>
+
+        <div class="p-6 space-y-4 text-gray-700">
+          <div>
+            <h3 class="font-semibold text-gray-900 mb-1">Pondelok – Sobota</h3>
+            <p>18:00</p>
+          </div>
+
+          <div>
+            <h3 class="font-semibold text-gray-900 mb-1">Nedeľa</h3>
+            <p>07:30 • 09:00 • 10:30 • 18:00</p>
+          </div>
+
+          <p class="text-sm text-gray-500 pt-2">
+            Presné časy a prípadné zmeny sledujte v aktuálnych farských oznamoch.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RÝCHLE ODKAZY -->
+  <section class="px-5 pb-8">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-xl font-bold text-green-800 mb-4">
+        Rýchle odkazy
+      </h2>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <a
+          href="/sviatosti"
+          class="bg-white border border-gray-200 rounded-2xl shadow-sm p-5 hover:shadow-md transition"
+        >
+          <h3 class="font-semibold text-green-800 mb-1">Sviatosti</h3>
+          <p class="text-sm text-gray-600">
+            Informácie o krste, Eucharistii, manželstve a ďalších sviatostiach.
+          </p>
+        </a>
+
+        <a
+          href="/kontakt"
+          class="bg-white border border-gray-200 rounded-2xl shadow-sm p-5 hover:shadow-md transition"
+        >
+          <h3 class="font-semibold text-green-800 mb-1">Kontakt</h3>
+          <p class="text-sm text-gray-600">
+            Kontaktné údaje, mapa a úradné informácie.
+          </p>
+        </a>
+
+        <a
+          href="/archiv"
+          class="bg-white border border-gray-200 rounded-2xl shadow-sm p-5 hover:shadow-md transition"
+        >
+          <h3 class="font-semibold text-green-800 mb-1">Archív oznamov</h3>
+          <p class="text-sm text-gray-600">
+            Staršie farské oznamy a história farnosti.
+          </p>
+        </a>
+
+        <a
+          href="/viac"
+          class="bg-white border border-gray-200 rounded-2xl shadow-sm p-5 hover:shadow-md transition"
+        >
+          <h3 class="font-semibold text-green-800 mb-1">Viac</h3>
+          <p class="text-sm text-gray-600">
+            Ulice farnosti a ďalšie doplnkové informácie.
+          </p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOTOGALÉRIA -->
+  <section class="px-5 pb-8">
+    <div class="max-w-4xl mx-auto">
+      <a
+        href="https://www.zonerama.com/starasasova/Album/5053400"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="block bg-white border border-gray-200 rounded-2xl shadow-sm p-6 hover:shadow-md transition"
+      >
+        <h2 class="text-xl font-bold text-green-800 mb-2">
+          Fotogaléria
+        </h2>
+
+        <p class="text-gray-700 leading-relaxed">
+          Pozrite si fotografie z liturgických slávení, podujatí a života
+          našej farnosti.
+        </p>
+      </a>
+    </div>
+  </section>
+
+  <!-- AKTUÁLNE OZNAMY -->
+  <section class="px-5 pb-16">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-xl font-bold text-green-800 mb-4">
+        Aktuálne farské oznamy
+      </h2>
+
+      <Announcements />
+    </div>
+  </section>
 </Base>
