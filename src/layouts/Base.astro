@@ -20,13 +20,13 @@ const { title = "Farnosť Stará Sásová" } = Astro.props;
     <!-- Hlavný obsah -->
     <div class="flex min-h-screen justify-center">
       <!--
-        Mobil: max-w-md (rovnaké ako doteraz)
-        Desktop: širší kontajner kvôli desktop menu
+        Mobil: max-w-md (ako doteraz)
+        Desktop: max-w-5xl (primeraná šírka)
       -->
-      <div class="w-full max-w-md lg:max-w-7xl bg-white">
+      <div class="w-full max-w-md lg:max-w-5xl bg-white">
         <!--
-          Mobile: spodný padding pre BottomNav
-          Desktop: bez paddingu
+          Mobile: priestor pre spodné menu
+          Desktop: bez spodného odsadenia
         -->
         <div class="pb-20 md:pb-0">
           <slot />
@@ -34,7 +34,7 @@ const { title = "Farnosť Stará Sásová" } = Astro.props;
       </div>
     </div>
 
-    <!-- Spodná navigácia iba pre mobil (už rieši BottomNav komponent) -->
+    <!-- Spodná navigácia pre mobil -->
     <BottomNav />
   </body>
 </html>
