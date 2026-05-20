@@ -37,9 +37,19 @@ const streets = [
   "Surovská",
   "Veterná"
 ];
+
+// zoradenie podľa abecedy (slovenské poradie)
+const sorted = [...streets].sort((a, b) =>
+  a.localeCompare(b, "sk")
+);
+
+// rozdelenie na dve polovice
+const middle = Math.ceil(sorted.length / 2);
+const leftColumn = sorted.slice(0, middle);
+const rightColumn = sorted.slice(middle);
 ---
 
-<Base>
+<Base title="Ulice farnosti">
   <section class="p-5 pb-16">
     <h1 class="text-3xl font-bold text-green-800 mb-3">
       Ulice farnosti
@@ -47,30 +57,43 @@ const streets = [
 
     <p class="text-gray-600 mb-6 leading-relaxed">
       Do Farnosti Banská Bystrica – Stará Sásová patria tieto ulice.
-      Ak bývate na niektorej z uvedených ulíc, patríte do našej farnosti.
     </p>
 
     <div class="bg-white border border-gray-200 rounded-2xl shadow-sm overflow-hidden">
       <div class="bg-green-50 px-4 py-3 border-b border-green-100">
         <h2 class="font-bold text-green-800">
-          Zoznam ulíc ({streets.length})
+          Zoznam ulíc ({sorted.length})
         </h2>
       </div>
 
       <div class="p-4">
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm text-gray-700">
-          {streets.map((street, index) => (
-            <div>
-              {index + 1}. {street}
-            </div>
-          ))}
+        <!-- Mobil: 1 stĺpec | Desktop: 2 stĺpce -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2 text-sm text-gray-700">
+          <!-- Ľavý stĺpec -->
+          <div class="space-y-2">
+            {leftColumn.map((street, index) => (
+              <div>
+                {index + 1}. {street}
+              </div>
+            ))}
+          </div>
+
+          <!-- Pravý stĺpec -->
+          <div class="space-y-2">
+            {rightColumn.map((street, index) => (
+              <div>
+                {middle + index + 1}. {street}
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>
 
     <div class="mt-6 bg-blue-50 border border-blue-100 rounded-2xl p-4">
       <p class="text-sm text-blue-900 leading-relaxed">
-        V prípade nejasností o príslušnosti k farnosti nás neváhajte kontaktovať.
+        Ak bývate na niektorej z uvedených ulíc, patríte do Farnosti
+        Banská Bystrica – Stará Sásová.
       </p>
     </div>
   </section>
