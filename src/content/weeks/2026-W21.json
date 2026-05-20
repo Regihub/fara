@@ -1,16 +1,16 @@
 {
-  "title": "Farské oznamy - 21. týždeň ",
+  "title": "Farské oznamy - 21. týždeň 2026",
   "weekNumber": 21,
   "year": 2026,
   "weekStart": "2026-05-18",
   "weekEnd": "2026-05-24",
-  "general": "* V stredu po svätej omši bude adorácia.\n* V sobotu bude upratovanie kostola.\n* nový oznam",
+  "general": "Tento týždeň upratuje skupina č.3",
   "masses": [
     {
       "day": "Pondelok",
       "date": "2026-05-18",
       "time": "17:00",
-      "intention": "za funkčné CMS",
+      "intention": "Za + manžela Dušana",
       "place": "",
       "note": ""
     },
@@ -18,7 +18,7 @@
       "day": "Utorok",
       "date": "2026-05-19",
       "time": "9:00",
-      "intention": "",
+      "intention": "Za uzdravenie syna a zdravie celej rodiny",
       "place": "",
       "note": ""
     },
@@ -26,7 +26,7 @@
       "day": "Streda",
       "date": "2026-05-20",
       "time": "17:00",
-      "intention": "",
+      "intention": "Na úmysel",
       "place": "",
       "note": ""
     },
@@ -34,7 +34,7 @@
       "day": "Štvrtok",
       "date": "2026-05-21",
       "time": "17:00",
-      "intention": "",
+      "intention": "Na úmysel",
       "place": "",
       "note": ""
     },
@@ -42,7 +42,7 @@
       "day": "Piatok",
       "date": "2026-05-22",
       "time": "17:00",
-      "intention": "",
+      "intention": "Na úmysel",
       "place": "",
       "note": ""
     },
@@ -50,7 +50,7 @@
       "day": "Sobota",
       "date": "2026-05-23",
       "time": "11:00",
-      "intention": "",
+      "intention": "Na úmysel",
       "place": "",
       "note": ""
     },
@@ -58,9 +58,9 @@
       "day": "Nedeľa",
       "date": "2026-05-24",
       "time": "9:00",
-      "intention": "",
+      "intention": "Za veriacich",
       "place": "",
-      "note": ""
+      "note": "Zoslanie Ducha svätého (Turíce)"
     }
   ]
 }
