@@ -1,0 +1,88 @@
+---
+import Base from "../../layouts/Base.astro";
+---
+
+<Base title="Fotogaléria">
+  <section class="p-5 pb-16">
+    <h1 class="text-3xl font-bold text-green-800 mb-3">
+      Fotogaléria
+    </h1>
+
+    <p class="text-gray-600 mb-6 leading-relaxed">
+      Fotografie zo života našej farnosti sú uložené na Zonerame.
+    </p>
+
+    <!-- Hlavné tlačidlo -->
+    <a
+      href="https://starasasova.zonerama.com"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="block w-full text-center bg-green-700 hover:bg-green-800 text-white font-semibold py-3 px-4 rounded-2xl shadow-sm transition mb-6"
+    >
+      Otvoriť fotogalériu
+    </a>
+
+    <div class="space-y-4">
+
+      <!-- Informácie -->
+      <div class="bg-white border border-gray-200 rounded-2xl shadow-sm p-5">
+        <h2 class="text-lg font-semibold text-green-800 mb-3">
+          Ako používať fotogalériu
+        </h2>
+
+        <div class="space-y-3 text-sm text-gray-700 leading-relaxed">
+          <p>
+            Fotografie sú zoradené podľa rokov, ktoré sa zobrazujú v lište pod
+            bežiacim pásom fotografií.
+          </p>
+
+          <p>
+            Po výbere roka si môžete zvoliť konkrétny album.
+          </p>
+
+          <p>
+            Ak je album označený zámkom, obsahuje fotografie osôb.
+            Pre vstup do takýchto albumov je potrebné heslo, ktoré možno
+            získať u správcu farnosti.
+          </p>
+
+          <p>
+            Dvojitým kliknutím na album otvoríte náhľady fotografií.
+          </p>
+
+          <p>
+            Dvojitým kliknutím na fotografiu ju zobrazíte v plnom rozlíšení.
+          </p>
+
+          <p>
+            Pomocou šípok vpravo a vľavo sa môžete presúvať medzi fotografiami.
+          </p>
+
+          <p>
+            Fotografie je možné stiahnuť jednotlivo alebo celý album naraz.
+          </p>
+
+          <p>
+            Staršie fotografie neprešli dodatočnou úpravou.
+          </p>
+        </div>
+      </div>
+
+      <!-- Zonerama info -->
+      <div class="bg-green-50 border border-green-100 rounded-2xl p-4">
+        <p class="text-sm text-green-900 leading-relaxed">
+          Adresa fotogalérie:
+          <a
+            href="https://starasasova.zonerama.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="font-semibold underline"
+          >
+            starasasova.zonerama.com
+          </a>
+        </p>
+      </div>
+
+    </div>
+  </section>
+</Base>
