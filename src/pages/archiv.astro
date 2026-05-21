@@ -15,43 +15,57 @@ const weeks = Object.values(files)
 ---
 
 <Base title="Archív farských oznamov">
-  <section class="px-4 py-8">
 
-    <!-- História farnosti a kostola -->
-    <a
-      href="/historia"
-      class="mb-8 block rounded-3xl bg-gradient-to-br from-green-50 to-emerald-100 p-6 shadow-sm ring-1 ring-green-200"
-    >
-      <h1 class="text-2xl font-bold text-green-900">
-        História farnosti a kostola
-      </h1>
+  <section class="page-section">
 
-      <p class="mt-2 text-sm leading-relaxed text-green-800">
-        Dejiny farnosti Stará Sásová, gotického kostola sv. Antona a Pavla
-        pustovníkov a príbehy patrónov našej farnosti.
-      </p>
+    <div class="page-container">
 
-      <p class="mt-4 font-medium text-green-700">
-        Zobraziť históriu →
-      </p>
-    </a>
-
-    <!-- Nadpis archívu -->
-    <h2 class="mb-6 text-2xl text-center font-bold text-slate-900">
-      Archív farských oznamov
-    </h2>
-
-    <!-- Zoznam týždňov -->
-    {weeks.map((week) => (
+      <!-- História -->
       <a
-        href={`/archiv/${week.year}-W${week.weekNumber}`}
-        class="block"
+        href="/historia"
+        class="card card-hover mb-8 block overflow-hidden"
       >
-        <AnnouncementCard
-          title={week.title}
-          date={`${week.weekStart} – ${week.weekEnd}`}
-        />
+        <div class="bg-gradient-to-br from-green-50 to-emerald-100 p-6">
+
+          <h1 class="card-title text-2xl mb-2">
+            História farnosti a kostola
+          </h1>
+
+          <p class="section-subtitle">
+            Dejiny farnosti Stará Sásová, gotického kostola
+            sv. Antona a Pavla pustovníkov a príbehy patrónov
+            našej farnosti.
+          </p>
+
+          <p class="mt-4 font-medium text-green-700">
+            Zobraziť históriu →
+          </p>
+
+        </div>
       </a>
-    ))}
+
+      <!-- Nadpis -->
+      <h2 class="page-title mb-6">
+        Archív farských oznamov
+      </h2>
+
+      <!-- Oznamy -->
+      <div class="space-y-4">
+        {weeks.map((week) => (
+          <a
+            href={`/archiv/${week.year}-W${week.weekNumber}`}
+            class="block"
+          >
+            <AnnouncementCard
+              title={week.title}
+              date={`${week.weekStart} – ${week.weekEnd}`}
+            />
+          </a>
+        ))}
+      </div>
+
+    </div>
+
   </section>
+
 </Base>

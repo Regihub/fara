@@ -53,13 +53,13 @@ const sviatosti = [
 ];
 ---
 
-<Base>
-  <main class="p-4 pb-16">
-    <h1 class="text-3xl font-bold text-green-800 mb-2">
+<Base title="Sviatosti">
+  <section class="page-section">
+    <h1 class="section-title mb-2">
       Sviatosti
     </h1>
 
-    <p class="text-gray-600 mb-6">
+    <p class="section-subtitle mb-6">
       Základné informácie o siedmich sviatostiach a potvrdení o krste.
     </p>
 
@@ -67,15 +67,19 @@ const sviatosti = [
       {sviatosti.map((item) => (
         <a
           href={item.href}
-          class="block bg-white border border-gray-200 rounded-2xl shadow-sm hover:shadow-md transition p-5"
+          class="card card-hover block p-5"
         >
           <div class="flex items-start gap-4">
-            <div class="text-3xl">{item.icon}</div>
+            <div class="text-3xl">
+              {item.icon}
+            </div>
+
             <div>
-              <h2 class="text-xl font-semibold text-green-800">
+              <h2 class="card-title">
                 {item.title}
               </h2>
-              <p class="text-gray-600 text-sm mt-1">
+
+              <p class="mt-1 text-sm text-gray-600">
                 {item.description}
               </p>
             </div>
@@ -83,5 +87,5 @@ const sviatosti = [
         </a>
       ))}
     </div>
-  </main>
+  </section>
 </Base>

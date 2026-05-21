@@ -35,30 +35,32 @@ const locations = {
 };
 ---
 
-<Base>
-  <section class="p-5 pb-16">
-    <h1 class="text-3xl font-bold text-green-800 mb-6">
+<Base title="Kontakt">
+  <section class="page-section">
+    <h1 class="section-title mb-6">
       Kontakt
     </h1>
 
     <div class="space-y-6">
 
       <!-- FARSKÝ ÚRAD -->
-      <div class="bg-white border border-gray-200 rounded-2xl shadow-sm overflow-hidden">
-        <div class="bg-green-50 px-4 py-3 border-b border-green-100">
+      <div class="card overflow-hidden">
+        <div class="border-b border-green-100 bg-green-50 px-4 py-3">
           <div class="flex items-center gap-3">
-            <Building2 class="w-5 h-5 text-green-700" />
-            <h2 class="font-bold text-green-800">
+            <Building2 class="h-5 w-5 text-green-700" />
+
+            <h2 class="card-title">
               {locations.fara.name}
             </h2>
           </div>
         </div>
 
-        <div class="p-4 space-y-4">
+        <div class="space-y-4 p-4">
 
           <!-- Adresa -->
           <div class="flex items-start gap-3">
-            <MapPin class="w-5 h-5 text-gray-400 mt-0.5 shrink-0" />
+            <MapPin class="mt-0.5 h-5 w-5 shrink-0 text-gray-400" />
+
             <p class="text-sm text-gray-700">
               {locations.fara.address}
             </p>
@@ -67,18 +69,18 @@ const locations = {
           <!-- Telefón -->
           <a
             href={`tel:${church.phone}`}
-            class="flex items-center gap-3 text-blue-600 font-medium"
+            class="flex items-center gap-3 font-medium text-blue-600"
           >
-            <Phone class="w-5 h-5 shrink-0" />
+            <Phone class="h-5 w-5 shrink-0" />
             <span>{church.phone}</span>
           </a>
 
           <!-- Email -->
           <a
             href={`mailto:${church.email}`}
-            class="flex items-center gap-3 text-blue-600 font-medium break-all"
+            class="flex items-center gap-3 break-all font-medium text-blue-600"
           >
-            <Mail class="w-5 h-5 shrink-0" />
+            <Mail class="h-5 w-5 shrink-0" />
             <span>{church.email}</span>
           </a>
 
@@ -87,27 +89,40 @@ const locations = {
             href="https://starasasova.fara.sk"
             target="_blank"
             rel="noopener noreferrer"
-            class="flex items-center gap-3 text-blue-600 font-medium break-all"
+            class="flex items-center gap-3 break-all font-medium text-blue-600"
           >
-            <Globe class="w-5 h-5 shrink-0" />
+            <Globe class="h-5 w-5 shrink-0" />
             <span>www.starasasova.fara.sk</span>
           </a>
 
-          <!-- Správca farnosti -->
+          <!-- Správca -->
           <div class="flex items-start gap-3">
-            <User class="w-5 h-5 text-gray-400 mt-0.5 shrink-0" />
-            <div class="text-sm text-gray-700">
-              <div class="font-medium">Správca farnosti</div>
-              <div>Egid Matuševský</div>
+            <User class="mt-0.5 h-5 w-5 shrink-0 text-gray-400" />
+
+            <div class="space-y-1 text-sm text-gray-700">
+              <div class="font-medium">
+                Správca farnosti
+              </div>
+
+              <div>
+                Egid Matuševský
+              </div>
             </div>
           </div>
 
           <!-- IČO / DIČ / IBAN -->
           <div class="flex items-start gap-3">
-            <CreditCard class="w-5 h-5 text-gray-400 mt-0.5 shrink-0" />
-            <div class="text-sm text-gray-700 space-y-1">
-              <div><strong>IČO:</strong> 37955314</div>
-              <div><strong>DIČ:</strong> 2022565600</div>
+            <CreditCard class="mt-0.5 h-5 w-5 shrink-0 text-gray-400" />
+
+            <div class="space-y-1 text-sm text-gray-700">
+              <div>
+                <strong>IČO:</strong> 37955314
+              </div>
+
+              <div>
+                <strong>DIČ:</strong> 2022565600
+              </div>
+
               <div class="break-all">
                 <strong>IBAN:</strong><br />
                 SK69 0900 0000 0004 3323 5972
@@ -121,7 +136,7 @@ const locations = {
               href={locations.fara.google}
               target="_blank"
               rel="noopener noreferrer"
-              class="bg-green-700 text-white text-center py-3 rounded-xl text-sm font-semibold hover:bg-green-800 transition"
+              class="button-primary"
             >
               Google Maps
             </a>
@@ -130,7 +145,7 @@ const locations = {
               href={locations.fara.mapycz}
               target="_blank"
               rel="noopener noreferrer"
-              class="bg-orange-500 text-white text-center py-3 rounded-xl text-sm font-semibold hover:bg-orange-600 transition"
+              class="rounded-xl bg-orange-500 py-3 text-center text-sm font-semibold text-white transition hover:bg-orange-600"
             >
               Mapy.cz
             </a>
@@ -139,11 +154,12 @@ const locations = {
       </div>
 
       <!-- KOSTOL -->
-      <div class="bg-white border border-gray-200 rounded-2xl shadow-sm overflow-hidden">
-        <div class="bg-green-50 px-4 py-3 border-b border-green-100">
+      <div class="card overflow-hidden">
+        <div class="border-b border-green-100 bg-green-50 px-4 py-3">
           <div class="flex items-center gap-3">
-            <Church class="w-5 h-5 text-green-700" />
-            <h2 class="font-bold text-green-800">
+            <Church class="h-5 w-5 text-green-700" />
+
+            <h2 class="card-title">
               {locations.kostol.name}
             </h2>
           </div>
@@ -151,18 +167,19 @@ const locations = {
 
         <div class="p-4">
           <div class="flex items-start gap-3 text-gray-700">
-            <MapPin class="w-5 h-5 text-gray-400 mt-0.5 shrink-0" />
+            <MapPin class="mt-0.5 h-5 w-5 shrink-0 text-gray-400" />
+
             <p class="text-sm">
               {locations.kostol.address}
             </p>
           </div>
 
-          <div class="grid grid-cols-2 gap-3 mt-5">
+          <div class="mt-5 grid grid-cols-2 gap-3">
             <a
               href={locations.kostol.google}
               target="_blank"
               rel="noopener noreferrer"
-              class="bg-green-700 text-white text-center py-3 rounded-xl text-sm font-semibold hover:bg-green-800 transition"
+              class="button-primary"
             >
               Google Maps
             </a>
@@ -171,7 +188,7 @@ const locations = {
               href={locations.kostol.mapycz}
               target="_blank"
               rel="noopener noreferrer"
-              class="bg-orange-500 text-white text-center py-3 rounded-xl text-sm font-semibold hover:bg-orange-600 transition"
+              class="rounded-xl bg-orange-500 py-3 text-center text-sm font-semibold text-white transition hover:bg-orange-600"
             >
               Mapy.cz
             </a>

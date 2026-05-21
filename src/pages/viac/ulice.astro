@@ -38,63 +38,92 @@ const streets = [
   "Veterná"
 ];
 
-// zoradenie podľa abecedy (slovenské poradie)
+// zoradenie podľa abecedy
 const sorted = [...streets].sort((a, b) =>
   a.localeCompare(b, "sk")
 );
 
-// rozdelenie na dve polovice
+// rozdelenie na polovice
 const middle = Math.ceil(sorted.length / 2);
+
 const leftColumn = sorted.slice(0, middle);
 const rightColumn = sorted.slice(middle);
 ---
 
 <Base title="Ulice farnosti">
-  <section class="p-5 pb-16">
-    <h1 class="text-3xl font-bold text-green-800 mb-3">
-      Ulice farnosti
-    </h1>
 
-    <p class="text-gray-600 mb-6 leading-relaxed">
-      Do Farnosti Banská Bystrica – Stará Sásová patria tieto ulice.
-    </p>
+  <section class="page-section">
 
-    <div class="bg-white border border-gray-200 rounded-2xl shadow-sm overflow-hidden">
-      <div class="bg-green-50 px-4 py-3 border-b border-green-100">
-        <h2 class="font-bold text-green-800">
-          Zoznam ulíc ({sorted.length})
-        </h2>
-      </div>
+    <div class="page-container">
 
-      <div class="p-4">
-        <!-- Mobil: 1 stĺpec | Desktop: 2 stĺpce -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2 text-sm text-gray-700">
-          <!-- Ľavý stĺpec -->
-          <div class="space-y-2">
-            {leftColumn.map((street, index) => (
-              <div>
-                {index + 1}. {street}
-              </div>
-            ))}
+      <!-- Nadpis -->
+      <h1 class="page-title mb-3">
+        Ulice farnosti
+      </h1>
+
+      <!-- Podnadpis -->
+      <p class="section-subtitle text-center mb-8">
+        Do Farnosti Banská Bystrica – Stará Sásová
+        patria tieto ulice.
+      </p>
+
+      <!-- Zoznam -->
+      <div class="card overflow-hidden">
+
+        <!-- Header -->
+        <div class="border-b border-green-100 bg-green-50 px-5 py-4">
+          <h2 class="card-title">
+            Zoznam ulíc ({sorted.length})
+          </h2>
+        </div>
+
+        <!-- Obsah -->
+        <div class="p-5">
+
+          <!-- Mobil: 1 stĺpec | Desktop: 2 -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-2 text-sm text-slate-700">
+
+            <!-- Ľavý -->
+            <div class="space-y-2">
+              {leftColumn.map((street, index) => (
+                <div class="leading-relaxed">
+                  <span class="font-medium text-green-800">
+                    {index + 1}.
+                  </span>{" "}
+                  {street}
+                </div>
+              ))}
+            </div>
+
+            <!-- Pravý -->
+            <div class="space-y-2">
+              {rightColumn.map((street, index) => (
+                <div class="leading-relaxed">
+                  <span class="font-medium text-green-800">
+                    {middle + index + 1}.
+                  </span>{" "}
+                  {street}
+                </div>
+              ))}
+            </div>
+
           </div>
 
-          <!-- Pravý stĺpec -->
-          <div class="space-y-2">
-            {rightColumn.map((street, index) => (
-              <div>
-                {middle + index + 1}. {street}
-              </div>
-            ))}
-          </div>
         </div>
       </div>
+
+      <!-- Info box -->
+      <div class="card mt-6 bg-blue-50 p-5">
+
+        <p class="text-sm text-blue-900 leading-relaxed">
+          Ak bývate na niektorej z uvedených ulíc,
+          patríte do Farnosti Banská Bystrica – Stará Sásová.
+        </p>
+
+      </div>
+
     </div>
 
-    <div class="mt-6 bg-blue-50 border border-blue-100 rounded-2xl p-4">
-      <p class="text-sm text-blue-900 leading-relaxed">
-        Ak bývate na niektorej z uvedených ulíc, patríte do Farnosti
-        Banská Bystrica – Stará Sásová.
-      </p>
-    </div>
   </section>
+
 </Base>

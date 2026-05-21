@@ -1,4 +1,11 @@
-/* RESET (ľahký, bez knižníc) */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =========================================
+   RESET
+========================================= */
+
 * {
   margin: 0;
   padding: 0;
@@ -6,33 +13,126 @@
 }
 
 html {
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
   -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
 }
 
 body {
-  background: #fff;
+  background: #f3f4f6; /* gray-100 */
   color: #111827; /* gray-900 */
   line-height: 1.5;
 }
 
-/* základné typografické štýly */
-h1, h2, h3 {
+/* =========================================
+   TYPOGRAFIA
+========================================= */
+
+h1,
+h2,
+h3 {
   line-height: 1.2;
 }
 
 h1 {
-  text-align: center;
   letter-spacing: -0.02em;
 }
 
-/* linky */
+/* =========================================
+   LINKY
+========================================= */
+
 a {
   text-decoration: none;
   color: inherit;
 }
 
-/* scroll padding pre mobile nav */
-main {
-  padding-bottom: 4rem;
+/* =========================================
+   LAYOUT
+========================================= */
+
+.page-section {
+  @apply px-4 py-8;
+}
+
+.page-section-mobile {
+  @apply p-5 pb-16;
+}
+
+.page-container {
+  @apply mx-auto max-w-4xl;
+}
+
+/* =========================================
+   CARDS
+========================================= */
+
+.card {
+  @apply rounded-3xl bg-white shadow-sm ring-1 ring-slate-200;
+}
+
+.card-hover {
+  @apply transition hover:shadow-md;
+}
+
+/* =========================================
+   TITLES
+========================================= */
+
+.page-title {
+  @apply text-3xl font-bold text-green-800 text-center;
+}
+
+.section-title {
+  @apply text-xl font-semibold text-green-800 text-center;
+}
+
+.card-title {
+  @apply text-lg font-semibold text-green-800;
+}
+
+/* =========================================
+   TEXT
+========================================= */
+
+.page-text {
+  @apply text-slate-600 leading-relaxed;
+}
+
+.section-subtitle {
+  @apply text-gray-600 leading-relaxed;
+}
+
+/* =========================================
+   NAVIGATION
+========================================= */
+
+.nav-link {
+  @apply px-4 py-2 rounded-xl text-sm font-medium transition;
+}
+
+.nav-link-active {
+  @apply bg-green-700 text-white shadow-sm;
+}
+
+.nav-link-inactive {
+  @apply text-slate-700 hover:bg-slate-100 hover:text-green-800;
+}
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.button-primary {
+  @apply rounded-xl bg-green-700 py-3 text-center text-sm font-semibold text-white transition hover:bg-green-800;
+}
+
+.button-secondary {
+  @apply bg-orange-500 text-white hover:bg-orange-600 transition;
 }

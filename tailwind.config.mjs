@@ -5,9 +5,9 @@ export default {
       colors: {
         church: {
           green: "#166534",
-        }
-      }
-    }
+        },
+      },
+    },
   },
   plugins: [],
-}
+};

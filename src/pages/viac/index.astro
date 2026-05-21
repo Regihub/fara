@@ -2,60 +2,58 @@
 import Base from "../../layouts/Base.astro";
 ---
 
-<Base>
-  <section class="p-5 pb-16">
-    <h1 class="text-3xl font-bold text-green-800 mb-3">
-      Viac
-    </h1>
+<Base title="Viac">
 
-    <p class="text-gray-600 mb-6 leading-relaxed">
-      Doplnkové informácie o našej farnosti.
-    </p>
+  <section class="page-section">
 
-    <div class="space-y-4">
+    <div class="page-container">
 
-      <!-- Ulice farnosti -->
-      <a
-        href="/viac/ulice"
-        class="block bg-white border border-gray-200 rounded-2xl shadow-sm p-5 hover:shadow-md transition"
-      >
-        <h2 class="text-lg font-semibold text-green-800 mb-1">
-          Ulice farnosti
-        </h2>
-        <p class="text-sm text-gray-600">
-          Zoznam ulíc, ktoré patria do Farnosti Banská Bystrica – Stará Sásová.
-        </p>
-      </a>
+      <!-- Nadpis -->
+      <h1 class="page-title mb-3">
+        Viac
+      </h1>
 
-      <!-- Fotogaléria -->
-<a
-  href="/viac/fotogaleria"
-  class="block bg-white border border-gray-200 rounded-2xl shadow-sm p-5 hover:shadow-md transition"
->
-  <h2 class="text-lg font-semibold text-green-800 mb-1">
-    Fotogaléria
-  </h2>
-  <p class="text-sm text-gray-600">
-    Fotografie zo života našej farnosti uložené na Zonerame.
-  </p>
-</a>
+      <!-- Podnadpis -->
+      <p class="section-subtitle text-center mb-8">
+        Doplnkové informácie o našej farnosti.
+      </p>
 
-      <!-- Možnosť ďalšieho rozšírenia -->
-      <!--
-      <a
-        href="/viac/nieco"
-        class="block bg-white border border-gray-200 rounded-2xl shadow-sm p-5 hover:shadow-md transition"
-      >
-        <h2 class="text-lg font-semibold text-green-800 mb-1">
-          Ďalšia stránka
-        </h2>
-        <p class="text-sm text-gray-600">
-          Krátky popis.
-        </p>
-      </a>
-      -->
-      
+      <!-- Karty -->
+      <div class="space-y-4">
+
+        <!-- Ulice -->
+        <a
+          href="/viac/ulice"
+          class="card card-hover block p-5"
+        >
+          <h2 class="card-title mb-1">
+            Ulice farnosti
+          </h2>
+
+          <p class="section-subtitle text-sm">
+            Zoznam ulíc, ktoré patria do Farnosti
+            Banská Bystrica – Stará Sásová.
+          </p>
+        </a>
+
+        <!-- Fotogaléria -->
+        <a
+          href="/viac/fotogaleria"
+          class="card card-hover block p-5"
+        >
+          <h2 class="card-title mb-1">
+            Fotogaléria
+          </h2>
+
+          <p class="section-subtitle text-sm">
+            Fotografie zo života farnosti uložené na Zonerame.
+          </p>
+        </a>
+
+      </div>
 
     </div>
+
   </section>
+
 </Base>
