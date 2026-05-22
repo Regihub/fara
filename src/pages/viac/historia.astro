@@ -1,249 +1,42 @@
----
-import Base from '../../layouts/Base.astro';
----
+<script>
+  const sections = document.querySelectorAll('details[name="historia"]');
 
-<Base title="História farnosti a kostola">
+  sections.forEach((detail) => {
+    const summary = detail.querySelector('summary');
 
-  <section class="page-section">
+    summary?.addEventListener('click', () => {
 
-    <h1 class="section-title mb-4">
-      História farnosti a kostola
-    </h1>
+      const wasOpen = detail.open;
 
-    <p class="section-subtitle mb-8 text-center">
-      Dejiny farnosti Stará Sásová, gotického kostola sv. Antona a Pavla
-      pustovníkov a príbehy patrónov našej farnosti.
-    </p>
+      setTimeout(() => {
 
-    <!-- História farnosti -->
-    <details
-      name="historia"
-      class="details-card mb-4"
-    >
-      <summary class="details-summary">
-        História farnosti
-      </summary>
-
-      <div class="details-content">
-
-        <p>
-          Diecézny banskobystrický biskup mons. Rudolf Baláž zriadil dňa
-          1.11.1990 farnosť Banská Bystrica - Sásová - Rudlová a zveril ju
-          do duchovnej správy rehoľnej spoločnosti Saleziáni don Bosca.
-          Kostol sv. Antona a Pavla je farským kostolom tejto farnosti.
-          Prvým správcom farnosti bol don Štefan Kovalík. Pod jeho vedením
-          sa kostol upravil a sprístupnil pre každodenné bohoslužby.
-          Dovtedy boli bohoslužby len raz týždenne.
-        </p>
-
-        <p>
-          V r. 1994 bol menovaný za farára don Vincent Feledik.
-          Počas jeho duchovnej správy bola v r.1998 zavedená do kostola voda,
-          základy kostola boli zvonka izolované a voda zo strechy odvedená
-          do kanalizácie. Kovové okná sa nahradili drevenými dubovými.
-          Starý nefunkčný organ bol nahradený novým elekronickým.
-        </p>
-
-        <p>
-          V roku 2000 bola vykonaná rekonštrukcia vnútra kostola.
-          Vymenila sa elektroinštalácia, zaviedlo sa nové osvetlenie
-          a ozvučenie kostola, opravili sa lavice, vymenili sa schody
-          vedúce na chór a podlaha na chóre. Kostol bol zvnútra vymaľovaný.
-          Oboje vchodové dvere boli nahradené novými dubovými.
-        </p>
-
-        <p>
-          V interiéri bol so súhlasom Diecéznej liturgickej komisie
-          na miesto pôvodne umiestneného oltára sv. Žofie uložený bohostánok.
-          Pod bohostánkom sa upravila oltárna menza tak, aby sa vytvoril
-          priestor pre jasličky a Boží hrob.
-        </p>
-
-        <p>
-          V roku 2004 vznikla vyčlenením starej časti Sásovej,
-          časti novej Sásovej a Rudlovej nová farnosť pod názvom
-          Banská Bystrica – Stará Sásová zasvätená sv. Antonovi a Pavlovi,
-          pustovníkom a správcom sa stal diecézny kňaz Peter Jurčík.
-        </p>
-
-      </div>
-    </details>
-
-    <!-- Kostol -->
-    <details
-      name="historia"
-      class="details-card mb-4"
-    >
-      <summary class="details-summary">
-        Kostol
-      </summary>
-
-      <div class="details-content">
-
-        <p>
-          Kostol sv. Antona a Pavla pustovníkov v obci Sásová bol
-          pravdepodobne postavený v prvej polovici 14.storočia,
-          prestavaný a obohnaný múrom v 15. a začiatkom 16.storočia.
-          Odpustková listina bola vydaná v Avignone 13.februára v roku 1350
-          na žiadosť Vavrinca, syna zvolenského župana Mikuláša Sasa.
-          Obyvatelia obce sa živili prevažne poľnohospodárstvom,
-          preto pomenovanie obce Ide Anthonio r.1401 i zasvätenie kostola
-          sv. Antonovi, ktorý bol patrónom poľnohospodárov.
-        </p>
-
-        <p>
-          Hoci história kostola nie je jednoznačná a historické dokumenty
-          nejednotné, zaujímavosťou môže byť, že literatúra niektorých
-          maďarských historikov napr. Ipolyi, považuje kostolík v Sásovej
-          za prvý farský kostol pre kresťanov v okolí Banskej Bystrice.
-        </p>
-
-        <p>
-          Stavba kostola má rozmery starších kaplniek a je stavaná
-          v starom gotickom slohu. Je to jednoloďová stavba s rovným
-          uzáverom presbytéria, priľahlou sakristiou a do telesa vstavanou
-          vežou na západnej strane.
-        </p>
-
-        <p>
-          Presbytérium je zaklenuté neskorogotickou klenbou
-          s prečnievajúcimi pretínanými rebrami.
-        </p>
-
-      </div>
-    </details>
-
-    <!-- Patróni -->
-    <details
-      name="historia"
-      class="details-card mb-4"
-    >
-      <summary class="details-summary">
-        Patróni farnosti
-      </summary>
-
-      <div class="details-content">
-
-        <p>
-          Patrónmi sásovského kostola sú svätý Anton a svätý Pavol.
-          Obaja pochádzajú z Egypta.
-        </p>
-
-        <div class="space-y-3">
-
-          <h3 class="details-heading">
-            Svätý Anton
-          </h3>
-
-          <p>
-            Svätý Anton (251–356) sa pokladá za zakladateľa kláštorného
-            života, hoci väčšinu života prežil v samote na území Dolného
-            Egypta, kde sa venoval modlitbe, štúdiu a telesnej práci.
-          </p>
-
-          <p>
-            Atribútom sv. Antona je zvonček a prasiatko pri nohách.
-          </p>
-
-        </div>
-
-        <div class="space-y-3">
-
-          <h3 class="details-heading">
-            Svätý Pavol Thébsky
-          </h3>
-
-          <p>
-            Svätý Pavol Thébsky (228–341) utiekol v čase prenasledovania
-            kresťanov pred úradmi.
-          </p>
-
-          <p>
-            Krátko pred smrťou ho z Božieho vnuknutia navštívil sv. Anton.
-          </p>
-
-        </div>
-
-      </div>
-    </details>
-
-    <!-- Odkazy -->
-    <details
-      name="historia"
-      class="details-card"
-    >
-      <summary class="details-summary">
-        Fotogaléria a odkazy
-      </summary>
-
-      <div class="details-content">
-
-        <ul class="details-links">
-
-          <li>
-            <a
-              href="https://www.zonerama.com/starasasova/Album/5053400"
-              class="underline"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Fotogaléria – kostolný zvon
-            </a>
-          </li>
-
-          <li>
-            <a
-              href="https://www.zonerama.com/starasasova/Album/5061689"
-              class="underline"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Fotogaléria – krížová cesta
-            </a>
-          </li>
-
-          <li>
-            <a
-              href="http://apsida.sk/c/1398/banska-bystrica-sasova"
-              class="underline"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Článok o kostole na apsida.sk
-            </a>
-          </li>
-
-        </ul>
-
-      </div>
-    </details>
-
-  </section>
-
-  <script>
-    const sections = document.querySelectorAll('details[name="historia"]');
-
-    sections.forEach((detail) => {
-      const summary = detail.querySelector('summary');
-
-      summary?.addEventListener('click', () => {
-        setTimeout(() => {
-          const isDesktop = window.innerWidth >= 1024;
-
-          const offset = isDesktop ? 90 : 20;
-
-          const y =
-            detail.getBoundingClientRect().top +
-            window.scrollY -
-            offset;
-
+        // keď sa kapitola ZATVORILA
+        if (wasOpen) {
           window.scrollTo({
-            top: y,
+            top: 0,
             behavior: 'smooth'
           });
-        }, 150);
-      });
-    });
-  </script>
 
-</Base>
+          return;
+        }
+
+        // keď sa kapitola OTVORILA
+        const isDesktop = window.innerWidth >= 1024;
+
+        const offset = isDesktop ? 90 : 20;
+
+        const y =
+          detail.getBoundingClientRect().top +
+          window.scrollY -
+          offset;
+
+        window.scrollTo({
+          top: y,
+          behavior: 'smooth'
+        });
+
+      }, 150);
+
+    });
+  });
+</script>
