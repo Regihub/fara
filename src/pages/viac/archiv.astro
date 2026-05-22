@@ -1,0 +1,47 @@
+---
+import Base from '../../layouts/Base.astro';
+import AnnouncementCard from '../../components/AnnouncementCard.astro';
+
+const files = import.meta.glob('../../content/weeks/*.json', {
+  eager: true
+});
+
+const weeks = Object.values(files)
+  .map((file) => file.default)
+  .sort((a, b) => {
+    if (a.year !== b.year) return b.year - a.year;
+    return b.weekNumber - a.weekNumber;
+  });
+---
+
+<Base title="Archív farských oznamov">
+
+  <section class="page-section">
+
+    <div class="page-container">
+
+    <!-- Nadpis -->
+      <h2 class="page-title mb-6">
+        Archív farských oznamov
+      </h2>
+
+      <!-- Oznamy -->
+      <div class="space-y-4">
+        {weeks.map((week) => (
+          <a
+            href={`/archiv/${week.year}-W${week.weekNumber}`}
+            class="block"
+          >
+            <AnnouncementCard
+              title={week.title}
+              date={`${week.weekStart} – ${week.weekEnd}`}
+            />
+          </a>
+        ))}
+      </div>
+
+    </div>
+
+  </section>
+
+</Base>
