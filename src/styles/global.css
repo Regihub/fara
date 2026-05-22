@@ -106,7 +106,7 @@ a {
 }
 
 .section-subtitle {
-  @apply text-gray-600 leading-relaxed text-center;
+  @apply text-gray-600 leading-relaxed;
 }
 
 /* =========================================
