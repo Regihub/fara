@@ -146,7 +146,7 @@ a {
 }
 
 .details-summary {
-  @apply cursor-pointer list-none px-6 py-4 text-xl font-semibold text-slate-900;
+  @apply cursor-pointer list-none px-6 py-4 text-base font-semibold text-slate-900;
 }
 
 .details-content {
