@@ -86,7 +86,7 @@ a {
 ========================================= */
 
 .page-title {
-  @apply text-3xl font-bold text-green-800 text-center;
+  @apply text-xl font-bold text-green-800 text-center;
 }
 
 .section-title {
