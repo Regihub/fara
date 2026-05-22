@@ -58,11 +58,11 @@ a {
 ========================================= */
 
 .page-section {
-  @apply px-4 py-8;
+  @apply px-4 pt-4 py-8;
 }
 
 .page-section-mobile {
-  @apply p-5 pb-16;
+  @apply p-5 pt-8 pb-16;
 }
 
 .page-container {
