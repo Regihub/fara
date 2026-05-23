@@ -169,15 +169,20 @@ const locations = {
 
                     <strong>IBAN:</strong><br />
 
-                    <span id="iban-text">
+                    <button
+                      type="button"
+                      id="copy-iban"
+                      class="cursor-pointer text-left font-medium text-green-700 transition hover:text-green-800"
+                      aria-label="Kopírovať IBAN"
+                    >
                       SK69 0900 0000 0004 3323 5972
-                    </span>
+                    </button>
 
                   </div>
 
                   <button
                     type="button"
-                    id="copy-iban"
+                    id="copy-iban-icon"
                     class="mt-5 shrink-0 rounded-lg p-2 text-gray-400 transition hover:bg-gray-100 hover:text-green-700"
                     aria-label="Kopírovať IBAN"
                   >
@@ -311,7 +316,8 @@ const locations = {
 
   <script>
 
-    const copyBtn = document.getElementById('copy-iban');
+    const ibanBtn = document.getElementById('copy-iban');
+    const iconBtn = document.getElementById('copy-iban-icon');
 
     const copyIcon = `
       <svg
@@ -335,7 +341,7 @@ const locations = {
       </svg>
     `;
 
-    copyBtn?.addEventListener('click', async () => {
+    async function copyIBAN() {
 
       const iban = 'SK6909000000000433235972';
 
@@ -343,10 +349,10 @@ const locations = {
 
         await navigator.clipboard.writeText(iban);
 
-        copyBtn.innerHTML = '✓';
+        iconBtn.innerHTML = '✓';
 
         setTimeout(() => {
-          copyBtn.innerHTML = copyIcon;
+          iconBtn.innerHTML = copyIcon;
         }, 1500);
 
       } catch (err) {
@@ -355,7 +361,10 @@ const locations = {
 
       }
 
-    });
+    }
+
+    ibanBtn?.addEventListener('click', copyIBAN);
+    iconBtn?.addEventListener('click', copyIBAN);
 
   </script>
 
