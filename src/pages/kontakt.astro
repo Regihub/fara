@@ -43,6 +43,7 @@ const locations = {
 
           <!-- Header -->
           <div class="border-b border-green-100 bg-green-50 px-4 py-3">
+
             <div class="flex items-center gap-3">
 
               <span class="text-lg">
@@ -54,6 +55,7 @@ const locations = {
               </h2>
 
             </div>
+
           </div>
 
           <!-- Content -->
@@ -161,23 +163,48 @@ const locations = {
                 </div>
 
                 <!-- IBAN -->
-                <div class="flex items-start gap-2">
+                <div class="flex items-center gap-2">
 
                   <div class="break-all">
+
                     <strong>IBAN:</strong><br />
 
                     <span id="iban-text">
                       SK69 0900 0000 0004 3323 5972
                     </span>
+
                   </div>
 
                   <button
                     type="button"
                     id="copy-iban"
-                    class="mt-1 rounded-lg p-2 text-gray-500 transition hover:bg-gray-100 hover:text-green-700"
+                    class="mt-5 shrink-0 rounded-lg p-2 text-gray-400 transition hover:bg-gray-100 hover:text-green-700"
                     aria-label="Kopírovať IBAN"
                   >
-                    📋
+
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      class="h-5 w-5"
+                    >
+
+                      <rect
+                        x="9"
+                        y="9"
+                        width="13"
+                        height="13"
+                        rx="2"
+                      />
+
+                      <path
+                        d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"
+                      />
+
+                    </svg>
+
                   </button>
 
                 </div>
@@ -218,6 +245,7 @@ const locations = {
 
           <!-- Header -->
           <div class="border-b border-green-100 bg-green-50 px-4 py-3">
+
             <div class="flex items-center gap-3">
 
               <span class="text-lg">
@@ -229,6 +257,7 @@ const locations = {
               </h2>
 
             </div>
+
           </div>
 
           <!-- Content -->
@@ -281,7 +310,30 @@ const locations = {
   </section>
 
   <script>
+
     const copyBtn = document.getElementById('copy-iban');
+
+    const copyIcon = `
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        class="h-5 w-5"
+      >
+        <rect
+          x="9"
+          y="9"
+          width="13"
+          height="13"
+          rx="2"
+        />
+        <path
+          d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"
+        />
+      </svg>
+    `;
 
     copyBtn?.addEventListener('click', async () => {
 
@@ -291,10 +343,10 @@ const locations = {
 
         await navigator.clipboard.writeText(iban);
 
-        copyBtn.textContent = '✓';
+        copyBtn.innerHTML = '✓';
 
         setTimeout(() => {
-          copyBtn.textContent = '📋';
+          copyBtn.innerHTML = copyIcon;
         }, 1500);
 
       } catch (err) {
@@ -304,6 +356,7 @@ const locations = {
       }
 
     });
+
   </script>
 
 </Base>
