@@ -160,9 +160,26 @@ const locations = {
                   <strong>DIČ:</strong> 2022565600
                 </div>
 
-                <div class="break-all">
-                  <strong>IBAN:</strong><br />
-                  SK69 0900 0000 0004 3323 5972
+                <!-- IBAN -->
+                <div class="flex items-start gap-2">
+
+                  <div class="break-all">
+                    <strong>IBAN:</strong><br />
+
+                    <span id="iban-text">
+                      SK69 0900 0000 0004 3323 5972
+                    </span>
+                  </div>
+
+                  <button
+                    type="button"
+                    id="copy-iban"
+                    class="mt-1 rounded-lg p-2 text-gray-500 transition hover:bg-gray-100 hover:text-green-700"
+                    aria-label="Kopírovať IBAN"
+                  >
+                    📋
+                  </button>
+
                 </div>
 
               </div>
@@ -262,5 +279,31 @@ const locations = {
     </div>
 
   </section>
+
+  <script>
+    const copyBtn = document.getElementById('copy-iban');
+
+    copyBtn?.addEventListener('click', async () => {
+
+      const iban = 'SK6909000000000433235972';
+
+      try {
+
+        await navigator.clipboard.writeText(iban);
+
+        copyBtn.textContent = '✓';
+
+        setTimeout(() => {
+          copyBtn.textContent = '📋';
+        }, 1500);
+
+      } catch (err) {
+
+        console.error('Kopírovanie zlyhalo', err);
+
+      }
+
+    });
+  </script>
 
 </Base>
