@@ -4,29 +4,29 @@
   "year": 2026,
   "weekStart": "2026-05-25",
   "weekEnd": "2026-05-31",
-  "general": "Tento týždeň upratuje skupina číslo ",
+  "general": "Tento týždeň upratuje skupina číslo 4",
   "masses": [
     {
       "day": "Pondelok",
       "date": "2026-05-25",
       "time": "17:00",
-      "intention": "",
+      "intention": "Za + brata Jána",
       "place": "",
-      "note": ""
+      "note": "Preblahoslavenej Panny Márie, Matky Cirkvi"
     },
     {
       "day": "Utorok",
       "date": "2026-05-26",
       "time": "09:00",
-      "intention": "",
+      "intention": "Za Božiu pomoc pri skúškach",
       "place": "",
-      "note": ""
+      "note": "Sv. Filipa Nériho, kňaza"
     },
     {
       "day": "Streda",
       "date": "2026-05-27",
       "time": "17:00",
-      "intention": "",
+      "intention": "Na úmysel",
       "place": "",
       "note": ""
     },
@@ -34,15 +34,15 @@
       "day": "Štvrtok",
       "date": "2026-05-28",
       "time": "17:00",
-      "intention": "",
+      "intention": "Na úmysel",
       "place": "",
-      "note": ""
+      "note": "Nášho Pána Ježiša Krista, Najvyššieho a Večného Kňaza, sviatok"
     },
     {
       "day": "Piatok",
       "date": "2026-05-29",
-      "time": "17:00",
-      "intention": "",
+      "time": "09:00",
+      "intention": "Na úmysel",
       "place": "",
       "note": ""
     },
@@ -50,7 +50,7 @@
       "day": "Sobota",
       "date": "2026-05-30",
       "time": "08:00",
-      "intention": "",
+      "intention": "Za veriacich",
       "place": "",
       "note": ""
     },
@@ -58,9 +58,9 @@
       "day": "Nedeľa",
       "date": "2026-05-31",
       "time": "09:00",
-      "intention": "",
+      "intention": "Za + manžela Štefana 2.výročie",
       "place": "",
-      "note": ""
+      "note": "Nedeľa Najsvätejšej Trojice"
     }
   ]
 }
