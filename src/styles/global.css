@@ -138,11 +138,11 @@ a {
 }
 
 .button-google {
-  @apply inline-flex items-center justify-center gap-2 rounded-xl bg-blue-600 px-4 py-1 text-center text-sm font-semibold text-white transition hover:bg-blue-700;
+  @apply inline-flex items-center justify-center gap-2 rounded-xl bg-blue-600 px-4 py-2 text-center text-sm font-semibold text-white transition hover:bg-blue-700;
 }
 
 .button-mapycz {
-  @apply inline-flex items-center justify-center gap-2 rounded-xl bg-green-700 px-4 py-1.5 text-center text-sm font-semibold text-white transition hover:bg-green-800;
+  @apply inline-flex items-center justify-center gap-2 rounded-xl bg-green-700 px-4 py-2 text-center text-sm font-semibold text-white transition hover:bg-green-800;
 }
 
 .button-waze {
