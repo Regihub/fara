@@ -1,7 +1,6 @@
 ---
 import { getLatestWeek } from '../lib/getLatestWeek';
 import { formatDate } from '../lib/formatDate';
-
 import defaultMasses from '../data/masses.json';
 
 const week = Astro.props.week || await getLatestWeek();
@@ -16,33 +15,10 @@ const {
   masses = []
 } = week;
 
-/* ---------------------------------------
-   NORMALIZÁCIA DŇA
---------------------------------------- */
-
-function normalizeDay(day) {
-  return day
-    ?.toLowerCase()
-    .trim()
-    .replace('pondelok', 'pondelok')
-    .replace('utorok', 'utorok')
-    .replace('streda', 'streda')
-    .replace('štvrtok', 'štvrtok')
-    .replace('piatok', 'piatok')
-    .replace('sobota', 'sobota')
-    .replace('nedeľa', 'nedeľa');
-}
-
-/* ---------------------------------------
-   ŠTANDARDNÉ OMŠE
---------------------------------------- */
-
-const standardMasses = Object.fromEntries(
-  defaultMasses.map((m) => [
-    normalizeDay(m.day),
-    m.time
-  ])
-);
+// Normalizácia času (9:00 = 09:00)
+const normalizeTime = (time) => {
+  return time.replace(/^0/, '');
+};
 ---
 
 <section class="py-2">
@@ -87,12 +63,18 @@ const standardMasses = Object.fromEntries(
 
       {masses.map((mass) => {
 
-        const standardTime =
-          standardMasses[normalizeDay(mass.day)];
+        // Nájde štandardnú omšu podľa dňa
+        const matchedMass = defaultMasses.find(
+          (m) =>
+            m.day.toLowerCase() ===
+            mass.day.toLowerCase()
+        );
 
+        // Porovná čas
         const isDifferentTime =
-          standardTime &&
-          standardTime !== mass.time;
+          matchedMass &&
+          normalizeTime(matchedMass.time) !==
+            normalizeTime(mass.time);
 
         return (
           <div
@@ -107,15 +89,20 @@ const standardMasses = Object.fromEntries(
             <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1 sm:gap-4">
 
               <!-- Deň a čas -->
-              <div
-                class:list={[
-                  'font-semibold',
-                  isDifferentTime
-                    ? 'text-red-600'
-                    : 'text-slate-900'
-                ]}
-              >
-                {mass.day} • {mass.time}
+              <div class="font-semibold text-slate-900">
+
+                {mass.day} •{' '}
+
+                <span
+                  class:list={[
+                    isDifferentTime
+                      ? 'text-red-600'
+                      : 'text-slate-900'
+                  ]}
+                >
+                  {mass.time}
+                </span>
+
               </div>
 
               <!-- Miesto -->
