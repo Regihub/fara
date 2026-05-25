@@ -1,7 +1,8 @@
 ---
 import { getLatestWeek } from '../lib/getLatestWeek';
 import { formatDate } from '../lib/formatDate';
-import massesData from '../data/masses.json';
+
+import defaultMasses from '../data/masses.json';
 
 const week = Astro.props.week || await getLatestWeek();
 
@@ -15,18 +16,33 @@ const {
   masses = []
 } = week;
 
+/* ---------------------------------------
+   NORMALIZÁCIA DŇA
+--------------------------------------- */
 
-function isSpecialTime(mass) {
-  const standard = massesData.find(
-    (m) =>
-      m.day === mass.day &&
-      m.place === mass.place
-  );
-
-  if (!standard) return false;
-
-  return standard.time !== mass.time;
+function normalizeDay(day) {
+  return day
+    ?.toLowerCase()
+    .trim()
+    .replace('pondelok', 'pondelok')
+    .replace('utorok', 'utorok')
+    .replace('streda', 'streda')
+    .replace('štvrtok', 'štvrtok')
+    .replace('piatok', 'piatok')
+    .replace('sobota', 'sobota')
+    .replace('nedeľa', 'nedeľa');
 }
+
+/* ---------------------------------------
+   ŠTANDARDNÉ OMŠE
+--------------------------------------- */
+
+const standardMasses = Object.fromEntries(
+  defaultMasses.map((m) => [
+    normalizeDay(m.day),
+    m.time
+  ])
+);
 ---
 
 <section class="py-2">
@@ -45,7 +61,6 @@ function isSpecialTime(mass) {
   <!-- Všeobecné oznamy -->
   {general && general.trim() && (
     <section class="card mb-5 p-6">
-
       <h2 class="mb-4 text-xl font-semibold text-green-800 text-center">
         Všeobecné oznamy
       </h2>
@@ -54,7 +69,6 @@ function isSpecialTime(mass) {
         class="leading-relaxed text-slate-800"
         set:html={general.replace(/\n/g, '<br>')}
       />
-
     </section>
   )}
 
@@ -62,72 +76,74 @@ function isSpecialTime(mass) {
   <section class="card overflow-hidden">
 
     <!-- Header -->
-    <div class="border-b border-slate-200 bg-slate-50 px-6 py-4">
-
+    <div class="border-b border-slate-200 px-6 py-4 bg-slate-50">
       <h2 class="text-xl font-semibold text-green-800 text-center">
         Sväté omše
       </h2>
-
     </div>
 
     <!-- Zoznam omší -->
     <div class="divide-y divide-slate-100">
 
-      {masses.map((mass) => (
+      {masses.map((mass) => {
 
-        <div
-          class:list={[
-            'px-6 py-4 transition-colors',
-            mass.date === today &&
-              'bg-green-50 border-l-4 border-green-400'
-          ]}
-        >
+        const standardTime =
+          standardMasses[normalizeDay(mass.day)];
 
-          <!-- Horný riadok -->
-          <div class="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between sm:gap-4">
+        const isDifferentTime =
+          standardTime &&
+          standardTime !== mass.time;
 
-            <!-- Deň a čas -->
-            <div class="font-semibold text-slate-900">
+        return (
+          <div
+            class:list={[
+              'px-6 py-4 transition-colors',
+              mass.date === today &&
+                'bg-green-50 border-l-4 border-green-400'
+            ]}
+          >
 
-              {mass.day} •
+            <!-- Horný riadok -->
+            <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1 sm:gap-4">
 
-              <span
+              <!-- Deň a čas -->
+              <div
                 class:list={[
-                  isSpecialTime(mass) &&
-                    'font-bold text-red-600'
+                  'font-semibold',
+                  isDifferentTime
+                    ? 'text-red-600'
+                    : 'text-slate-900'
                 ]}
               >
-                {mass.time}
-              </span>
+                {mass.day} • {mass.time}
+              </div>
+
+              <!-- Miesto -->
+              {mass.place && (
+                <div class="text-sm sm:text-base text-slate-600 sm:text-right">
+                  {mass.place}
+                </div>
+              )}
 
             </div>
 
-            <!-- Miesto -->
-            {mass.place && (
-              <div class="text-sm text-slate-600 sm:text-right sm:text-base">
-                {mass.place}
+            <!-- Poznámka -->
+            {mass.note && (
+              <div class="mt-2 text-sm text-green-700 leading-relaxed">
+                {mass.note}
+              </div>
+            )}
+
+            <!-- Úmysel -->
+            {mass.intention && (
+              <div class="mt-2 text-sm italic text-slate-700 leading-relaxed">
+                {mass.intention}
               </div>
             )}
 
           </div>
-
-          <!-- Poznámka -->
-          {mass.note && (
-            <div class="mt-2 text-sm leading-relaxed text-green-700">
-              {mass.note}
-            </div>
-          )}
-
-          <!-- Úmysel -->
-          {mass.intention && (
-            <div class="mt-2 text-sm italic leading-relaxed text-slate-700">
-              {mass.intention}
-            </div>
-          )}
-
-        </div>
-
-      ))}
+        );
+      })}
 
     </div>
 
