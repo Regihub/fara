@@ -137,6 +137,14 @@ a {
   @apply bg-orange-500 text-white hover:bg-orange-600 transition;
 }
 
+.button-google {
+  @apply rounded-xl bg-blue-700 py-3 text-center text-sm font-semibold text-white transition hover:bg-blue-800;
+}
+
+.button-mapycz {
+  @apply rounded-xl bg-green-700 py-3 text-center text-sm font-semibold text-white transition hover:bg-green-800;
+}
+
 /* =========================================
    DETAILS / ACCORDION
 ========================================= */
