@@ -2,93 +2,141 @@
 import Base from "../../layouts/Base.astro";
 ---
 
-<Base>
-  <main class="p-4 pb-16">
-    <a
-      href="/sviatosti"
-      class="inline-block mb-4 text-green-700 font-medium"
-    >
-      ← Späť na sviatosti
-    </a>
+<Base title="Sviatosť manželstva">
 
-    <h1 class="text-3xl font-bold text-green-800 mb-6">
-      Sviatosť manželstva
-    </h1>
+  <section class="page-section">
 
-    <div class="space-y-8 text-gray-800 leading-relaxed">
+    <div class="page-container">
 
-      <!-- Úvod -->
-      <section>
-        <p>
-          Manželstvo je sviatosť, v ktorej muž a žena
-          slobodne vytvárajú trvalé spoločenstvo života
-          a lásky.
-        </p>
-      </section>
+      <!-- Späť -->
+      <a
+        href="/sviatosti"
+        class="inline-block mb-4 font-medium text-green-700"
+      >
+        ← Späť na sviatosti
+      </a>
 
-      <!-- Podstatné vlastnosti -->
-      <section>
-        <h2 class="text-xl font-semibold text-green-800 mb-3">
-          Podstatné vlastnosti manželstva
-        </h2>
-        <ul class="list-disc pl-6 space-y-2">
-          <li>Jednota</li>
-          <li>Nerozlučiteľnosť</li>
-          <li>Vzájomná vernosť</li>
-          <li>Otvorenosť pre prijatie detí</li>
-        </ul>
-      </section>
+      <!-- Nadpis -->
+      <h1 class="page-title mb-6">
+        Sviatosť manželstva
+      </h1>
 
-      <!-- Účinky -->
-      <section>
-        <h2 class="text-xl font-semibold text-green-800 mb-3">
-          Účinky sviatosti
-        </h2>
-        <ul class="list-disc pl-6 space-y-2">
-          <li>Trvalý zväzok muža a ženy.</li>
-          <li>Milosť na vernosť a vzájomnú lásku.</li>
-          <li>Pomoc pri prekonávaní životných ťažkostí.</li>
-          <li>Posvätenie rodinného života.</li>
-        </ul>
-      </section>
+      <!-- Obsah -->
+      <div class="details-card p-6">
 
-      <!-- Príprava -->
-      <section>
-        <h2 class="text-xl font-semibold text-green-800 mb-3">
-          Predmanželská príprava
-        </h2>
-        <p class="mb-3">
-          Snúbenci sa majú prihlásiť na farskom úrade
-          minimálne 3 mesiace pred plánovaným sobášom.
-        </p>
-        <p>
-          Súčasťou prípravy je rozhovor s kňazom
-          a absolvovanie predmanželskej náuky.
-        </p>
-      </section>
+        <div class="space-y-8 page-text">
 
-      <!-- Potrebné doklady -->
-      <section>
-        <h2 class="text-xl font-semibold text-green-800 mb-3">
-          Potrebné doklady
-        </h2>
-        <ul class="list-disc pl-6 space-y-2">
-          <li>Zápisnica z matriky.</li>
-          <li>Rodné listy.</li>
-          <li>Občianske preukazy.</li>
-          <li>Krstné listy (nie staršie ako 3 mesiace).</li>
-          <li>Údaje o svedkoch.</li>
-        </ul>
-      </section>
+          <!-- Úvod -->
+          <section>
 
-      <!-- Poznámka -->
-      <section class="bg-green-50 border border-green-200 rounded-xl p-4">
-        <p class="text-sm text-gray-700">
-          Termín sobáša si rezervujte čo najskôr,
-          ideálne niekoľko mesiacov vopred.
-        </p>
-      </section>
+            <p>
+              Manželstvo je sviatosť, v ktorej muž a žena
+              slobodne vytvárajú trvalé spoločenstvo života
+              a lásky.
+            </p>
+
+          </section>
+
+          <!-- Podstatné vlastnosti -->
+          <section>
+
+            <h2 class="details-heading mb-3">
+              Podstatné vlastnosti manželstva
+            </h2>
+
+            <ul class="list-disc pl-6 space-y-2">
+
+              <li>Jednota</li>
+
+              <li>Nerozlučiteľnosť</li>
+
+              <li>Vzájomná vernosť</li>
+
+              <li>Otvorenosť pre prijatie detí</li>
+
+            </ul>
+
+          </section>
+
+          <!-- Účinky -->
+          <section>
+
+            <h2 class="details-heading mb-3">
+              Účinky sviatosti
+            </h2>
+
+            <ul class="list-disc pl-6 space-y-2">
+
+              <li>Trvalý zväzok muža a ženy.</li>
+
+              <li>Milosť na vernosť a vzájomnú lásku.</li>
+
+              <li>Pomoc pri prekonávaní životných ťažkostí.</li>
+
+              <li>Posvätenie rodinného života.</li>
+
+            </ul>
+
+          </section>
+
+          <!-- Príprava -->
+          <section>
+
+            <h2 class="details-heading mb-3">
+              Predmanželská príprava
+            </h2>
+
+            <p class="mb-3">
+              Snúbenci sa majú prihlásiť na farskom úrade
+              minimálne 3 mesiace pred plánovaným sobášom.
+            </p>
+
+            <p>
+              Súčasťou prípravy je rozhovor s kňazom
+              a absolvovanie predmanželskej náuky.
+            </p>
+
+          </section>
+
+          <!-- Potrebné doklady -->
+          <section>
+
+            <h2 class="details-heading mb-3">
+              Potrebné doklady
+            </h2>
+
+            <ul class="list-disc pl-6 space-y-2">
+
+              <li>Zápisnica z matriky.</li>
+
+              <li>Rodné listy.</li>
+
+              <li>Občianske preukazy.</li>
+
+              <li>Krstné listy (nie staršie ako 3 mesiace).</li>
+
+              <li>Údaje o svedkoch.</li>
+
+            </ul>
+
+          </section>
+
+          <!-- Poznámka -->
+          <section class="rounded-xl border border-green-200 bg-green-50 p-4">
+
+            <p class="text-sm text-gray-700">
+              Termín sobáša si rezervujte čo najskôr,
+              ideálne niekoľko mesiacov vopred.
+            </p>
+
+          </section>
+
+        </div>
+
+      </div>
 
     </div>
-  </main>
+
+  </section>
+
 </Base>
