@@ -131,13 +131,20 @@ const normalizeTime = (time) => {
   </section>
 <script>
 
-  const today = new Date().toLocaleDateString('sv-SE');
+  document.addEventListener('DOMContentLoaded', () => {
 
-  document.querySelectorAll('.mass-item').forEach((item) => {
+    const today = new Date()
+      .toLocaleDateString('sv-SE');
 
-    if (item.dataset.date === today) {
-      item.classList.add('mass-today');
-    }
+    document
+      .querySelectorAll('.mass-item')
+      .forEach((item) => {
+
+        if (item.dataset.date === today) {
+          item.classList.add('mass-today');
+        }
+
+      });
 
   });
 
