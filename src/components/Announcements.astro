@@ -136,13 +136,7 @@ const normalizeTime = (time) => {
   document.querySelectorAll('.mass-item').forEach((item) => {
 
     if (item.dataset.date === today) {
-
-      item.classList.add(
-        'bg-green-50',
-        'border-l-4',
-        'border-1-green-400'
-      );
-
+      item.classList.add('mass-today');
     }
 
   });
