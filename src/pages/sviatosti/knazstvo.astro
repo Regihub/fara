@@ -2,97 +2,119 @@
 import Base from "../../layouts/Base.astro";
 ---
 
-<Base>
-  <main class="p-4 pb-16">
-    <a
-      href="/sviatosti"
-      class="inline-block mb-4 text-green-700 font-medium"
-    >
-      ← Späť na sviatosti
-    </a>
+<Base title="Sviatosť kňazstva">
 
-    <h1 class="text-3xl font-bold text-green-800 mb-6">
-      Sviatosť kňazstva
-    </h1>
+  <section class="page-section">
 
-    <div class="space-y-8 text-gray-800 leading-relaxed">
+    <div class="page-container max-w-3xl">
 
-      <!-- Úvod -->
-      <section>
-        <p>
-          Posvätný stav (ordo) je sviatosť, prostredníctvom ktorej
-          Kristus naďalej pôsobí vo svojej Cirkvi prostredníctvom
-          biskupov, kňazov a diakonov.
-        </p>
-      </section>
+      <!-- Späť -->
+      <a
+        href="/sviatosti"
+        class="inline-block mb-4 text-green-700 font-medium"
+      >
+        ← Späť na sviatosti
+      </a>
 
-      <!-- Tri stupne -->
-      <section>
-        <h2 class="text-xl font-semibold text-green-800 mb-3">
-          Tri stupne sviatosti
-        </h2>
-        <ul class="list-disc pl-6 space-y-2">
-          <li>Episkopát – biskupi</li>
-          <li>Presbyterát – kňazi</li>
-          <li>Diakonát – diakoni</li>
-        </ul>
-      </section>
+      <!-- Card -->
+      <article class="card p-6 sm:p-8">
 
-      <!-- Účinky -->
-      <section>
-        <h2 class="text-xl font-semibold text-green-800 mb-3">
-          Účinky sviatosti
-        </h2>
-        <ul class="list-disc pl-6 space-y-2">
-          <li>Nezmazateľný duchovný znak.</li>
-          <li>Osobitná milosť Ducha Svätého.</li>
-          <li>Účasť na Kristovej službe.</li>
-          <li>Poverenie slúžiť Božiemu ľudu.</li>
-        </ul>
-      </section>
+        <!-- Nadpis -->
+        <h1 class="section-title mb-8">
+          Sviatosť kňazstva
+        </h1>
 
-      <!-- Kto môže prijať -->
-      <section>
-        <h2 class="text-xl font-semibold text-green-800 mb-3">
-          Kto môže prijať sviatosť?
-        </h2>
-        <p>
-          Platne ju môže prijať iba pokrstený muž,
-          ktorého Boh povoláva do tejto služby.
-        </p>
-      </section>
+        <div class="space-y-8 page-text">
 
-      <!-- Vysluhovateľ -->
-      <section>
-        <h2 class="text-xl font-semibold text-green-800 mb-3">
-          Vysluhovateľ sviatosti
-        </h2>
-        <p>
-          Sviatosť posvätného stavu udeľuje biskup,
-          ktorý je nástupcom apoštolov.
-        </p>
-      </section>
+          <!-- Úvod -->
+          <section>
+            <p>
+              Posvätný stav (ordo) je sviatosť, prostredníctvom ktorej
+              Kristus naďalej pôsobí vo svojej Cirkvi prostredníctvom
+              biskupov, kňazov a diakonov.
+            </p>
+          </section>
 
-      <!-- Citát -->
-      <section class="bg-green-50 border border-green-200 rounded-xl p-4">
-        <p class="text-sm text-gray-700 italic">
-          „Kňazstvo, to je láska Ježišovho srdca.“
-          <br />
-          – sv. Ján Mária Vianney
-        </p>
-      </section>
+          <!-- Tri stupne -->
+          <section>
+            <h2 class="details-heading mb-3">
+              Tri stupne sviatosti
+            </h2>
 
-      <!-- Modlitba za povolania -->
-      <section>
-        <h2 class="text-xl font-semibold text-green-800 mb-3">
-          Modlitba za duchovné povolania
-        </h2>
-        <p>
-          Prosme Pána, aby aj z našej farnosti povolával
-          nových kňazov a rehoľné povolania.
-        </p>
-      </section>
+            <ul class="list-disc pl-6 space-y-2">
+              <li>Episkopát – biskupi</li>
+              <li>Presbyterát – kňazi</li>
+              <li>Diakonát – diakoni</li>
+            </ul>
+          </section>
+
+          <!-- Účinky -->
+          <section>
+            <h2 class="details-heading mb-3">
+              Účinky sviatosti
+            </h2>
+
+            <ul class="list-disc pl-6 space-y-2">
+              <li>Nezmazateľný duchovný znak.</li>
+              <li>Osobitná milosť Ducha Svätého.</li>
+              <li>Účasť na Kristovej službe.</li>
+              <li>Poverenie slúžiť Božiemu ľudu.</li>
+            </ul>
+          </section>
+
+          <!-- Kto môže prijať -->
+          <section>
+            <h2 class="details-heading mb-3">
+              Kto môže prijať sviatosť?
+            </h2>
+
+            <p>
+              Platne ju môže prijať iba pokrstený muž,
+              ktorého Boh povoláva do tejto služby.
+            </p>
+          </section>
+
+          <!-- Vysluhovateľ -->
+          <section>
+            <h2 class="details-heading mb-3">
+              Vysluhovateľ sviatosti
+            </h2>
+
+            <p>
+              Sviatosť posvätného stavu udeľuje biskup,
+              ktorý je nástupcom apoštolov.
+            </p>
+          </section>
+
+          <!-- Citát -->
+          <section class="rounded-xl border border-green-200 bg-green-50 p-4">
+
+            <p class="text-sm italic text-gray-700">
+              „Kňazstvo, to je láska Ježišovho srdca.“
+              <br />
+              – sv. Ján Mária Vianney
+            </p>
+
+          </section>
+
+          <!-- Modlitba -->
+          <section>
+            <h2 class="details-heading mb-3">
+              Modlitba za duchovné povolania
+            </h2>
+
+            <p>
+              Prosme Pána, aby aj z našej farnosti povolával
+              nových kňazov a rehoľné povolania.
+            </p>
+          </section>
+
+        </div>
+
+      </article>
 
     </div>
-  </main>
+
+  </section>
+
 </Base>
