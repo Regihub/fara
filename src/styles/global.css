@@ -187,11 +187,11 @@ a {
 ========================================= */
 
 .content-page {
-  @apply mx-auto max-w-3xl px-4 pb-16;
+  @apply p-4 pb-16;
 }
 
-.content-back {
-  @apply mb-4 inline-block font-medium text-green-700;
+.content-back-link {
+  @apply inline-block mb-4 font-medium text-green-700;
 }
 
 .content-title {
@@ -199,7 +199,7 @@ a {
 }
 
 .content-body {
-  @apply space-y-8 leading-relaxed text-gray-800;
+  @apply space-y-8 text-gray-800 leading-relaxed;
 }
 
 .content-section-title {
@@ -207,7 +207,7 @@ a {
 }
 
 .content-list {
-  @apply list-disc space-y-2 pl-6;
+  @apply list-disc pl-6 space-y-2;
 }
 
 .content-note {
