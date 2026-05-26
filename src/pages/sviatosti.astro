@@ -65,21 +65,27 @@ const sviatosti = [
           href={item.href}
           class="card card-hover block px-5 py-3"
         >
-          <div class="flex items-center gap-5">
-            <div class="text-3xl">
-              {item.icon}
-            </div>
+          <div class="flex items-center gap-4">
 
-            <div>
-              <h2 class="card-title">
-                {item.title}
-              </h2>
+  <!-- Ikona -->
+  <div class="w-10 shrink-0 text-center text-3xl leading-none">
+    {item.icon}
+  </div>
 
-              <p class="mt-0 text-sm text-gray-600">
-                {item.description}
-              </p>
-            </div>
-          </div>
+  <!-- Text -->
+  <div>
+
+    <h2 class="card-title leading-tight">
+      {item.title}
+    </h2>
+
+    <p class="text-sm text-gray-600 leading-snug">
+      {item.description}
+    </p>
+
+  </div>
+
+</div>
         </a>
       ))}
     </div>
