@@ -2,50 +2,60 @@
 import Base from "../../layouts/Base.astro";
 ---
 
-<Base>
+<Base title="Birmovanie">
 
-  <main class="content-page">
+  <section class="page-section">
 
-    <a
-      href="/sviatosti"
-      class="content-back-link"
-    >
-      ← Späť na sviatosti
-    </a>
+    <div class="page-container">
 
-    <h1 class="content-title">
-      Birmovanie
-    </h1>
+      <!-- Späť -->
+      <a
+        href="/sviatosti"
+        class="inline-block mb-4 text-green-700 font-medium"
+      >
+        ← Späť na sviatosti
+      </a>
 
-    <div class="content-body">
+      <!-- Card -->
+      <article class="details-card">
 
-      <!-- Úvod -->
-      <section>
-        <p>
-          Sviatosť birmovania spolu s krstom a Eucharistiou tvorí
-          jednotu sviatostí uvádzania do kresťanského života.
-          Posilňuje krstnú milosť a obdarúva veriacich
-          osobitnou silou Ducha Svätého.
-        </p>
-      </section>
+        <!-- Header -->
+        <div class="border-b border-slate-200 px-6 py-4 bg-slate-50">
 
-      <!-- Účinky -->
-      <section>
+          <h1 class="section-title">
+            Birmovanie
+          </h1>
 
-        <h2 class="content-section-title">
-          Účinky sviatosti birmovania
-        </h2>
+        </div>
 
-        <ul class="content-list">
-          <li>Plné vyliatie Ducha Svätého.</li>
-          <li>Prehĺbenie krstnej milosti.</li>
-          <li>Užšie spojenie s Kristom.</li>
-          <li>Rozmnoženie darov Ducha Svätého.</li>
-          <li>Sila vyznávať a brániť vieru.</li>
-          <li>Nezmazateľný duchovný znak.</li>
-        </ul>
+        <!-- Obsah -->
+        <div class="details-content">
 
-      </section>
+          <!-- Úvod -->
+          <section>
+            <p>
+              Sviatosť birmovania spolu s krstom a Eucharistiou tvorí
+              jednotu sviatostí uvádzania do kresťanského života.
+              Posilňuje krstnú milosť a obdarúva veriacich
+              osobitnou silou Ducha Svätého.
+            </p>
+          </section>
+
+          <!-- Účinky -->
+          <section>
+            <h2 class="details-heading">
+              Účinky sviatosti birmovania
+            </h2>
+
+            <ul class="list-disc pl-6 space-y-2 mt-3">
+              <li>Plné vyliatie Ducha Svätého.</li>
+              <li>Prehĺbenie krstnej milosti.</li>
+              <li>Užšie spojenie s Kristom.</li>
+              <li>Rozmnoženie darov Ducha Svätého.</li>
+              <li>Sila vyznávať a brániť vieru.</li>
+              <li>Nezmazateľný duchovný znak.</li>
+            </ul>
+          </section>
 
       <!-- Kto môže prijať -->
       <section>
