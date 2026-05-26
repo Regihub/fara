@@ -3,19 +3,21 @@ import Base from "../../layouts/Base.astro";
 ---
 
 <Base>
-  <main class="p-4 pb-16">
+
+  <main class="content-page">
+
     <a
       href="/sviatosti"
-      class="inline-block mb-4 text-green-700 font-medium"
+      class="content-back"
     >
       ← Späť na sviatosti
     </a>
 
-    <h1 class="text-3xl font-bold text-green-800 mb-6">
+    <h1 class="content-heading">
       Birmovanie
     </h1>
 
-    <div class="space-y-8 text-gray-800 leading-relaxed">
+    <div class="content-body">
 
       <!-- Úvod -->
       <section>
@@ -29,10 +31,12 @@ import Base from "../../layouts/Base.astro";
 
       <!-- Účinky -->
       <section>
-        <h2 class="text-xl font-semibold text-green-800 mb-3">
+
+        <h2 class="content-section-title">
           Účinky sviatosti birmovania
         </h2>
-        <ul class="list-disc pl-6 space-y-2">
+
+        <ul class="content-list">
           <li>Plné vyliatie Ducha Svätého.</li>
           <li>Prehĺbenie krstnej milosti.</li>
           <li>Užšie spojenie s Kristom.</li>
@@ -40,48 +44,58 @@ import Base from "../../layouts/Base.astro";
           <li>Sila vyznávať a brániť vieru.</li>
           <li>Nezmazateľný duchovný znak.</li>
         </ul>
+
       </section>
 
       <!-- Kto môže prijať -->
       <section>
-        <h2 class="text-xl font-semibold text-green-800 mb-3">
+
+        <h2 class="content-section-title">
           Kto môže prijať birmovanie?
         </h2>
+
         <p class="mb-3">
           Sviatosť birmovania môže prijať každý pokrstený,
           ktorý:
         </p>
-        <ul class="list-disc pl-6 space-y-2">
+
+        <ul class="content-list">
           <li>ešte nebol pobirmovaný,</li>
           <li>je v stave posväcujúcej milosti,</li>
           <li>je primerane pripravený,</li>
           <li>má dostatočný vek (na Slovensku spravidla od 13 rokov).</li>
         </ul>
+
       </section>
 
       <!-- Birmovné meno -->
       <section>
-        <h2 class="text-xl font-semibold text-green-800 mb-3">
+
+        <h2 class="content-section-title">
           Birmovné meno
         </h2>
+
         <p>
           Každý birmovanec si vyberá patróna – svätca,
           ktorého chce nasledovať a ktorý sa za neho
           prihovára u Boha.
         </p>
+
       </section>
 
       <!-- Birmovný rodič -->
       <section>
-        <h2 class="text-xl font-semibold text-green-800 mb-3">
+
+        <h2 class="content-section-title">
           Birmovný rodič
         </h2>
+
         <p class="mb-3">
           Birmovanec má mať birmovného rodiča,
           ktorý mu pomáha v živote viery.
         </p>
 
-        <ul class="list-disc pl-6 space-y-2">
+        <ul class="content-list">
           <li>Má úmysel plniť túto úlohu.</li>
           <li>Má aspoň 16 rokov.</li>
           <li>Je katolík.</li>
@@ -90,26 +104,34 @@ import Base from "../../layouts/Base.astro";
           <li>Ak je ženatý/vydatá, žije v platnom cirkevnom manželstve.</li>
           <li>Nie je otcom ani matkou birmovanca.</li>
         </ul>
+
       </section>
 
       <!-- Vysluhovateľ -->
       <section>
-        <h2 class="text-xl font-semibold text-green-800 mb-3">
+
+        <h2 class="content-section-title">
           Vysluhovateľ sviatosti
         </h2>
+
         <p>
           Riadnym vysluhovateľom sviatosti birmovania je biskup.
         </p>
+
       </section>
 
       <!-- Poznámka -->
-      <section class="bg-green-50 border border-green-200 rounded-xl p-4">
+      <section class="content-note">
+
         <p class="text-sm text-gray-700">
           Prihlasovanie na birmovku a termíny prípravy
           sa oznamujú každoročne vo farských oznamoch.
         </p>
+
       </section>
 
     </div>
+
   </main>
+
 </Base>
