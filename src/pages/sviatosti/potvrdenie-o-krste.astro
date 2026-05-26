@@ -2,41 +2,58 @@
 import Base from "../../layouts/Base.astro";
 ---
 
-<Base>
-  <main class="p-4 pb-16">
-    <a
-      href="/sviatosti"
-      class="inline-block mb-4 text-green-700 font-medium"
-    >
-      ← Späť na sviatosti
-    </a>
+<Base title="Potvrdenie o krste">
 
-    <h1 class="text-3xl font-bold text-green-800 mb-6">
-      Potvrdenie o krste (Krstný list)
-    </h1>
+  <section class="page-section">
 
-    <div class="space-y-4 text-gray-800 leading-relaxed">
-      <p>
-        Dňa 1. júla 2004 bola zriadená nová samostatná
-        Farnosť Banská Bystrica – Stará Sásová.
-      </p>
+    <div class="page-container">
 
-      <p>
-        Potvrdenie o krste v našej farnosti po 23. júli 2004
-        je možné získať vo farskom úrade v Banskej Bystrici –
-        Starej Sásovej.
-      </p>
+      <!-- Späť -->
+      <a
+        href="/sviatosti"
+        class="inline-block mb-4 font-medium text-green-700"
+      >
+        ← Späť na sviatosti
+      </a>
 
-      <p>
-        Krsty, ktoré boli vyslúžené do 23. júla 2004,
-        sú zapísané v matrike vo Farskom úrade
-        Banská Bystrica – Sásová (Saleziáni)
-        na Tatranskej 38/A.
-      </p>
+      <!-- Nadpis -->
+      <h1 class="page-title mb-6">
+        Potvrdenie o krste (Krstný list)
+      </h1>
 
-      <p>
-        Tam vydávajú aj potrebné potvrdenie.
-      </p>
+      <!-- Obsah -->
+      <div class="details-card p-6">
+
+        <div class="space-y-4 page-text">
+
+          <p>
+            Dňa 1. júla 2004 bola zriadená nová samostatná
+            Farnosť Banská Bystrica – Stará Sásová.
+          </p>
+
+          <p>
+            Potvrdenie o krste v našej farnosti po 23. júli 2004
+            je možné získať vo farskom úrade v Banskej Bystrici –
+            Starej Sásovej.
+          </p>
+
+          <p>
+            Krsty, ktoré boli vyslúžené do 23. júla 2004,
+            sú zapísané v matrike vo Farskom úrade
+            Banská Bystrica – Sásová (Saleziáni)
+            na Tatranskej 38/A.
+          </p>
+
+          <p>
+            Tam vydávajú aj potrebné potvrdenie.
+          </p>
+
+        </div>
+
+      </div>
+
     </div>
-  </main>
+
+  </section>
+
 </Base>
