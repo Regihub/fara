@@ -181,3 +181,35 @@ a {
   background-color: #f0fdf4 !important;
   border-left: 4px solid #4ade80 !important;
 }
+
+/* =========================================
+   CONTENT PAGES
+========================================= */
+
+.content-page {
+  @apply mx-auto max-w-3xl px-4 pb-16;
+}
+
+.content-back {
+  @apply mb-4 inline-block font-medium text-green-700;
+}
+
+.content-title {
+  @apply mb-6 text-3xl font-bold text-green-800;
+}
+
+.content-body {
+  @apply space-y-8 leading-relaxed text-gray-800;
+}
+
+.content-section-title {
+  @apply mb-3 text-xl font-semibold text-green-800;
+}
+
+.content-list {
+  @apply list-disc space-y-2 pl-6;
+}
+
+.content-note {
+  @apply rounded-xl border border-green-200 bg-green-50 p-4;
+}
