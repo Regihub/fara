@@ -178,6 +178,6 @@ a {
 ========================================= */
 
 .mass-today {
-  background-color: #f0fdf4;
-  border-left: 4px solid #4ade80;
+  background-color: #f0fdf4 !important;
+  border-left: 4px solid #4ade80 !important;
 }
