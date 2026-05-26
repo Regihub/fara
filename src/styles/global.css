@@ -172,3 +172,12 @@ a {
 .details-links {
   @apply space-y-3 text-green-700;
 }
+
+/* =========================================
+   TODAY MASS
+========================================= */
+
+.mass-today {
+  background-color: #f0fdf4;
+  border-left: 4px solid #4ade80;
+}
