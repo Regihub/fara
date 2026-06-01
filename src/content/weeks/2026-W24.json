@@ -8,7 +8,7 @@
   "masses": [
     {
       "day": "Pondelok",
-      "date": "2026-06-08",
+      "date": "2026-06-01",
       "time": "17:00",
       "intention": "Za + Emila",
       "place": "",
@@ -16,7 +16,7 @@
     },
     {
       "day": "Utorok",
-      "date": "2026-06-09",
+      "date": "2026-06-02",
       "time": "09:00",
       "intention": "Za Božie požehnanie pre rodičov a bratov",
       "place": "",
@@ -24,7 +24,7 @@
     },
     {
       "day": "Streda",
-      "date": "2026-06-10",
+      "date": "2026-06-03",
       "time": "17:00",
       "intention": "Na úmysel",
       "place": "",
@@ -32,7 +32,7 @@
     },
     {
       "day": "Štvrtok",
-      "date": "2026-06-11",
+      "date": "2026-06-04",
       "time": "17:00",
       "intention": "Za veriacich",
       "place": "",
@@ -40,7 +40,7 @@
     },
     {
       "day": "Piatok",
-      "date": "2026-06-12",
+      "date": "2026-06-05",
       "time": "09:00",
       "intention": "Na úmysel",
       "place": "",
@@ -48,7 +48,7 @@
     },
     {
       "day": "Sobota",
-      "date": "2026-06-13",
+      "date": "2026-06-06",
       "time": "08:00",
       "intention": "Za veriacich",
       "place": "",
@@ -56,7 +56,7 @@
     },
     {
       "day": "Nedeľa",
-      "date": "2026-06-14",
+      "date": "2026-06-07",
       "time": "09:00",
       "intention": "Za + manžela Františka a celú + rodinu",
       "place": "",
