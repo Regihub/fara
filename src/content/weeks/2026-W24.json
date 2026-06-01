@@ -1,24 +1,24 @@
 {
-  "title": "Farské oznamy – 24. týždeň 2026",
+  "title": "Najsvätejšia trojica",
   "weekNumber": 24,
   "year": 2026,
   "weekStart": "2026-06-08",
   "weekEnd": "2026-06-14",
-  "general": "Tento týždeň upratuje skupina číslo ",
+  "general": "Tento týždeň upratuje skupina číslo 5",
   "masses": [
     {
       "day": "Pondelok",
       "date": "2026-06-08",
       "time": "17:00",
-      "intention": "",
+      "intention": "Za + Emila",
       "place": "",
-      "note": ""
+      "note": "Sv. Justín, mučeník"
     },
     {
       "day": "Utorok",
       "date": "2026-06-09",
       "time": "09:00",
-      "intention": "",
+      "intention": "Za Božie požehnanie pre rodičov a bratov",
       "place": "",
       "note": ""
     },
@@ -26,31 +26,31 @@
       "day": "Streda",
       "date": "2026-06-10",
       "time": "17:00",
-      "intention": "",
+      "intention": "Na úmysel",
       "place": "",
-      "note": ""
+      "note": "Sv. Karol Lwanga a spoločníci, mučeníci"
     },
     {
       "day": "Štvrtok",
       "date": "2026-06-11",
       "time": "17:00",
-      "intention": "",
+      "intention": "Za veriacich",
       "place": "",
-      "note": ""
+      "note": "Najsvätejšie Kristovo Telo a Krv (Božie telo), prikázaný sviatok"
     },
     {
       "day": "Piatok",
       "date": "2026-06-12",
-      "time": "17:00",
-      "intention": "",
+      "time": "09:00",
+      "intention": "Na úmysel",
       "place": "",
-      "note": ""
+      "note": "Bonifác, biskup a mučeník"
     },
     {
       "day": "Sobota",
       "date": "2026-06-13",
       "time": "08:00",
-      "intention": "",
+      "intention": "Za veriacich",
       "place": "",
       "note": ""
     },
@@ -58,9 +58,9 @@
       "day": "Nedeľa",
       "date": "2026-06-14",
       "time": "09:00",
-      "intention": "",
+      "intention": "Za + manžela Františka a celú + rodinu",
       "place": "",
-      "note": ""
+      "note": "10. nedeľa cez rok"
     }
   ]
 }
