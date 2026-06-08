@@ -1,66 +1,66 @@
 {
-  "title": "Farské oznamy – 25. týždeň 2026",
-  "weekNumber": 25,
+  "title": "10. nedeľa cez rok",
+  "weekNumber": 24,
   "year": 2026,
-  "weekStart": "2026-06-15",
-  "weekEnd": "2026-06-21",
-  "general": "Tento týždeň upratuje skupina číslo ",
+  "weekStart": "2026-06-08",
+  "weekEnd": "2026-06-14",
+  "general": "V nedeľu 14. 6. bude akcia farský guláš o 12:00 hodine. Pitný režim je zabezpečený, prosíme šikovné gazdinky o upečenie slaného pečiva a koláčikov.\n\nTento týždeň upratuje skupina číslo 6.",
   "masses": [
     {
       "day": "Pondelok",
-      "date": "2026-06-15",
+      "date": "2026-06-08",
       "time": "17:00",
-      "intention": "",
+      "intention": "Na úmysel",
       "place": "",
-      "note": ""
+      "note": "Najsvätejšieho Srdca Ježišovho slávnosť po sv.omši odprosujúca pobožnosť, odpustky obvyklé podmienky pri modlitbe Najmilší Ježišu"
     },
     {
       "day": "Utorok",
-      "date": "2026-06-16",
+      "date": "2026-06-09",
       "time": "09:00",
-      "intention": "",
+      "intention": "Na úmysel",
       "place": "",
       "note": ""
     },
     {
       "day": "Streda",
-      "date": "2026-06-17",
+      "date": "2026-06-10",
       "time": "17:00",
-      "intention": "",
+      "intention": "Na úmysel",
       "place": "",
-      "note": ""
+      "note": "Nepoškvrnené Srdce Panny Márie, spomienka"
     },
     {
       "day": "Štvrtok",
-      "date": "2026-06-18",
+      "date": "2026-06-11",
       "time": "17:00",
-      "intention": "",
+      "intention": "Na úmysel",
       "place": "",
       "note": ""
     },
     {
       "day": "Piatok",
-      "date": "2026-06-19",
+      "date": "2026-06-12",
       "time": "17:00",
-      "intention": "",
+      "intention": "Na úmysel",
       "place": "",
       "note": ""
     },
     {
       "day": "Sobota",
-      "date": "2026-06-20",
+      "date": "2026-06-13",
       "time": "08:00",
-      "intention": "",
+      "intention": "Za veriacich",
       "place": "",
       "note": ""
     },
     {
       "day": "Nedeľa",
-      "date": "2026-06-21",
+      "date": "2026-06-14",
       "time": "09:00",
-      "intention": "",
+      "intention": "Poďakovanie za Božiu pomoc a ochranu pri operácii",
       "place": "",
-      "note": ""
+      "note": "11. nedeľa cez rok"
     }
   ]
 }
