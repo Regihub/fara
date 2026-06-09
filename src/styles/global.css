@@ -218,65 +218,127 @@ a {
    PRINT STYLES
 ========================================= */
 
+/* =========================================
+   PRINT MODE (PRO VERSION)
+========================================= */
+
 @media print {
 
-  /* skrytie UI */
+  /* Základ */
+  @page {
+    margin: 12mm;
+    size: A4;
+  }
+
+  html, body {
+    background: white !important;
+    color: black !important;
+    font-size: 12pt;
+  }
+
+  /* ❌ Skryť celý UI shell */
   nav,
+  header,
   footer,
+  .desktop-nav,
+  .bottom-nav,
+  .hero,
+  .page-section-mobile,
   button,
-  #install-btn,
-  .bottom-nav {
+  a.button,
+  .install-btn {
     display: none !important;
   }
 
-  /* čisté pozadie */
-  body {
-    background: white !important;
-    color: black !important;
-  }
-
-  /* odstránenie card efektu */
-  .card {
+  /* ❌ odstrániť shadow a card štýly */
+  .card,
+  .card-hover,
+  section,
+  div {
     box-shadow: none !important;
-    border: 1px solid #ddd !important;
-    border-radius: 0 !important;
+    border: none !important;
+    background: transparent !important;
   }
 
-  /* menej paddingu */
-  .page-section,
-  .page-section-mobile,
-  .content-page {
+  /* stránka ako čistý dokument */
+  .page-container,
+  .max-w-4xl,
+  .max-w-5xl {
+    max-width: 100% !important;
+    width: 100% !important;
+    margin: 0 !important;
     padding: 0 !important;
   }
 
   /* titulky pre tlač */
   h1 {
     font-size: 18pt !important;
+    text-align: center;
+    margin-bottom: 6mm;
   }
 
   h2 {
     font-size: 14pt !important;
+    margin-top: 6mm;
   }
 
-  /* omše nesmú byť rozdelené */
+  /* odstrániť zbytočné spacingy z webu */
+  .py-2,
+  .py-4,
+  .py-6,
+  .py-8 {
+    padding: 0 !important;
+  }
+
+  .mt-2,
+  .mt-4,
+  .mt-6,
+  .mb-2,
+  .mb-4,
+  .mb-6 {
+    margin: 0 !important;
+  }
+
+  /* sväté omše – aby sa nelámali divne */
   .mass-item {
+    break-inside: avoid;
+    page-break-inside: avoid;
+    padding: 2mm 0 !important;
+  }
+
+  /* text */
+  .text-slate-600,
+  .text-slate-700,
+  .text-green-700 {
+    color: black !important;
+  }
+
+  /* zvýraznenie dňa */
+  .mass-today {
+    background: transparent !important;
+    border-left: 2px solid black !important;
+  }
+
+  /* odkazy */
+  a {
+    text-decoration: none !important;
+    color: black !important;
+  }
+
+  /* odstrániť backdrop efekty */
+  .backdrop-blur-sm {
+    backdrop-filter: none !important;
+  }
+
+  /* nech sa nerozdeľujú sekcie */
+  section {
+    break-inside: avoid;
     page-break-inside: avoid;
   }
 
-  /* jemnejší text */
-  .text-slate-600,
-  .text-gray-600 {
-    color: #333 !important;
-  }
-
-  /* lepšie oddelenie položiek */
-  .mass-item {
-    padding: 6px 0 !important;
-    border-bottom: 1px solid #eee;
-  }
-
-  /* zvýraznenie miesta (place) */
-  .mass-item .text-slate-600 {
-    font-weight: 600;
+  /* kontrola zalomenia */
+  .avoid-break {
+    break-inside: avoid;
+    page-break-inside: avoid;
   }
 }
