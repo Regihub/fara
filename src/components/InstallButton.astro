@@ -1,0 +1,41 @@
+<button id="install-btn" style="display:none">
+  Pridať na plochu
+</button>
+
+<script>
+  let deferredPrompt;
+
+  const btn = document.getElementById('install-btn');
+
+  if (localStorage.getItem('appInstalled') === 'true') {
+    btn?.remove();
+  }
+
+  window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+
+    deferredPrompt = e;
+
+    btn.style.display = 'block';
+  });
+
+  btn?.addEventListener('click', async () => {
+    if (!deferredPrompt) return;
+
+    deferredPrompt.prompt();
+
+    const result = await deferredPrompt.userChoice;
+
+    if (result.outcome === 'accepted') {
+      localStorage.setItem('appInstalled', 'true');
+      btn.remove();
+    }
+
+    deferredPrompt = null;
+  });
+
+  window.addEventListener('appinstalled', () => {
+    localStorage.setItem('appInstalled', 'true');
+    btn?.remove();
+  });
+</script>
