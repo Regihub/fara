@@ -1,0 +1,63 @@
+---
+import PrintLayout from '../../layouts/PrintLayout.astro';
+import { getLatestWeek } from '../../lib/getLatestWeek';
+
+import defaultMasses from '../../data/masses.json';
+import { formatDate } from '../../lib/formatDate';
+
+export async function getStaticPaths() {
+  const files = import.meta.glob('../../content/weeks/*.json', { eager: true });
+
+  return Object.entries(files).map(([path]) => {
+    const slug = path.split('/').pop().replace('.json', '');
+    return { params: { slug } };
+  });
+}
+
+const { slug } = Astro.params;
+
+const files = import.meta.glob('../../content/weeks/*.json', { eager: true });
+
+const entry = Object.entries(files).find(([path]) =>
+  path.endsWith(`/${slug}.json`)
+);
+
+if (!entry) throw new Error('Week not found');
+
+const week = entry[1].default;
+---
+
+<PrintLayout title={week.title}>
+
+  <div class="section">
+    <strong>Platnosť:</strong>
+    {formatDate(week.weekStart)} – {formatDate(week.weekEnd)}
+  </div>
+
+  {week.general && (
+    <div class="section">
+      <h2>Všeobecné oznamy</h2>
+      <div set:html={week.general.replace(/\n/g, '<br>')} />
+    </div>
+  )}
+
+  <div class="section">
+    <h2>Sväté omše</h2>
+
+    {week.masses.map((m) => (
+      <div class="mass">
+        <div class="day">
+          {m.day} {m.time}
+          {m.place && <span class="place">{m.place}</span>}
+        </div>
+
+        {m.note && <div class="note">{m.note}</div>}
+
+        {m.intention && (
+          <div class="intention">{m.intention}</div>
+        )}
+      </div>
+    ))}
+  </div>
+
+</PrintLayout>
