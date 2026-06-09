@@ -1,5 +1,5 @@
 <button id="install-btn" style="display:none">
-  Pridať na plochu
+  📱 Pridať na plochu
 </button>
 
 <script>
@@ -7,7 +7,9 @@
 
   const btn = document.getElementById('install-btn');
 
-  if (localStorage.getItem('appInstalled') === 'true') {
+  // Ak je stránka spustená ako nainštalovaná aplikácia,
+  // tlačidlo nezobrazuj.
+  if (window.matchMedia('(display-mode: standalone)').matches) {
     btn?.remove();
   }
 
@@ -16,7 +18,9 @@
 
     deferredPrompt = e;
 
-    btn.style.display = 'block';
+    if (btn) {
+      btn.style.display = 'block';
+    }
   });
 
   btn?.addEventListener('click', async () => {
@@ -24,18 +28,12 @@
 
     deferredPrompt.prompt();
 
-    const result = await deferredPrompt.userChoice;
-
-    if (result.outcome === 'accepted') {
-      localStorage.setItem('appInstalled', 'true');
-      btn.remove();
-    }
+    await deferredPrompt.userChoice;
 
     deferredPrompt = null;
   });
 
   window.addEventListener('appinstalled', () => {
-    localStorage.setItem('appInstalled', 'true');
     btn?.remove();
   });
 </script>
