@@ -213,3 +213,23 @@ a {
 .content-note {
   @apply rounded-xl border border-green-200 bg-green-50 p-4;
 }
+
+/* =========================================
+   FOOTER
+========================================= */
+.site-footer {
+  margin-top: 30px;
+  text-align: center;
+  color: #64748b;
+  font-size: 13px;
+  padding-bottom: 20px;
+}
+
+.site-footer a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+.site-footer a:hover {
+  color: #166534;
+}
