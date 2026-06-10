@@ -218,11 +218,11 @@ a {
    FOOTER
 ========================================= */
 .site-footer {
-  margin-top: 30px;
+  margin-top: 5px;
   text-align: center;
   color: #64748b;
   font-size: 13px;
-  padding-bottom: 20px;
+  padding-bottom: 50px;
 }
 
 .site-footer a {
