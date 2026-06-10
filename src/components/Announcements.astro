@@ -80,33 +80,29 @@ const normalizeTime = (time) => {
   class="mass-item px-6 py-4 transition-colors"
 >
             <!-- Horný riadok -->
-            <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1 sm:gap-4">
+            <div class="flex items-start">
 
-              <!-- Deň a čas -->
-              <div class="font-semibold text-slate-900">
+  <div class="w-40 font-semibold text-slate-900">
+    {mass.day} •
 
-                {mass.day} •{' '}
+    <span
+      class:list={[
+        isDifferentTime
+          ? 'text-red-600'
+          : 'text-slate-900'
+      ]}
+    >
+      {mass.time}
+    </span>
+  </div>
 
-                <span
-                  class:list={[
-                    isDifferentTime
-                      ? 'text-red-600'
-                      : 'text-slate-900'
-                  ]}
-                >
-                  {mass.time}
-                </span>
+  {mass.place && (
+    <div class="text-sm sm:text-base text-slate-600">
+      {mass.place}
+    </div>
+  )}
 
-              </div>
-
-              <!-- Miesto -->
-              {mass.place && (
-                <div class="text-sm sm:text-base text-slate-600 sm:text-center">
-                  {mass.place}
-                </div>
-              )}
-
-            </div>
+</div>
 
             <!-- Spomienka -->
             {mass.note && (
