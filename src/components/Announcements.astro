@@ -128,9 +128,11 @@ const normalizeTime = (time) => {
 
     </div>
 
+  </section>
+
     <div class="mt-6 text-center">
       <a
-        href={`/tlac/${year}-W${String(weekNumber).padStart(2, '0')}`}
+        href={`/tlac/${week.year}-W${String(week.weekNumber).padStart(2, '0')}`}
         target="_blank"
         rel="noopener"
         class="button-primary inline-block px-6"
@@ -139,7 +141,6 @@ const normalizeTime = (time) => {
       </a>
     </div>
 
-  </section>
 <script>
 
   document.addEventListener('DOMContentLoaded', () => {
