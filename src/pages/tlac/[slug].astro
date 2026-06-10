@@ -1,63 +1,249 @@
 ---
-import PrintLayout from '../../layouts/PrintLayout.astro';
-import { getLatestWeek } from '../../lib/getLatestWeek';
-
-import defaultMasses from '../../data/masses.json';
 import { formatDate } from '../../lib/formatDate';
 
 export async function getStaticPaths() {
-  const files = import.meta.glob('../../content/weeks/*.json', { eager: true });
 
-  return Object.entries(files).map(([path]) => {
-    const slug = path.split('/').pop().replace('.json', '');
-    return { params: { slug } };
-  });
+  const files = import.meta.glob(
+    '../../content/weeks/*.json',
+    { eager: true }
+  );
+
+  return Object.entries(files).map(([path]) => ({
+    params: {
+      slug: path
+        .split('/')
+        .pop()
+        .replace('.json', '')
+    }
+  }));
 }
 
 const { slug } = Astro.params;
 
-const files = import.meta.glob('../../content/weeks/*.json', { eager: true });
+const files = import.meta.glob(
+  '../../content/weeks/*.json',
+  { eager: true }
+);
 
 const entry = Object.entries(files).find(([path]) =>
   path.endsWith(`/${slug}.json`)
 );
 
-if (!entry) throw new Error('Week not found');
+if (!entry) {
+  throw new Error(`Week not found: ${slug}`);
+}
 
 const week = entry[1].default;
 ---
 
-<PrintLayout title={week.title}>
+<html lang="sk">
+<head>
 
-  <div class="section">
-    <strong>Platnosť:</strong>
-    {formatDate(week.weekStart)} – {formatDate(week.weekEnd)}
+<meta charset="utf-8" />
+
+<title>
+  Farské oznamy – {week.title}
+</title>
+
+<style>
+
+@page {
+  size: A4;
+  margin: 15mm;
+}
+
+body {
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  color: #111827;
+  line-height: 1.45;
+}
+
+.print-toolbar {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.print-button {
+  background: #15803d;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 24px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.print-button:hover {
+  background: #166534;
+}
+
+.page {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.parish {
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+h1 {
+  text-align: center;
+  font-size: 26px;
+  margin-bottom: 0.5rem;
+}
+
+.period {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.section-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  border-bottom: 2px solid #15803d;
+  padding-bottom: 4px;
+}
+
+.general {
+  white-space: pre-line;
+}
+
+.mass {
+  margin-bottom: 12px;
+}
+
+.mass-day {
+  font-weight: 700;
+}
+
+.mass-intention {
+  margin-left: 1rem;
+}
+
+.mass-note {
+  margin-left: 1rem;
+  font-style: italic;
+}
+
+@media print {
+
+  .print-toolbar {
+    display: none;
+  }
+
+  body {
+    margin: 0;
+  }
+
+  .page {
+    max-width: none;
+  }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="print-toolbar">
+
+  <button
+    class="print-button"
+    onclick="window.print()"
+  >
+    🖨️ Tlačiť
+  </button>
+
+</div>
+
+<div class="page">
+
+  <div class="parish">
+    Farnosť Banská Bystrica – Stará Sásová
+  </div>
+
+  <h1>
+    {week.title}
+  </h1>
+
+  <div class="period">
+    {formatDate(week.weekStart)}
+    –
+    {formatDate(week.weekEnd)}
   </div>
 
   {week.general && (
-    <div class="section">
-      <h2>Všeobecné oznamy</h2>
-      <div set:html={week.general.replace(/\n/g, '<br>')} />
-    </div>
+    <>
+      <div class="section-title">
+        Farské oznamy
+      </div>
+
+      <div class="general">
+        {week.general}
+      </div>
+    </>
   )}
 
-  <div class="section">
-    <h2>Sväté omše</h2>
-
-    {week.masses.map((m) => (
-      <div class="mass">
-        <div class="day">
-          {m.day} {m.time}
-          {m.place && <span class="place">{m.place}</span>}
-        </div>
-
-        {m.note && <div class="note">{m.note}</div>}
-
-        {m.intention && (
-          <div class="intention">{m.intention}</div>
-        )}
-      </div>
-    ))}
+  <div class="section-title">
+    Sväté omše
   </div>
 
-</PrintLayout>
+  {week.masses.map((mass) => (
+
+    <div class="mass">
+
+      <div class="mass-day">
+        {mass.day}
+        ({formatDate(mass.date)})
+        •
+        {mass.time}
+      </div>
+
+      {mass.place && (
+        <div class="mass-intention">
+          Miesto: {mass.place}
+        </div>
+      )}
+
+      {mass.intention && (
+        <div class="mass-intention">
+          {mass.intention}
+        </div>
+      )}
+
+      {mass.note && (
+        <div class="mass-note">
+          {mass.note}
+        </div>
+      )}
+
+    </div>
+
+  ))}
+
+</div>
+
+    <script>
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        window.print();
+      }, 300);
+    });
+    </script>
+
+</body>
+</html>
