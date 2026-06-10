@@ -361,6 +361,7 @@ body {
           <th>Deň</th>
           <th>Čas</th>
           <th>Úmysel / Spomienka</th>
+          <th>Miesto</th>
         </tr>
       </thead>
 
@@ -380,7 +381,17 @@ body {
 
             <td>
 
+              {mass.note && (
+                <div class="mass-note">
+                  {mass.note}
+                </div>
+              )}
+
               {mass.intention}
+
+            </td>
+
+            <td>
 
               {mass.place && (
                 <div>
@@ -388,13 +399,8 @@ body {
                 </div>
               )}
 
-              {mass.note && (
-                <div class="mass-note">
-                  {mass.note}
-                </div>
-              )}
-
             </td>
+
 
           </tr>
 
