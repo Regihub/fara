@@ -128,11 +128,12 @@ const normalizeTime = (time) => {
 
     </div>
 
-    <div class="mt-6 text-center no-print">
+    <div class="mt-6 text-center">
       <a
-        href={`/tlac/${year}-W${String(week.weekNumber).padStart(2, '0')}`}
+        href={`/tlac/${year}-W${String(weekNumber).padStart(2, '0')}`}
         target="_blank"
-        class="inline-flex items-center rounded-lg bg-green-700 px-5 py-3 text-white font-medium hover:bg-green-800 transition"
+        rel="noopener"
+        class="button-primary inline-block px-6"
       >
         🖨️ Tlačiť oznamy
       </a>
