@@ -79,28 +79,26 @@ const normalizeTime = (time) => {
   data-date={mass.date}
   class="mass-item px-6 py-4 transition-colors"
 >
-            <!-- Horný riadok -->
-            <div class="flex items-start">
+      <!-- Horný riadok -->
+        <div class="font-semibold text-slate-900">
 
-  <div class="w-52 font-semibold text-slate-900">
-    {mass.day} •
+  {mass.day} •{' '}
 
-    <span
-      class:list={[
-        isDifferentTime
-          ? 'text-red-600'
-          : 'text-slate-900'
-      ]}
-    >
-      {mass.time}
-    </span>
-  </div>
+  <span
+    class:list={[
+      isDifferentTime
+        ? 'text-red-600'
+        : 'text-slate-900'
+    ]}
+  >
+    {mass.time}
+  </span>
 
   {mass.place && (
-    <div class="text-sm sm:text-base text-slate-900">
-      {mass.place}
-    </div>
-  )}
+  <span class="ml-3 text-sm text-slate-500">
+    ({mass.place})
+  </span>
+)}
 
 </div>
 
