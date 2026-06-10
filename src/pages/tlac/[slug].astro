@@ -37,6 +37,7 @@ const week = entry[1].default;
 ---
 
 <html lang="sk">
+
 <head>
 
 <meta charset="utf-8" />
@@ -53,6 +54,8 @@ const week = entry[1].default;
 }
 
 body {
+  margin: 0;
+  padding: 20px;
   font-family:
     system-ui,
     -apple-system,
@@ -60,97 +63,211 @@ body {
     "Segoe UI",
     sans-serif;
 
+  background: #f3f4f6;
   color: #111827;
-  line-height: 1.45;
 }
 
 .print-toolbar {
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 24px;
 }
 
 .print-button {
   background: #15803d;
   color: white;
   border: none;
-  border-radius: 12px;
+  border-radius: 999px;
   padding: 12px 24px;
-  cursor: pointer;
   font-size: 15px;
   font-weight: 600;
+  cursor: pointer;
 }
 
 .print-button:hover {
   background: #166534;
 }
 
-.page {
-  max-width: 800px;
-  margin: 0 auto;
+.document {
+
+  max-width: 900px;
+  margin: auto;
+
+  background: white;
+
+  border-radius: 24px;
+
+  padding: 32px;
+
+  box-shadow:
+    0 4px 12px rgba(0,0,0,.08);
+}
+
+.header {
+
+  display: flex;
+  gap: 20px;
+
+  align-items: center;
+
+  padding-bottom: 16px;
+
+  border-bottom:
+    3px solid #15803d;
+}
+
+.logo {
+
+  width: 90px;
+
+  height: auto;
+}
+
+.header-content {
+
+  flex: 1;
 }
 
 .parish {
-  text-align: center;
-  font-size: 14px;
-  font-weight: 600;
-  margin-bottom: 0.75rem;
+
+  color: #166534;
+
+  font-size: 28px;
+
+  font-weight: 700;
 }
 
-h1 {
-  text-align: center;
-  font-size: 26px;
-  margin-bottom: 0.5rem;
+.subtitle {
+
+  color: #64748b;
+
+  font-size: 16px;
+
+  margin-top: 2px;
+}
+
+.week-title {
+
+  margin-top: 14px;
+
+  font-size: 30px;
+
+  font-weight: 700;
 }
 
 .period {
-  text-align: center;
-  margin-bottom: 1.5rem;
+
+  margin-top: 6px;
+
+  color: #475569;
+}
+
+.section {
+
+  margin-top: 28px;
 }
 
 .section-title {
-  font-size: 18px;
+
+  color: #166534;
+
+  font-size: 20px;
+
   font-weight: 700;
-  margin-top: 1.5rem;
-  margin-bottom: 0.75rem;
-  border-bottom: 2px solid #15803d;
-  padding-bottom: 4px;
-}
 
-.general {
-  white-space: pre-line;
-}
-
-.mass {
   margin-bottom: 12px;
 }
 
-.mass-day {
-  font-weight: 700;
+.announcements {
+
+  border: 1px solid #bbf7d0;
+
+  background: #f0fdf4;
+
+  border-radius: 16px;
+
+  padding: 16px;
+
+  white-space: pre-line;
 }
 
-.mass-intention {
-  margin-left: 1rem;
+.mass-table {
+
+  width: 100%;
+
+  border-collapse: collapse;
+}
+
+.mass-table thead th {
+
+  background: #166534;
+
+  color: white;
+
+  text-align: left;
+
+  padding: 10px;
+}
+
+.mass-table td {
+
+  padding: 10px;
+
+  border-bottom:
+    1px solid #e5e7eb;
+
+  vertical-align: top;
+}
+
+.mass-day {
+
+  font-weight: 600;
 }
 
 .mass-note {
-  margin-left: 1rem;
+
+  margin-top: 4px;
+
+  color: #166534;
+
   font-style: italic;
 }
 
+.footer {
+
+  margin-top: 30px;
+
+  text-align: center;
+
+  color: #64748b;
+
+  font-size: 13px;
+}
+
 @media print {
+
+  body {
+    background: white;
+    padding: 0;
+  }
 
   .print-toolbar {
     display: none;
   }
 
-  body {
-    margin: 0;
-  }
+  .document {
 
-  .page {
     max-width: none;
+
+    box-shadow: none;
+
+    border-radius: 0;
+
+    padding: 0;
   }
 
+  .week-title {
+    font-size: 24pt;
+  }
 }
 
 </style>
@@ -165,85 +282,125 @@ h1 {
     class="print-button"
     onclick="window.print()"
   >
-    🖨️ Tlačiť
+    🖨️ Vytlačiť oznamy
   </button>
 
 </div>
 
-<div class="page">
+<div class="document">
 
-  <div class="parish">
-    Farnosť Banská Bystrica – Stará Sásová
-  </div>
+  <div class="header">
 
-  <h1>
-    {week.title}
-  </h1>
+    <img
+      src="/images/znamka.png"
+      alt="Znak farnosti"
+      class="logo"
+    />
 
-  <div class="period">
-    {formatDate(week.weekStart)}
-    –
-    {formatDate(week.weekEnd)}
-  </div>
+    <div class="header-content">
 
-  {week.general && (
-    <>
-      <div class="section-title">
-        Farské oznamy
+      <div class="parish">
+        Farnosť Banská Bystrica
       </div>
 
-      <div class="general">
-        {week.general}
-      </div>
-    </>
-  )}
-
-  <div class="section-title">
-    Sväté omše
-  </div>
-
-  {week.masses.map((mass) => (
-
-    <div class="mass">
-
-      <div class="mass-day">
-        {mass.day}
-        ({formatDate(mass.date)})
-        •
-        {mass.time}
+      <div class="subtitle">
+        Stará Sásová
       </div>
 
-      {mass.place && (
-        <div class="mass-intention">
-          Miesto: {mass.place}
-        </div>
-      )}
+      <div class="week-title">
+        {week.title}
+      </div>
 
-      {mass.intention && (
-        <div class="mass-intention">
-          {mass.intention}
-        </div>
-      )}
-
-      {mass.note && (
-        <div class="mass-note">
-          {mass.note}
-        </div>
-      )}
+      <div class="period">
+        {formatDate(week.weekStart)}
+        –
+        {formatDate(week.weekEnd)}
+      </div>
 
     </div>
 
-  ))}
+  </div>
+
+  {week.general && (
+
+    <section class="section">
+
+      <h2 class="section-title">
+        Farské oznamy
+      </h2>
+
+      <div class="announcements">
+        {week.general}
+      </div>
+
+    </section>
+
+  )}
+
+  <section class="section">
+
+    <h2 class="section-title">
+      Sväté omše
+    </h2>
+
+    <table class="mass-table">
+
+      <thead>
+        <tr>
+          <th>Deň</th>
+          <th>Čas</th>
+          <th>Úmysel</th>
+        </tr>
+      </thead>
+
+      <tbody>
+
+        {week.masses.map((mass) => (
+
+          <tr>
+
+            <td class="mass-day">
+              {mass.day}
+            </td>
+
+            <td>
+              {mass.time}
+            </td>
+
+            <td>
+
+              {mass.intention}
+
+              {mass.place && (
+                <div>
+                  {mass.place}
+                </div>
+              )}
+
+              {mass.note && (
+                <div class="mass-note">
+                  {mass.note}
+                </div>
+              )}
+
+            </td>
+
+          </tr>
+
+        ))}
+
+      </tbody>
+
+    </table>
+
+  </section>
+
+  <div class="footer">
+    Farnosť Banská Bystrica – Stará Sásová
+  </div>
 
 </div>
 
-    <script>
-    window.addEventListener('load', () => {
-      setTimeout(() => {
-        window.print();
-      }, 300);
-    });
-    </script>
-
 </body>
+
 </html>
