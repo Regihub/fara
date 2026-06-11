@@ -34,6 +34,10 @@ if (!entry) {
 }
 
 const week = entry[1].default;
+
+const hasPlaces = week.masses.some(
+  (mass) => mass.place && mass.place.trim()
+);
 ---
 
 <html lang="sk">
@@ -251,7 +255,7 @@ body {
   font-style: italic;
 }
 
-<!-- Pridané kvoli širke 4. stlpca -->
+/* Pridané kvôli šírke 4. stĺpca */
 .mass-table th:nth-child(1),
 .mass-table td:nth-child(1) {
   width: 110px;
@@ -373,11 +377,9 @@ body {
           <th>Spomienka / Úmysel</th>
           <!-- <th>Miesto</th> -->
 
-            {mass.place && (
-                <th>
-                  Miesto
-                </th>
-              )}
+          {hasPlaces && (
+            <th>Miesto</th>
+          )}
 
         </tr>
       </thead>
