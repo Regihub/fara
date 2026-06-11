@@ -306,15 +306,23 @@ body {
   align-items: center;
   gap: 20px;
   padding: 24px 80px;
-  font-size: 2.25rem;
+  font-size: 2.25rem; /* text-4xl */
   font-weight: 900;
+}
+
+.mobile-print-button .icon {
+  font-size: 3rem; /* približne text-5xl */
 }
 
 @media (min-width: 768px) {
   .mobile-print-button {
-    padding: 12px 32px;
-    font-size: 1.25rem;
     gap: 12px;
+    padding: 12px 32px;
+    font-size: 1.5rem;
+  }
+
+  .mobile-print-button .icon {
+    font-size: 2rem;
   }
 }
 
@@ -495,15 +503,15 @@ body {
 
 <div class="print-toolbar pt-16 flex flex-col items-center gap-2">
 
-  <button class="mobile-print-button" onclick="window.print()">
-    <span>🖨️</span>
-    <span>Vytlačiť</span>
-  </button>
+<button class="mobile-print-button" onclick="window.print()">
+  <span class="icon">🖨️</span>
+  <span>Vytlačiť</span>
+</button>
 
-  <button class="mobile-print-button" onclick="history.back()">
-    <span>←</span>
-    <span>Späť</span>
-  </button>
+<button class="mobile-print-button" onclick="history.back()">
+  <span class="icon">←</span>
+  <span>Späť</span>
+</button>
 
 </div>
 
