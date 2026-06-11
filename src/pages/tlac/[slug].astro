@@ -1,5 +1,6 @@
 ---
 import { formatDate } from '../../lib/formatDate';
+import defaultMasses from '../../data/masses.json';
 
 export async function getStaticPaths() {
 
@@ -38,6 +39,10 @@ const week = entry[1].default;
 const hasPlaces = week.masses.some(
   (mass) => mass.place && mass.place.trim()
 );
+
+const normalizeTime = (time) => {
+  return time.replace(/^0/, '');
+};
 ---
 
 <html lang="sk">
