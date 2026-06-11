@@ -387,7 +387,7 @@ body {
           )}
         </tr>
       </thead>
-
+<!--
       <tbody>
 
         {week.masses.map((mass) => (
@@ -427,6 +427,67 @@ body {
         ))}
 
       </tbody>
+-->
+<tbody>
+
+  {week.masses.map((mass) => {
+
+    const matchedMass = defaultMasses.find(
+      (m) =>
+        m.day.toLowerCase() ===
+        mass.day.toLowerCase()
+    );
+
+    const isDifferentTime =
+      matchedMass &&
+      normalizeTime(matchedMass.time) !==
+        normalizeTime(mass.time);
+
+    return (
+
+      <tr>
+
+        <td class="mass-day">
+          {mass.day}
+        </td>
+
+        <td
+          style={
+            isDifferentTime
+              ? 'color:#dc2626;font-weight:700;'
+              : ''
+          }
+        >
+          {mass.time}
+        </td>
+
+        <td>
+
+          {mass.note && (
+            <div class="mass-note">
+              {mass.note}
+            </div>
+          )}
+
+          <span class="mass-day">
+            {mass.intention}
+          </span>
+
+        </td>
+
+        {hasPlaces && (
+          <td>
+            {mass.place}
+          </td>
+        )}
+
+      </tr>
+
+    );
+
+  })}
+
+</tbody>
 
     </table>
 
