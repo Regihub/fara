@@ -409,16 +409,11 @@ body {
 
             </td>
 
-
-
               {hasPlaces && (
                 <td>
                   {mass.place}
                 </td>
               )}
-
-
-
 
           </tr>
 
@@ -432,6 +427,16 @@ body {
 
 
 </div>
+
+<script>
+  window.addEventListener('load', () => {
+    window.print();
+  });
+
+  window.addEventListener('afterprint', () => {
+    window.close();
+  });
+</script>
 
 </body>
 
