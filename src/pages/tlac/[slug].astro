@@ -387,47 +387,7 @@ body {
           )}
         </tr>
       </thead>
-<!--
-      <tbody>
 
-        {week.masses.map((mass) => (
-
-          <tr>
-
-            <td class="mass-day">
-              {mass.day}
-            </td>
-
-            <td>
-              {mass.time}
-            </td>
-
-            <td>
-
-              {mass.note && (
-                <div class="mass-note">
-                  {mass.note}
-                </div>
-              )}
-           
-              <span class="mass-day">
-                {mass.intention}
-              </span>
-
-            </td>
-
-              {hasPlaces && (
-                <td>
-                  {mass.place}
-                </td>
-              )}
-
-          </tr>
-
-        ))}
-
-      </tbody>
--->
 <tbody>
 
   {week.masses.map((mass) => {
@@ -496,6 +456,7 @@ body {
 
 </div>
 
+<!--
 <script>
   window.addEventListener('load', () => {
     window.print();
@@ -505,6 +466,7 @@ body {
     window.close();
   });
 </script>
+-->
 
 </body>
 
