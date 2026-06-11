@@ -301,30 +301,6 @@ body {
 
 }
 
-.mobile-print-button {
-  display: inline-flex;
-  align-items: center;
-  gap: 20px;
-  padding: 24px 80px;
-  font-size: 2.25rem; /* text-4xl */
-  font-weight: 900;
-}
-
-.mobile-print-button .icon {
-  font-size: 3rem; /* približne text-5xl */
-}
-
-@media (min-width: 768px) {
-  .mobile-print-button {
-    gap: 12px;
-    padding: 12px 32px;
-    font-size: 1.5rem;
-  }
-
-  .mobile-print-button .icon {
-    font-size: 2rem;
-  }
-}
 
 </style>
 
@@ -503,13 +479,19 @@ body {
 
 <div class="print-toolbar pt-16 flex flex-col items-center gap-2">
 
-<button class="mobile-print-button" onclick="window.print()">
-  <span class="icon">🖨️</span>
+<button
+  class="inline-flex items-center gap-5 px-20 py-6 text-4xl font-black lg:gap-3 lg:px-8 lg:py-3 lg:text-xl"
+  onclick="window.print()"
+>
+  <span class="text-5xl lg:text-2xl">🖨️</span>
   <span>Vytlačiť</span>
 </button>
 
-<button class="mobile-print-button" onclick="history.back()">
-  <span class="icon">←</span>
+<button
+  class="inline-flex items-center gap-5 px-20 py-6 text-4xl font-black lg:gap-3 lg:px-8 lg:py-3 lg:text-xl"
+  onclick="history.back()"
+>
+  <span class="text-5xl lg:text-2xl">←</span>
   <span>Späť</span>
 </button>
 
