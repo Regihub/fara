@@ -99,36 +99,6 @@ const {
 
   </head>
 
-<body class="m-0 bg-gray-100 text-gray-900">
-  <DesktopNav />
-
-  <div class="flex min-h-screen justify-center">
-    <div class="w-full max-w-md lg:max-w-5xl bg-white">
-
-      <div class="pb-20 md:pb-2">
-        <slot />
-      </div>
-
-      <footer class="site-footer">
-        © {new Date().getFullYear()}
-        <a href="mailto:p.reguli@gmail.com">
-          Peter Reguli
-        </a>
-      </footer>
-
-    </div>
-  </div>
-
-  <script>
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('/sw.js');
-    }
-  </script>
-
-  <BottomNav />
-</body>
-
-<!--
   <body class="m-0 bg-gray-100 text-gray-900">
     <DesktopNav />
 
@@ -158,8 +128,5 @@ const {
 
     <BottomNav />
   </body>
--->
-
-
 
 </html>
