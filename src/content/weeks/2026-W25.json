@@ -1,32 +1,32 @@
 {
-  "title": "Farské oznamy – 25. týždeň 2026",
+  "title": "11. nedeľa cez rok",
   "weekNumber": 25,
   "year": 2026,
   "weekStart": "2026-06-15",
   "weekEnd": "2026-06-21",
-  "general": "Tento týždeň upratuje skupina číslo ",
+  "general": "Tento týždeň upratuje skupina číslo 7",
   "masses": [
     {
       "day": "Pondelok",
       "date": "2026-06-15",
       "time": "17:00",
-      "intention": "",
+      "intention": "Za zdravie manžela a celej rodiny",
       "place": "",
       "note": ""
     },
     {
       "day": "Utorok",
       "date": "2026-06-16",
-      "time": "09:00",
-      "intention": "",
+      "time": "17:00",
+      "intention": "Na úmysel",
       "place": "",
-      "note": ""
+      "note": "Od 14.00. do 16.55. hodiny má naša farnosť celodennú poklonu Najsvätejšej Sviatosti Oltárnej."
     },
     {
       "day": "Streda",
       "date": "2026-06-17",
       "time": "17:00",
-      "intention": "",
+      "intention": "Za + syna Rastislava",
       "place": "",
       "note": ""
     },
@@ -34,7 +34,7 @@
       "day": "Štvrtok",
       "date": "2026-06-18",
       "time": "17:00",
-      "intention": "",
+      "intention": "Za Božiu pomoc ochranu a zdravie pre dcéry a vnúčatá",
       "place": "",
       "note": ""
     },
@@ -42,7 +42,7 @@
       "day": "Piatok",
       "date": "2026-06-19",
       "time": "17:00",
-      "intention": "",
+      "intention": "Za prvoprijimajúce deti našej farnosti",
       "place": "",
       "note": ""
     },
@@ -50,7 +50,7 @@
       "day": "Sobota",
       "date": "2026-06-20",
       "time": "08:00",
-      "intention": "",
+      "intention": "Za veriacich",
       "place": "",
       "note": ""
     },
@@ -58,7 +58,7 @@
       "day": "Nedeľa",
       "date": "2026-06-21",
       "time": "09:00",
-      "intention": "",
+      "intention": "Za Božiu pomoc pri operácii",
       "place": "",
       "note": ""
     }
