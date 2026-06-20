@@ -1,16 +1,16 @@
 {
-  "title": "Farské oznamy – 26. týždeň 2026",
+  "title": "12. nedeľa cez rok",
   "weekNumber": 26,
   "year": 2026,
   "weekStart": "2026-06-22",
   "weekEnd": "2026-06-28",
-  "general": "Tento týždeň upratuje skupina číslo ",
+  "general": "Tento týždeň upratuje skupina číslo 8",
   "masses": [
     {
       "day": "Pondelok",
       "date": "2026-06-22",
       "time": "17:00",
-      "intention": "",
+      "intention": "Za + syna Rastislava",
       "place": "",
       "note": ""
     },
@@ -18,7 +18,7 @@
       "day": "Utorok",
       "date": "2026-06-23",
       "time": "09:00",
-      "intention": "",
+      "intention": "Za zdravie pani Bartovej",
       "place": "",
       "note": ""
     },
@@ -26,15 +26,15 @@
       "day": "Streda",
       "date": "2026-06-24",
       "time": "17:00",
-      "intention": "",
+      "intention": "Za + Jána a Annu",
       "place": "",
-      "note": ""
+      "note": "Narodenie sv.Jána Krstiteľa"
     },
     {
       "day": "Štvrtok",
       "date": "2026-06-25",
       "time": "17:00",
-      "intention": "",
+      "intention": "Za + z rodiny Škarbovej",
       "place": "",
       "note": ""
     },
@@ -42,7 +42,7 @@
       "day": "Piatok",
       "date": "2026-06-26",
       "time": "17:00",
-      "intention": "",
+      "intention": " Za živú rodinu Arpálovú",
       "place": "",
       "note": ""
     },
@@ -50,17 +50,17 @@
       "day": "Sobota",
       "date": "2026-06-27",
       "time": "08:00",
-      "intention": "",
+      "intention": "Za vnučku Ninku",
       "place": "",
-      "note": ""
+      "note": "Ladislava, spomienka"
     },
     {
       "day": "Nedeľa",
       "date": "2026-06-28",
       "time": "09:00",
-      "intention": "",
+      "intention": "Za veriacich",
       "place": "",
-      "note": ""
+      "note": "13. nedeľa cez rok"
     }
   ]
 }
