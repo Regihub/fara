@@ -1,66 +1,50 @@
 {
-  "title": "Farské oznamy – 33. týždeň 2026",
-  "weekNumber": 33,
+  "title": "18. nedeľa cez rok",
+  "weekNumber": 32,
   "year": 2026,
-  "weekStart": "2026-08-10",
-  "weekEnd": "2026-08-16",
+  "weekStart": "2026-08-03",
+  "weekEnd": "2026-08-09",
   "general": "Tento týždeň upratuje skupina číslo ",
   "masses": [
     {
-      "day": "Pondelok",
-      "date": "2026-08-10",
-      "time": "17:00",
-      "intention": "",
-      "place": "",
-      "note": ""
-    },
-    {
-      "day": "Utorok",
-      "date": "2026-08-11",
-      "time": "09:00",
-      "intention": "",
-      "place": "",
-      "note": ""
-    },
-    {
       "day": "Streda",
-      "date": "2026-08-12",
+      "date": "2026-08-05",
       "time": "17:00",
-      "intention": "",
+      "intention": "Za + mamu Škarbovú",
       "place": "",
       "note": ""
     },
     {
       "day": "Štvrtok",
-      "date": "2026-08-13",
+      "date": "2026-08-06",
       "time": "17:00",
-      "intention": "",
+      "intention": " Za 1.prijimajúce deti našej farnosti",
       "place": "",
-      "note": ""
+      "note": "Premenenie Pána, sviatok"
     },
     {
       "day": "Piatok",
-      "date": "2026-08-14",
+      "date": "2026-08-07",
       "time": "17:00",
-      "intention": "",
+      "intention": " Za + Štefana Žilku",
       "place": "",
-      "note": ""
+      "note": "1.piatok sv. spoveď a adorácia od 16:30"
     },
     {
       "day": "Sobota",
-      "date": "2026-08-15",
+      "date": "2026-08-08",
       "time": "08:00",
-      "intention": "",
+      "intention": " Za + Ivana a manželku",
       "place": "",
-      "note": ""
+      "note": "sv. Dominika kňaza"
     },
     {
       "day": "Nedeľa",
-      "date": "2026-08-16",
+      "date": "2026-08-09",
       "time": "09:00",
-      "intention": "",
+      "intention": " Za veriacich",
       "place": "",
-      "note": ""
+      "note": "19. nedeľa cez rok"
     }
   ]
 }
