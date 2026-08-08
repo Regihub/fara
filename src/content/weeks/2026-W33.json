@@ -1,32 +1,32 @@
 {
-  "title": "Farské oznamy – 33. týždeň 2026",
+  "title": "19. nedeľa cez rok",
   "weekNumber": 33,
   "year": 2026,
   "weekStart": "2026-08-10",
   "weekEnd": "2026-08-16",
-  "general": "Tento týždeň upratuje skupina číslo ",
+  "general": " .",
   "masses": [
     {
       "day": "Pondelok",
       "date": "2026-08-10",
       "time": "17:00",
-      "intention": "",
+      "intention": " Za + rodičov Michala a Emu",
       "place": "",
-      "note": ""
+      "note": "sv.Vavrinca, diakona a mučeníka"
     },
     {
       "day": "Utorok",
       "date": "2026-08-11",
       "time": "09:00",
-      "intention": "",
+      "intention": " Za + manžela Antona",
       "place": "",
-      "note": ""
+      "note": "sv.Kláry panny"
     },
     {
       "day": "Streda",
       "date": "2026-08-12",
       "time": "17:00",
-      "intention": "",
+      "intention": "Za + Mirku",
       "place": "",
       "note": ""
     },
@@ -34,7 +34,7 @@
       "day": "Štvrtok",
       "date": "2026-08-13",
       "time": "17:00",
-      "intention": "",
+      "intention": " Za + Dianu",
       "place": "",
       "note": ""
     },
@@ -42,23 +42,23 @@
       "day": "Piatok",
       "date": "2026-08-14",
       "time": "17:00",
-      "intention": "",
+      "intention": "Za 1.prijimajúce deti našej farnosti",
       "place": "",
-      "note": ""
+      "note": "sv.Maximiliána Máriu Kolbeho kňaza a mučeníka"
     },
     {
       "day": "Sobota",
       "date": "2026-08-15",
       "time": "08:00",
-      "intention": "",
+      "intention": " Za veriacich",
       "place": "",
-      "note": ""
+      "note": "Nanebovzatie Preblahoslavenej Panny Márie slávnosť, prikázaný sviatok"
     },
     {
       "day": "Nedeľa",
       "date": "2026-08-16",
       "time": "09:00",
-      "intention": "",
+      "intention": "Za zdravie a Božiu pomoc pre dcéru Zuzku",
       "place": "",
       "note": ""
     }
