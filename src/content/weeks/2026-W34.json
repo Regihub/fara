@@ -1,16 +1,16 @@
 {
-  "title": "Farské oznamy – 34. týždeň 2026",
+  "title": "20. nedeľa cez rok",
   "weekNumber": 34,
   "year": 2026,
   "weekStart": "2026-08-17",
   "weekEnd": "2026-08-23",
-  "general": "Tento týždeň upratuje skupina číslo ",
+  "general": "Tento týždeň upratuje skupina číslo 6.",
   "masses": [
     {
       "day": "Pondelok",
       "date": "2026-08-17",
       "time": "17:00",
-      "intention": "",
+      "intention": " Za + rodičov a brata",
       "place": "",
       "note": ""
     },
@@ -18,7 +18,7 @@
       "day": "Utorok",
       "date": "2026-08-18",
       "time": "09:00",
-      "intention": "",
+      "intention": "Za + manžela Juraja",
       "place": "",
       "note": ""
     },
@@ -26,7 +26,7 @@
       "day": "Streda",
       "date": "2026-08-19",
       "time": "17:00",
-      "intention": "",
+      "intention": " Za veriacich",
       "place": "",
       "note": ""
     },
@@ -34,33 +34,33 @@
       "day": "Štvrtok",
       "date": "2026-08-20",
       "time": "17:00",
-      "intention": "",
+      "intention": "Za + manžela Antona",
       "place": "",
-      "note": ""
+      "note": "sv.Bernarda, opáta a učiteľa Cirkvi"
     },
     {
       "day": "Piatok",
       "date": "2026-08-21",
       "time": "17:00",
-      "intention": "",
+      "intention": "Za 1.prijimajúce deti našej farnosti",
       "place": "",
-      "note": ""
+      "note": "sv.Pia X.,pápeža"
     },
     {
       "day": "Sobota",
       "date": "2026-08-22",
       "time": "08:00",
-      "intention": "",
+      "intention": " Za veriacich",
       "place": "",
-      "note": ""
+      "note": "Preblahoslavenej Panny Márie Kráľovnej"
     },
     {
       "day": "Nedeľa",
       "date": "2026-08-23",
       "time": "09:00",
-      "intention": "",
+      "intention": " Za 1.prijimajúce deti našej farnosti",
       "place": "",
-      "note": ""
+      "note": "21. nedeľa cez rok "
     }
   ]
 }
