@@ -1,66 +1,66 @@
 {
-  "title": "Farské oznamy – 36. týždeň 2026",
-  "weekNumber": 36,
+  "title": "21. nedeľa cez rok",
+  "weekNumber": 35,
   "year": 2026,
-  "weekStart": "2026-08-31",
-  "weekEnd": "2026-09-06",
-  "general": "Tento týždeň upratuje skupina číslo ",
+  "weekStart": "2026-08-24",
+  "weekEnd": "2026-08-30",
+  "general": "Tento týždeň upratuje skupina číslo 7",
   "masses": [
     {
       "day": "Pondelok",
-      "date": "2026-08-31",
+      "date": "2026-08-24",
       "time": "17:00",
-      "intention": "",
+      "intention": "Za + rodičov Imricha a Máriu",
       "place": "",
-      "note": ""
+      "note": "sv.Bartolomeja, apoštola"
     },
     {
       "day": "Utorok",
-      "date": "2026-09-01",
+      "date": "2026-08-25",
       "time": "09:00",
-      "intention": "",
+      "intention": " Za + švagra Metóda",
       "place": "",
       "note": ""
     },
     {
       "day": "Streda",
-      "date": "2026-09-02",
+      "date": "2026-08-26",
       "time": "17:00",
-      "intention": "",
+      "intention": " Za + Evu Gábrišovú",
       "place": "",
       "note": ""
     },
     {
       "day": "Štvrtok",
-      "date": "2026-09-03",
+      "date": "2026-08-27",
       "time": "17:00",
-      "intention": "",
+      "intention": " Za deti a ich rodiny",
       "place": "",
-      "note": ""
+      "note": "sv.Moniky"
     },
     {
       "day": "Piatok",
-      "date": "2026-09-04",
+      "date": "2026-08-28",
       "time": "17:00",
-      "intention": "",
+      "intention": " Za pokoj v rodine",
       "place": "",
-      "note": ""
+      "note": "sv.Augustína, biskupa a učiteľa Cirkvi"
     },
     {
       "day": "Sobota",
-      "date": "2026-09-05",
+      "date": "2026-08-29",
       "time": "08:00",
-      "intention": "",
+      "intention": "Na vlastný úmysel",
       "place": "",
-      "note": ""
+      "note": "Mučenícka smrť sv. Jána Krstiteľa"
     },
     {
       "day": "Nedeľa",
-      "date": "2026-09-06",
+      "date": "2026-08-30",
       "time": "09:00",
-      "intention": "",
+      "intention": "Za veriacich",
       "place": "",
-      "note": ""
+      "note": "22.nedeľa cez rok"
     }
   ]
 }
