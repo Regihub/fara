@@ -1,0 +1,66 @@
+{
+  "title": "Farské oznamy – 36. týždeň 2026",
+  "weekNumber": 36,
+  "year": 2026,
+  "weekStart": "2026-08-31",
+  "weekEnd": "2026-09-06",
+  "general": "Tento týždeň upratuje skupina číslo ",
+  "masses": [
+    {
+      "day": "Pondelok",
+      "date": "2026-08-31",
+      "time": "17:00",
+      "intention": "",
+      "place": "",
+      "note": ""
+    },
+    {
+      "day": "Utorok",
+      "date": "2026-09-01",
+      "time": "09:00",
+      "intention": "",
+      "place": "",
+      "note": ""
+    },
+    {
+      "day": "Streda",
+      "date": "2026-09-02",
+      "time": "17:00",
+      "intention": "",
+      "place": "",
+      "note": ""
+    },
+    {
+      "day": "Štvrtok",
+      "date": "2026-09-03",
+      "time": "17:00",
+      "intention": "",
+      "place": "",
+      "note": ""
+    },
+    {
+      "day": "Piatok",
+      "date": "2026-09-04",
+      "time": "17:00",
+      "intention": "",
+      "place": "",
+      "note": ""
+    },
+    {
+      "day": "Sobota",
+      "date": "2026-09-05",
+      "time": "08:00",
+      "intention": "",
+      "place": "",
+      "note": ""
+    },
+    {
+      "day": "Nedeľa",
+      "date": "2026-09-06",
+      "time": "09:00",
+      "intention": "",
+      "place": "",
+      "note": ""
+    }
+  ]
+}
