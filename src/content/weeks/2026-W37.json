@@ -1,64 +1,64 @@
 {
-  "title": "Farské oznamy – 37. týždeň 2026",
-  "weekNumber": 37,
+  "title": "22. nedeľa cez rok ",
+  "weekNumber": 36,
   "year": 2026,
-  "weekStart": "2026-09-07",
-  "weekEnd": "2026-09-13",
-  "general": "Tento týždeň upratuje skupina číslo ",
+  "weekStart": "2026-08-31",
+  "weekEnd": "2026-09-06",
+  "general": "Tento týždeň upratuje skupina číslo 8",
   "masses": [
     {
       "day": "Pondelok",
-      "date": "2026-09-07",
+      "date": "2026-08-31",
       "time": "17:00",
-      "intention": "",
+      "intention": "Na vlastný úmysel",
       "place": "",
       "note": ""
     },
     {
       "day": "Utorok",
-      "date": "2026-09-08",
+      "date": "2026-09-01",
       "time": "09:00",
-      "intention": "",
+      "intention": "Na vlastný úmysel",
       "place": "",
       "note": ""
     },
     {
       "day": "Streda",
-      "date": "2026-09-09",
+      "date": "2026-09-02",
       "time": "17:00",
-      "intention": "",
+      "intention": "Za Božie požehnanie Moniky s rodinou",
       "place": "",
       "note": ""
     },
     {
       "day": "Štvrtok",
-      "date": "2026-09-10",
+      "date": "2026-09-03",
       "time": "17:00",
-      "intention": "",
+      "intention": " Za + mamu Máriu a otca Jozefa",
       "place": "",
-      "note": ""
+      "note": "sv.Gregora Veľkého, pápeža a učiteľa Cirkvi; 1.štvrtok v mesiac"
     },
     {
       "day": "Piatok",
-      "date": "2026-09-11",
+      "date": "2026-09-04",
       "time": "17:00",
-      "intention": "",
+      "intention": "Za + Ľubomíra nedožitých 80 rokov",
       "place": "",
-      "note": ""
+      "note": "1. piatok v mesiaci sv. spoveď a adorácia od 16.00.hod."
     },
     {
       "day": "Sobota",
-      "date": "2026-09-12",
+      "date": "2026-09-05",
       "time": "08:00",
-      "intention": "",
+      "intention": "Za veriacich",
       "place": "",
       "note": ""
     },
     {
       "day": "Nedeľa",
-      "date": "2026-09-13",
+      "date": "2026-09-06",
       "time": "09:00",
-      "intention": "",
+      "intention": "Za + manžela Františka celú + rodinu Slobodníkovú",
       "place": "",
       "note": ""
     }
