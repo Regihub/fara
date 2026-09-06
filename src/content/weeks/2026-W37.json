@@ -1,16 +1,16 @@
 {
-  "title": "Farské oznamy – 37. týždeň 2026",
+  "title": "23. nedeľa cez rok ",
   "weekNumber": 37,
   "year": 2026,
   "weekStart": "2026-09-07",
   "weekEnd": "2026-09-13",
-  "general": "Tento týždeň upratuje skupina číslo ",
+  "general": "Tento týždeň upratuje skupina číslo 9",
   "masses": [
     {
       "day": "Pondelok",
       "date": "2026-09-07",
       "time": "17:00",
-      "intention": "",
+      "intention": "Omša nebude",
       "place": "",
       "note": ""
     },
@@ -18,23 +18,23 @@
       "day": "Utorok",
       "date": "2026-09-08",
       "time": "09:00",
-      "intention": "",
+      "intention": "Na vlastný úmysel",
       "place": "",
-      "note": ""
+      "note": "Narodenie Preblahoslavenej Panny Márie"
     },
     {
       "day": "Streda",
       "date": "2026-09-09",
       "time": "17:00",
-      "intention": "",
+      "intention": "Za zdravie a Božie požehnanie pre rodinu Róthovú",
       "place": "",
-      "note": ""
+      "note": "Najsvätejšieho mena Panny Márie"
     },
     {
       "day": "Štvrtok",
       "date": "2026-09-10",
       "time": "17:00",
-      "intention": "",
+      "intention": "Za zdravie a Božie požehnanie pre rodinu Škrváňovú",
       "place": "",
       "note": ""
     },
@@ -42,7 +42,7 @@
       "day": "Piatok",
       "date": "2026-09-11",
       "time": "17:00",
-      "intention": "",
+      "intention": "Za veriacich",
       "place": "",
       "note": ""
     },
@@ -50,7 +50,7 @@
       "day": "Sobota",
       "date": "2026-09-12",
       "time": "08:00",
-      "intention": "",
+      "intention": " Za + rodinu Pančilovú",
       "place": "",
       "note": ""
     },
@@ -58,9 +58,9 @@
       "day": "Nedeľa",
       "date": "2026-09-13",
       "time": "09:00",
-      "intention": "",
+      "intention": "Za + rodičov Margitu a Štefana brata Martina a tetu Ľudmilu",
       "place": "",
-      "note": ""
+      "note": "24. nedeľa cez rok"
     }
   ]
 }
