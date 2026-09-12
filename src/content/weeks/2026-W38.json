@@ -1,40 +1,40 @@
 {
-  "title": "Farské oznamy – 38. týždeň 2026",
+  "title": "24. nedeľa cez rok ",
   "weekNumber": 38,
   "year": 2026,
   "weekStart": "2026-09-14",
   "weekEnd": "2026-09-20",
-  "general": "Tento týždeň upratuje skupina číslo ",
+  "general": "Tento týždeň upratuje skupina číslo 10",
   "masses": [
     {
       "day": "Pondelok",
       "date": "2026-09-14",
-      "time": "17:00",
-      "intention": "",
+      "time": "00:00",
+      "intention": "OMŠA NEBUDE ",
       "place": "",
       "note": ""
     },
     {
       "day": "Utorok",
       "date": "2026-09-15",
-      "time": "09:00",
-      "intention": "",
+      "time": "17:00",
+      "intention": " Za uzdravenie dcéry",
       "place": "",
-      "note": ""
+      "note": "Sedembolestnej Panny Márie Patrónky Slovenska slávnosť"
     },
     {
       "day": "Streda",
       "date": "2026-09-16",
       "time": "17:00",
-      "intention": "",
+      "intention": "Za Božie požehnanie pre Moniku a Máriu a + Františka",
       "place": "",
-      "note": ""
+      "note": "sv. Kornélia pápeža a Cypriána biskupa mučeníkov"
     },
     {
       "day": "Štvrtok",
       "date": "2026-09-17",
       "time": "17:00",
-      "intention": "",
+      "intention": "Za + rodičov Jána a Máriu a brata Cyrila",
       "place": "",
       "note": ""
     },
@@ -42,7 +42,7 @@
       "day": "Piatok",
       "date": "2026-09-18",
       "time": "17:00",
-      "intention": "",
+      "intention": "Za + rodičov Škarbových",
       "place": "",
       "note": ""
     },
@@ -50,7 +50,7 @@
       "day": "Sobota",
       "date": "2026-09-19",
       "time": "08:00",
-      "intention": "",
+      "intention": "Za veriacich",
       "place": "",
       "note": ""
     },
@@ -58,9 +58,9 @@
       "day": "Nedeľa",
       "date": "2026-09-20",
       "time": "09:00",
-      "intention": "",
+      "intention": "Za + mamu Máriu a strarú mamu Máriu",
       "place": "",
-      "note": ""
+      "note": "25. nedeľa cez rok "
     }
   ]
 }
