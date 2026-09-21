@@ -1,64 +1,64 @@
 {
-  "title": "Farské oznamy – 40. týždeň 2026",
-  "weekNumber": 40,
+  "title": "25. nedeľa cez rok ",
+  "weekNumber": 39,
   "year": 2026,
-  "weekStart": "2026-09-28",
-  "weekEnd": "2026-10-04",
-  "general": "Tento týždeň upratuje skupina číslo ",
+  "weekStart": "2026-09-21",
+  "weekEnd": "2026-09-27",
+  "general": "Tento týždeň upratuje skupina číslo 1",
   "masses": [
     {
       "day": "Pondelok",
-      "date": "2026-09-28",
-      "time": "17:00",
-      "intention": "",
+      "date": "2026-09-21",
+      "time": "00:00",
+      "intention": "OMŠA NEBUDE ",
       "place": "",
       "note": ""
     },
     {
       "day": "Utorok",
-      "date": "2026-09-29",
-      "time": "09:00",
-      "intention": "",
+      "date": "2026-09-22",
+      "time": "17:00",
+      "intention": "Poďakovanie za 50 rokov manželstva",
       "place": "",
       "note": ""
     },
     {
       "day": "Streda",
-      "date": "2026-09-30",
+      "date": "2026-09-23",
       "time": "17:00",
-      "intention": "",
+      "intention": "Za + rodičov Máriu a Juraja a + súrodencov Magdalénu Jána tetu a strýka",
       "place": "",
-      "note": ""
+      "note": "sv.Pia z Pietrelciny, kňaza"
     },
     {
       "day": "Štvrtok",
-      "date": "2026-10-01",
+      "date": "2026-09-24",
       "time": "17:00",
-      "intention": "",
+      "intention": "Za uzdravenie a Božiu pomoc pre manžela dcéry a vnúčatá",
       "place": "",
-      "note": ""
+      "note": "Výročie posviacky katedralného chrámu sv.Františka Xaverského v B.Bystrici"
     },
     {
       "day": "Piatok",
-      "date": "2026-10-02",
+      "date": "2026-09-25",
       "time": "17:00",
-      "intention": "",
+      "intention": "Za + švagra Alfréda",
       "place": "",
       "note": ""
     },
     {
       "day": "Sobota",
-      "date": "2026-10-03",
+      "date": "2026-09-26",
       "time": "08:00",
-      "intention": "",
+      "intention": "Za pokoj v rodine",
       "place": "",
       "note": ""
     },
     {
       "day": "Nedeľa",
-      "date": "2026-10-04",
+      "date": "2026-09-27",
       "time": "09:00",
-      "intention": "",
+      "intention": "50. výročie za + otca a matku za súrodencov Angelu a Jozefa za tetu Júliu za starku Katarínu a za súrodencov Amáliu Jožka a Janka",
       "place": "",
       "note": ""
     }
