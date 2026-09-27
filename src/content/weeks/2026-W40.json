@@ -1,16 +1,16 @@
 {
-  "title": "Farské oznamy – 40. týždeň 2026",
+  "title": "26. nedeľa cez rok ",
   "weekNumber": 40,
   "year": 2026,
   "weekStart": "2026-09-28",
   "weekEnd": "2026-10-04",
-  "general": "Tento týždeň upratuje skupina číslo ",
+  "general": "Tento týždeň upratuje skupina číslo 2",
   "masses": [
     {
       "day": "Pondelok",
       "date": "2026-09-28",
       "time": "17:00",
-      "intention": "",
+      "intention": "OMŠA NEBUDE ",
       "place": "",
       "note": ""
     },
@@ -18,39 +18,39 @@
       "day": "Utorok",
       "date": "2026-09-29",
       "time": "09:00",
-      "intention": "",
+      "intention": "Za veriacich",
       "place": "",
-      "note": ""
+      "note": "sv.Michala Gabriela a Rafaela, archanjelov"
     },
     {
       "day": "Streda",
       "date": "2026-09-30",
       "time": "17:00",
-      "intention": "",
+      "intention": "Za Danku a Mareka za zdrav. Božie pož. a Dary Ducha Svätého",
       "place": "",
-      "note": ""
+      "note": "sv.Hieronyma, kňaza a učiteľa Cirkvi"
     },
     {
       "day": "Štvrtok",
       "date": "2026-10-01",
       "time": "17:00",
-      "intention": "",
+      "intention": "Za zdr. Bož. Pom. a Bož. pož. Márie Miroslava Rebeky Kataríny",
       "place": "",
-      "note": ""
+      "note": "sv.Terézie od Dieťaťa Ježiša z Lisieux panny a učiteľky Cirkvi a 1.štvrtok"
     },
     {
       "day": "Piatok",
       "date": "2026-10-02",
       "time": "17:00",
-      "intention": "",
+      "intention": "Za + manžela Františka a za zdravie a Božie pomoc pre det",
       "place": "",
-      "note": ""
+      "note": "sv.anjelov strážcov a 1.piatok adorácia a sv.spoveď od 16.00.hod"
     },
     {
       "day": "Sobota",
       "date": "2026-10-03",
       "time": "08:00",
-      "intention": "",
+      "intention": "Za veriacich",
       "place": "",
       "note": ""
     },
@@ -58,9 +58,9 @@
       "day": "Nedeľa",
       "date": "2026-10-04",
       "time": "09:00",
-      "intention": "",
+      "intention": "Za + Štefana Andreu a vnučku",
       "place": "",
-      "note": ""
+      "note": "27. nedeľa cez rok "
     }
   ]
 }
