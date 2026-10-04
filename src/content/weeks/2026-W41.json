@@ -1,16 +1,16 @@
 {
-  "title": "Farské oznamy – 41. týždeň 2026",
+  "title": "27. nedeľa cez rok ",
   "weekNumber": 41,
   "year": 2026,
   "weekStart": "2026-10-05",
   "weekEnd": "2026-10-11",
-  "general": "Tento týždeň upratuje skupina číslo ",
+  "general": "Tento týždeň upratuje skupina číslo 3",
   "masses": [
     {
       "day": "Pondelok",
       "date": "2026-10-05",
-      "time": "17:00",
-      "intention": "",
+      "time": "00:00",
+      "intention": "OMŠA NEBUDE ",
       "place": "",
       "note": ""
     },
@@ -18,7 +18,7 @@
       "day": "Utorok",
       "date": "2026-10-06",
       "time": "09:00",
-      "intention": "",
+      "intention": "Za Kristínu a Vladimíra na úmysel",
       "place": "",
       "note": ""
     },
@@ -26,15 +26,15 @@
       "day": "Streda",
       "date": "2026-10-07",
       "time": "17:00",
-      "intention": "",
+      "intention": "Za + Natašu",
       "place": "",
-      "note": ""
+      "note": "Ružencovej Panny Márie"
     },
     {
       "day": "Štvrtok",
       "date": "2026-10-08",
       "time": "17:00",
-      "intention": "",
+      "intention": "Za + manžela Jána",
       "place": "",
       "note": ""
     },
@@ -42,7 +42,7 @@
       "day": "Piatok",
       "date": "2026-10-09",
       "time": "17:00",
-      "intention": "",
+      "intention": "Za veriacich",
       "place": "",
       "note": ""
     },
@@ -50,7 +50,7 @@
       "day": "Sobota",
       "date": "2026-10-10",
       "time": "08:00",
-      "intention": "",
+      "intention": "Za + Oľgu Škrváňovú 2.výr.a jej sestru Vieru",
       "place": "",
       "note": ""
     },
@@ -58,9 +58,9 @@
       "day": "Nedeľa",
       "date": "2026-10-11",
       "time": "09:00",
-      "intention": "",
+      "intention": "Za Božiu pomoc a zdravie pre synov Jozefa a Ladislava",
       "place": "",
-      "note": ""
+      "note": "28. nedeľa cez rok "
     }
   ]
 }
