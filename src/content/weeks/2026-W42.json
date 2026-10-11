@@ -1,0 +1,66 @@
+{
+  "title": "Farské oznamy – 42. týždeň 2026",
+  "weekNumber": 42,
+  "year": 2026,
+  "weekStart": "2026-10-12",
+  "weekEnd": "2026-10-18",
+  "general": "Tento týždeň upratuje skupina číslo ",
+  "masses": [
+    {
+      "day": "Pondelok",
+      "date": "2026-10-12",
+      "time": "17:00",
+      "intention": "",
+      "place": "",
+      "note": ""
+    },
+    {
+      "day": "Utorok",
+      "date": "2026-10-13",
+      "time": "09:00",
+      "intention": "",
+      "place": "",
+      "note": ""
+    },
+    {
+      "day": "Streda",
+      "date": "2026-10-14",
+      "time": "17:00",
+      "intention": "",
+      "place": "",
+      "note": ""
+    },
+    {
+      "day": "Štvrtok",
+      "date": "2026-10-15",
+      "time": "17:00",
+      "intention": "",
+      "place": "",
+      "note": ""
+    },
+    {
+      "day": "Piatok",
+      "date": "2026-10-16",
+      "time": "17:00",
+      "intention": "",
+      "place": "",
+      "note": ""
+    },
+    {
+      "day": "Sobota",
+      "date": "2026-10-17",
+      "time": "08:00",
+      "intention": "",
+      "place": "",
+      "note": ""
+    },
+    {
+      "day": "Nedeľa",
+      "date": "2026-10-18",
+      "time": "09:00",
+      "intention": "",
+      "place": "",
+      "note": ""
+    }
+  ]
+}
