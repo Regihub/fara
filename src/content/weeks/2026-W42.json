@@ -1,16 +1,16 @@
 {
-  "title": "Farské oznamy – 42. týždeň 2026",
+  "title": "28. nedeľa cez rok ",
   "weekNumber": 42,
   "year": 2026,
   "weekStart": "2026-10-12",
   "weekEnd": "2026-10-18",
-  "general": "Tento týždeň upratuje skupina číslo ",
+  "general": "Konkurz na kostolníčku - Alenka Slobodníkova odstupuje zo zdravotných príčin.\n\nV 29. nedeľu cez rok bude zbierka na misie. \n\nTento týždeň upratuje skupina číslo 4",
   "masses": [
     {
       "day": "Pondelok",
       "date": "2026-10-12",
-      "time": "17:00",
-      "intention": "",
+      "time": "00:00",
+      "intention": "OMŠA NEBUDE ",
       "place": "",
       "note": ""
     },
@@ -18,7 +18,7 @@
       "day": "Utorok",
       "date": "2026-10-13",
       "time": "09:00",
-      "intention": "",
+      "intention": " Za + rodičov a brata",
       "place": "",
       "note": ""
     },
@@ -26,7 +26,7 @@
       "day": "Streda",
       "date": "2026-10-14",
       "time": "17:00",
-      "intention": "",
+      "intention": "Za + rod.Valériu a Pavla a str.rod.Štefana a Valériu a man.Pavla",
       "place": "",
       "note": ""
     },
@@ -34,15 +34,15 @@
       "day": "Štvrtok",
       "date": "2026-10-15",
       "time": "17:00",
-      "intention": "",
+      "intention": " Za + Mons Andreja Patka",
       "place": "",
-      "note": ""
+      "note": "sv. Terézie od Ježiša z Avily panny a učiteľky Cirkvi"
     },
     {
       "day": "Piatok",
       "date": "2026-10-16",
       "time": "17:00",
-      "intention": "",
+      "intention": "Za + Máriu Kasanovú",
       "place": "",
       "note": ""
     },
@@ -50,7 +50,7 @@
       "day": "Sobota",
       "date": "2026-10-17",
       "time": "08:00",
-      "intention": "",
+      "intention": " Za veriacich",
       "place": "",
       "note": ""
     },
@@ -58,9 +58,9 @@
       "day": "Nedeľa",
       "date": "2026-10-18",
       "time": "09:00",
-      "intention": "",
+      "intention": "Za + rodičov Emíliu a Jána a súrodencov",
       "place": "",
-      "note": ""
+      "note": "29. nedeľa cez rok - ZBIERKA na misie"
     }
   ]
 }
