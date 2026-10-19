@@ -1,64 +1,64 @@
 {
-  "title": "Farské oznamy – 44. týždeň 2026",
-  "weekNumber": 44,
+  "title": "29. nedeľa cez rok ",
+  "weekNumber": 43,
   "year": 2026,
-  "weekStart": "2026-10-26",
-  "weekEnd": "2026-11-01",
-  "general": "Tento týždeň upratuje skupina číslo ",
+  "weekStart": "2026-10-19",
+  "weekEnd": "2026-10-25",
+  "general": "Konkurz na kostolníčku - Alenka Slobodníkova odstupuje zo zdravotných príčin.\n\nZmena času zo soboty na nedeľu o 1.hodinu dozadu.\n\nTento týždeň upratuje skupina číslo 5",
   "masses": [
     {
       "day": "Pondelok",
-      "date": "2026-10-26",
-      "time": "17:00",
-      "intention": "",
+      "date": "2026-10-19",
+      "time": "00:00",
+      "intention": "OMŠA NEBUDE ",
       "place": "",
       "note": ""
     },
     {
       "day": "Utorok",
-      "date": "2026-10-27",
+      "date": "2026-10-20",
       "time": "09:00",
-      "intention": "",
+      "intention": " Za + starých rodičov a tetu Annu",
       "place": "",
       "note": ""
     },
     {
       "day": "Streda",
-      "date": "2026-10-28",
+      "date": "2026-10-21",
       "time": "17:00",
-      "intention": "",
+      "intention": " Za pokoj v rodine",
       "place": "",
       "note": ""
     },
     {
       "day": "Štvrtok",
-      "date": "2026-10-29",
+      "date": "2026-10-22",
       "time": "17:00",
-      "intention": "",
+      "intention": " Za + rodičov Annu a Júliusa",
       "place": "",
-      "note": ""
+      "note": "sv.Jána Pavla II. Pápeža ľubovoľná spomienka"
     },
     {
       "day": "Piatok",
-      "date": "2026-10-30",
+      "date": "2026-10-23",
       "time": "17:00",
-      "intention": "",
+      "intention": "Za zdravie a Božie požehnanie pre deti vnúčence a pravnúčence",
       "place": "",
       "note": ""
     },
     {
       "day": "Sobota",
-      "date": "2026-10-31",
+      "date": "2026-10-24",
       "time": "08:00",
-      "intention": "",
+      "intention": " Za veriacich",
       "place": "",
       "note": ""
     },
     {
       "day": "Nedeľa",
-      "date": "2026-11-01",
+      "date": "2026-10-25",
       "time": "09:00",
-      "intention": "",
+      "intention": "Za Božiu pomoc pri operácii Evy",
       "place": "",
       "note": ""
     }
