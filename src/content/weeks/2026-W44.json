@@ -1,16 +1,16 @@
 {
-  "title": "Farské oznamy – 44. týždeň 2026",
+  "title": "30. nedeľa cez rok ",
   "weekNumber": 44,
   "year": 2026,
   "weekStart": "2026-10-26",
   "weekEnd": "2026-11-01",
-  "general": "Tento týždeň upratuje skupina číslo ",
+  "general": "Konkurz na kostolníčku Alenka Slobodníkova odstupuje zo zdravotných príčin.\n\nDušičková pobožnosť na cintoríne bude v nedeľu 1.11. o 15.00. hodine.\n\nTento týždeň upratuje skupina číslo 6",
   "masses": [
     {
       "day": "Pondelok",
       "date": "2026-10-26",
-      "time": "17:00",
-      "intention": "",
+      "time": "00:00",
+      "intention": "OMŠA NEBUDE ",
       "place": "",
       "note": ""
     },
@@ -18,7 +18,7 @@
       "day": "Utorok",
       "date": "2026-10-27",
       "time": "09:00",
-      "intention": "",
+      "intention": " Na vlastný úmysel",
       "place": "",
       "note": ""
     },
@@ -26,15 +26,15 @@
       "day": "Streda",
       "date": "2026-10-28",
       "time": "17:00",
-      "intention": "",
+      "intention": " Na vlastný úmysel",
       "place": "",
-      "note": ""
+      "note": "sv.Šimona a Júdu, apoštolov sviatok"
     },
     {
       "day": "Štvrtok",
       "date": "2026-10-29",
       "time": "17:00",
-      "intention": "",
+      "intention": " Na vlastný úmysel",
       "place": "",
       "note": ""
     },
@@ -42,15 +42,15 @@
       "day": "Piatok",
       "date": "2026-10-30",
       "time": "17:00",
-      "intention": "",
+      "intention": " Na vlastný úmysel",
       "place": "",
-      "note": ""
+      "note": "spovedanie pred Dušičkami od 16.15.hod."
     },
     {
       "day": "Sobota",
       "date": "2026-10-31",
       "time": "08:00",
-      "intention": "",
+      "intention": " Na vlastný úmysel",
       "place": "",
       "note": ""
     },
@@ -58,9 +58,9 @@
       "day": "Nedeľa",
       "date": "2026-11-01",
       "time": "09:00",
-      "intention": "",
+      "intention": "Za veriacich",
       "place": "",
-      "note": ""
+      "note": "31. nedeľa slávnosť Všetkých svätých prikázaný sviatok"
     }
   ]
 }
