@@ -1,64 +1,64 @@
 {
-  "title": "Farské oznamy – 46. týždeň 2026",
-  "weekNumber": 46,
+  "title": "31. nedeľa cez rok ",
+  "weekNumber": 45,
   "year": 2026,
-  "weekStart": "2026-11-09",
-  "weekEnd": "2026-11-15",
-  "general": "Tento týždeň upratuje skupina číslo ",
+  "weekStart": "2026-11-02",
+  "weekEnd": "2026-11-08",
+  "general": "Konkurz na kostolníčku Alenka Slobodníkova odstupuje zo zdravotných príčin.\n\nTento týždeň upratuje skupina číslo 7",
   "masses": [
     {
       "day": "Pondelok",
-      "date": "2026-11-09",
+      "date": "2026-11-02",
       "time": "17:00",
-      "intention": "",
+      "intention": " Za všetkých zomrelých",
       "place": "",
-      "note": ""
+      "note": "Spomienka na všetkých zosnulých veriacich"
     },
     {
       "day": "Utorok",
-      "date": "2026-11-10",
+      "date": "2026-11-03",
       "time": "09:00",
-      "intention": "",
+      "intention": " Na vlastný úmysel",
       "place": "",
       "note": ""
     },
     {
       "day": "Streda",
-      "date": "2026-11-11",
+      "date": "2026-11-04",
       "time": "17:00",
-      "intention": "",
+      "intention": " Za oslobodenie od zlého pre Marka",
       "place": "",
-      "note": ""
+      "note": "sv. Karola Boromejského, biskupa"
     },
     {
       "day": "Štvrtok",
-      "date": "2026-11-12",
+      "date": "2026-11-05",
       "time": "17:00",
-      "intention": "",
+      "intention": "Za + Edku, Ferdinanda a Joachym a za zdravie sestry Beáty",
       "place": "",
-      "note": ""
+      "note": "1.štvrtok v mesiaci"
     },
     {
       "day": "Piatok",
-      "date": "2026-11-13",
+      "date": "2026-11-06",
       "time": "17:00",
-      "intention": "",
+      "intention": "Za veriacich",
       "place": "",
-      "note": ""
+      "note": "1.piatok bude sa spovedať od 16.00 hod"
     },
     {
       "day": "Sobota",
-      "date": "2026-11-14",
+      "date": "2026-11-07",
       "time": "08:00",
-      "intention": "",
+      "intention": "Za + manžela Pavla a celú + rodinu",
       "place": "",
       "note": ""
     },
     {
       "day": "Nedeľa",
-      "date": "2026-11-15",
+      "date": "2026-11-08",
       "time": "09:00",
-      "intention": "",
+      "intention": "Za + rodičov Mateja a Elenu a manžela Jána",
       "place": "",
       "note": ""
     }
